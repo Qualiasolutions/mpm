@@ -1,4 +1,4 @@
-# MPM Employee Discount Platform — Requirements
+# MPM Employee Discount Platform -- Requirements
 
 ## v1 Requirements
 
@@ -66,50 +66,50 @@
 
 ## Out of Scope
 
-- **External vendor marketplace** — MPM sells own brands, not aggregating third-party deals
-- **Points/rewards system** — Simple percentage discounts are transparent, no gamification
-- **Social recognition / peer rewards** — Employee engagement feature, not discount management
-- **Payment processing / in-app checkout** — Discounts applied at POS by cashier, not an e-commerce store
-- **Multi-tenant SaaS** — Custom build for MPM only
-- **Native mobile apps (iOS/Android)** — PWA covers all use cases
-- **Gamification (leaderboards, badges)** — Discounts are a benefit, not a competition
+- **External vendor marketplace** -- MPM sells own brands, not aggregating third-party deals
+- **Points/rewards system** -- Simple percentage discounts are transparent, no gamification
+- **Social recognition / peer rewards** -- Employee engagement feature, not discount management
+- **Payment processing / in-app checkout** -- Discounts applied at POS by cashier, not an e-commerce store
+- **Multi-tenant SaaS** -- Custom build for MPM only
+- **Native mobile apps (iOS/Android)** -- PWA covers all use cases
+- **Gamification (leaderboards, badges)** -- Discounts are a benefit, not a competition
 
 ## Traceability
 
 | REQ ID | Phase | Status |
 |--------|-------|--------|
-| AUTH-01 | — | Pending |
-| AUTH-02 | — | Pending |
-| AUTH-03 | — | Pending |
-| AUTH-04 | — | Pending |
-| AUTH-05 | — | Pending |
-| EMP-01 | — | Pending |
-| EMP-02 | — | Pending |
-| EMP-03 | — | Pending |
-| EMP-04 | — | Pending |
-| EMP-05 | — | Pending |
-| DISC-01 | — | Pending |
-| DISC-02 | — | Pending |
-| DISC-03 | — | Pending |
-| DISC-04 | — | Pending |
-| VAL-01 | — | Pending |
-| VAL-02 | — | Pending |
-| VAL-03 | — | Pending |
-| VAL-04 | — | Pending |
-| VAL-05 | — | Pending |
-| ADM-01 | — | Pending |
-| ADM-02 | — | Pending |
-| ADM-03 | — | Pending |
-| ADM-04 | — | Pending |
-| ADM-05 | — | Pending |
-| ADM-06 | — | Pending |
-| ADM-07 | — | Pending |
-| ADM-08 | — | Pending |
-| PWA-01 | — | Pending |
-| PWA-02 | — | Pending |
-| PWA-03 | — | Pending |
-| PWA-04 | — | Pending |
+| AUTH-01 | Phase 1: Foundation | Pending |
+| AUTH-02 | Phase 1: Foundation | Pending |
+| AUTH-03 | Phase 1: Foundation | Pending |
+| AUTH-04 | Phase 1: Foundation | Pending |
+| AUTH-05 | Phase 1: Foundation | Pending |
+| EMP-01 | Phase 3: Employee Experience | Pending |
+| EMP-02 | Phase 3: Employee Experience | Pending |
+| EMP-03 | Phase 3: Employee Experience | Pending |
+| EMP-04 | Phase 3: Employee Experience | Pending |
+| EMP-05 | Phase 3: Employee Experience | Pending |
+| DISC-01 | Phase 2: Admin Core | Pending |
+| DISC-02 | Phase 2: Admin Core | Pending |
+| DISC-03 | Phase 2: Admin Core | Pending |
+| DISC-04 | Phase 4: Validation Engine | Pending |
+| VAL-01 | Phase 4: Validation Engine | Pending |
+| VAL-02 | Phase 4: Validation Engine | Pending |
+| VAL-03 | Phase 4: Validation Engine | Pending |
+| VAL-04 | Phase 4: Validation Engine | Pending |
+| VAL-05 | Phase 4: Validation Engine | Pending |
+| ADM-01 | Phase 2: Admin Core | Pending |
+| ADM-02 | Phase 2: Admin Core | Pending |
+| ADM-03 | Phase 2: Admin Core | Pending |
+| ADM-04 | Phase 2: Admin Core | Pending |
+| ADM-05 | Phase 6: Analytics & Reporting | Pending |
+| ADM-06 | Phase 6: Analytics & Reporting | Pending |
+| ADM-07 | Phase 6: Analytics & Reporting | Pending |
+| ADM-08 | Phase 6: Analytics & Reporting | Pending |
+| PWA-01 | Phase 5: PWA & Offline | Pending |
+| PWA-02 | Phase 5: PWA & Offline | Pending |
+| PWA-03 | Phase 5: PWA & Offline | Pending |
+| PWA-04 | Phase 5: PWA & Offline | Pending |
 
 ---
-*25 v1 requirements across 6 categories*
+*31 v1 requirements across 6 categories*
 *Last updated: 2026-02-04*
