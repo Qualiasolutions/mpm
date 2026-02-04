@@ -148,3 +148,46 @@ export type RecentValidation = {
   discount_percentage: number
   created_at: string
 }
+
+export type AnalyticsOverview = {
+  totalTransactions: number
+  totalOriginalAmount: number
+  totalDiscountAmount: number
+  totalFinalAmount: number
+  activeEmployees: number
+  averageDiscountPercentage: number
+  transactionsByDay: { date: string; count: number; amount: number }[]
+}
+
+export type EmployeeReportRow = {
+  id: string
+  name: string
+  email: string
+  division_names: string[]
+  transaction_count: number
+  total_original: number
+  total_discount: number
+  total_final: number
+  monthly_limit: number
+  limit_usage_pct: number
+}
+
+export type DivisionReportRow = {
+  id: string
+  name: string
+  code: string
+  transaction_count: number
+  total_original: number
+  total_discount: number
+  total_final: number
+  unique_employees: number
+  avg_discount_pct: number
+}
+
+export type MonthlyTrend = {
+  month: string
+  transactions: number
+  total_original: number
+  total_discount: number
+  unique_employees: number
+}

@@ -37,6 +37,7 @@ export function NavBar({ role, userName }: NavBarProps) {
               <NavLink href="/admin/validate" highlight>
                 Validate
               </NavLink>
+              <NavLink href="/admin/analytics">Analytics</NavLink>
               <NavDivider />
               <NavLink href="/dashboard" subtle>
                 Employee View
@@ -87,6 +88,9 @@ export function NavBar({ role, userName }: NavBarProps) {
                   </MobileNavLink>
                   <MobileNavLink href="/admin/validate" highlight>
                     Validate
+                  </MobileNavLink>
+                  <MobileNavLink href="/admin/analytics">
+                    Analytics
                   </MobileNavLink>
                   <div className="my-1.5 border-t border-white/[0.06]" />
                   <MobileNavLink href="/dashboard">Employee View</MobileNavLink>
