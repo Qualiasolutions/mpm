@@ -31,11 +31,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Employee can log out from any page in the application and be redirected to the login screen
   4. Admin can create a new employee account (employees cannot self-register)
   5. Navigating to an admin route as an employee shows access denied; navigating to an employee route as an unauthenticated user redirects to login
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md -- Project scaffolding, Supabase clients, middleware, database migration
+- [ ] 01-02-PLAN.md -- Auth pages (login, password reset, update password) and Server Actions
+- [ ] 01-03-PLAN.md -- Role-based access layouts, admin employee creation, navigation
 
 ### Phase 2: Admin Core
 **Goal**: Admins can fully manage the employee roster, organizational structure, and discount rules so the system is ready for employees to use
@@ -122,7 +123,7 @@ Phases 1 through 4 execute sequentially (dependency chain). Phases 5 and 6 can e
 
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/3 | Planning complete | - |
 | 2. Admin Core | 0/TBD | Not started | - |
 | 3. Employee Experience | 0/TBD | Not started | - |
 | 4. Validation Engine | 0/TBD | Not started | - |
