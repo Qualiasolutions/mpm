@@ -1,22 +1,44 @@
+import { getEmployees, getDivisions } from '@/actions/admin'
 import { CreateEmployeeForm } from '@/components/admin/create-employee-form'
+import { EmployeeList } from '@/components/admin/employee-list'
+import { CsvImport } from '@/components/admin/csv-import'
+import { EmployeePageTabs } from './tabs'
 
-export default function EmployeesPage() {
+export default async function EmployeesPage() {
+  const [employeesResult, divisionsResult] = await Promise.all([
+    getEmployees(),
+    getDivisions(),
+  ])
+
+  const employees =
+    'employees' in employeesResult ? employeesResult.employees : []
+  const divisions =
+    'divisions' in divisionsResult
+      ? divisionsResult.divisions.map((d) => ({
+          id: d.id,
+          name: d.name,
+          code: d.code,
+        }))
+      : []
+
   return (
     <div className="space-y-8">
       <h1 className="text-2xl font-light tracking-wide text-neutral-200">
         Employee Management
       </h1>
 
+      {/* Create Employee */}
       <div className="max-w-xl">
         <CreateEmployeeForm />
       </div>
 
-      {/* Placeholder for employee list -- Phase 2 */}
-      <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-6">
-        <p className="text-sm text-neutral-600">
-          Employee list will appear here in a future update.
-        </p>
-      </div>
+      {/* Tabs: Manage / Import */}
+      <EmployeePageTabs
+        manageContent={
+          <EmployeeList employees={employees} divisions={divisions} />
+        }
+        importContent={<CsvImport />}
+      />
     </div>
   )
 }

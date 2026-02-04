@@ -32,6 +32,8 @@ export function NavBar({ role, userName }: NavBarProps) {
             <>
               <NavLink href="/admin">Dashboard</NavLink>
               <NavLink href="/admin/employees">Employees</NavLink>
+              <NavLink href="/admin/divisions">Divisions</NavLink>
+              <NavLink href="/admin/discounts">Discounts</NavLink>
               <NavDivider />
               <NavLink href="/" subtle>
                 Employee View
@@ -69,6 +71,12 @@ export function NavBar({ role, userName }: NavBarProps) {
                   <MobileNavLink href="/admin">Dashboard</MobileNavLink>
                   <MobileNavLink href="/admin/employees">
                     Employees
+                  </MobileNavLink>
+                  <MobileNavLink href="/admin/divisions">
+                    Divisions
+                  </MobileNavLink>
+                  <MobileNavLink href="/admin/discounts">
+                    Discounts
                   </MobileNavLink>
                   <div className="my-1.5 border-t border-white/[0.06]" />
                   <MobileNavLink href="/">Employee View</MobileNavLink>

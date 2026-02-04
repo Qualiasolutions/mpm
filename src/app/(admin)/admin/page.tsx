@@ -1,14 +1,31 @@
 import Link from 'next/link'
+import { getAdminStats } from '@/actions/admin'
+import { AdminStatsCards } from '@/components/admin/admin-stats'
 
-export default function AdminDashboardPage() {
+export default async function AdminDashboardPage() {
+  const statsResult = await getAdminStats()
+  const stats =
+    'stats' in statsResult
+      ? statsResult.stats
+      : {
+          totalEmployees: 0,
+          activeEmployees: 0,
+          totalDivisions: 0,
+          activeDiscountRules: 0,
+        }
+
   return (
     <div className="space-y-8">
       <h1 className="text-2xl font-light tracking-wide text-neutral-200">
         Admin Dashboard
       </h1>
 
+      {/* Stats */}
+      <AdminStatsCards stats={stats} />
+
+      {/* Navigation Cards */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {/* Employee Management -- Active */}
+        {/* Employee Management */}
         <Link
           href="/admin/employees"
           className="group rounded-lg border border-[#D4A853]/15 bg-[#D4A853]/[0.03] p-5 transition-colors hover:border-[#D4A853]/25 hover:bg-[#D4A853]/[0.06]"
@@ -35,13 +52,16 @@ export default function AdminDashboardPage() {
             Employee Management
           </h3>
           <p className="mt-1 text-xs text-neutral-600">
-            Create and manage employee accounts
+            Create, edit, and manage employee accounts
           </p>
         </Link>
 
-        {/* Division Management -- Placeholder */}
-        <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-5 opacity-50">
-          <div className="mb-3 text-neutral-600">
+        {/* Division Management */}
+        <Link
+          href="/admin/divisions"
+          className="group rounded-lg border border-[#D4A853]/15 bg-[#D4A853]/[0.03] p-5 transition-colors hover:border-[#D4A853]/25 hover:bg-[#D4A853]/[0.06]"
+        >
+          <div className="mb-3 text-[#D4A853]/60">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="22"
@@ -57,15 +77,20 @@ export default function AdminDashboardPage() {
               <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
             </svg>
           </div>
-          <h3 className="text-sm font-medium text-neutral-400">
+          <h3 className="text-sm font-medium text-[#D4A853]/80 transition-colors group-hover:text-[#D4A853]">
             Division Management
           </h3>
-          <p className="mt-1 text-xs text-neutral-600">Coming in Phase 2</p>
-        </div>
+          <p className="mt-1 text-xs text-neutral-600">
+            Manage divisions and their brands
+          </p>
+        </Link>
 
-        {/* Discount Rules -- Placeholder */}
-        <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-5 opacity-50">
-          <div className="mb-3 text-neutral-600">
+        {/* Discount Rules */}
+        <Link
+          href="/admin/discounts"
+          className="group rounded-lg border border-[#D4A853]/15 bg-[#D4A853]/[0.03] p-5 transition-colors hover:border-[#D4A853]/25 hover:bg-[#D4A853]/[0.06]"
+        >
+          <div className="mb-3 text-[#D4A853]/60">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="22"
@@ -83,11 +108,13 @@ export default function AdminDashboardPage() {
               <rect x="2" y="2" width="20" height="20" rx="2" />
             </svg>
           </div>
-          <h3 className="text-sm font-medium text-neutral-400">
+          <h3 className="text-sm font-medium text-[#D4A853]/80 transition-colors group-hover:text-[#D4A853]">
             Discount Rules
           </h3>
-          <p className="mt-1 text-xs text-neutral-600">Coming in Phase 3</p>
-        </div>
+          <p className="mt-1 text-xs text-neutral-600">
+            Configure discount percentages and spending limits
+          </p>
+        </Link>
       </div>
     </div>
   )
