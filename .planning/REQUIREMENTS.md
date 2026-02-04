@@ -4,11 +4,11 @@
 
 ### Authentication
 
-- [ ] **AUTH-01**: Employee can log in with email/password and stay logged in across sessions
-- [ ] **AUTH-02**: Employee can reset password via email link
-- [ ] **AUTH-03**: Employee can log out from any page
-- [ ] **AUTH-04**: Admin can create employee accounts (no self-registration)
-- [ ] **AUTH-05**: System enforces role-based access (Admin sees admin routes, Employee sees employee routes)
+- [x] **AUTH-01**: Employee can log in with email/password and stay logged in across sessions
+- [x] **AUTH-02**: Employee can reset password via email link
+- [x] **AUTH-03**: Employee can log out from any page
+- [x] **AUTH-04**: Admin can create employee accounts (no self-registration)
+- [x] **AUTH-05**: System enforces role-based access (Admin sees admin routes, Employee sees employee routes)
 
 ### Employee Experience
 
@@ -78,11 +78,11 @@
 
 | REQ ID | Phase | Status |
 |--------|-------|--------|
-| AUTH-01 | Phase 1: Foundation | Pending |
-| AUTH-02 | Phase 1: Foundation | Pending |
-| AUTH-03 | Phase 1: Foundation | Pending |
-| AUTH-04 | Phase 1: Foundation | Pending |
-| AUTH-05 | Phase 1: Foundation | Pending |
+| AUTH-01 | Phase 1: Foundation | Complete |
+| AUTH-02 | Phase 1: Foundation | Complete |
+| AUTH-03 | Phase 1: Foundation | Complete |
+| AUTH-04 | Phase 1: Foundation | Complete |
+| AUTH-05 | Phase 1: Foundation | Complete |
 | EMP-01 | Phase 3: Employee Experience | Pending |
 | EMP-02 | Phase 3: Employee Experience | Pending |
 | EMP-03 | Phase 3: Employee Experience | Pending |

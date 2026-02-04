@@ -12,7 +12,7 @@ The MPM Employee Discount Platform delivers a mobile-first PWA for 100+ employee
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - Database schema, authentication, security architecture, and role-based access
+- [x] **Phase 1: Foundation** - Database schema, authentication, security architecture, and role-based access
 - [ ] **Phase 2: Admin Core** - Employee management, division/brand CRUD, and discount rule configuration
 - [ ] **Phase 3: Employee Experience** - Discount browsing, QR code generation, manual codes, and usage tracking
 - [ ] **Phase 4: Validation Engine** - QR scanning, code validation, transaction recording, and spending limit enforcement
@@ -34,10 +34,10 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 4 plans
 
 Plans:
-- [ ] 01-01-PLAN.md -- Project scaffolding, Supabase clients, middleware, database migration
-- [ ] 01-02-PLAN.md -- Auth pages (login, password reset, update password) and Server Actions
-- [ ] 01-03-PLAN.md -- Role-based access layouts, admin employee creation, navigation
-- [ ] 01-04-PLAN.md -- Push to GitHub and deploy to Vercel
+- [x] 01-01-PLAN.md -- Project scaffolding, Supabase clients, middleware, database migration
+- [x] 01-02-PLAN.md -- Auth pages (login, password reset, update password) and Server Actions
+- [x] 01-03-PLAN.md -- Role-based access layouts, admin employee creation, navigation
+- [x] 01-04-PLAN.md -- Push to GitHub and deploy to Vercel
 
 ### Phase 2: Admin Core
 **Goal**: Admins can fully manage the employee roster, organizational structure, and discount rules so the system is ready for employees to use
@@ -124,7 +124,7 @@ Phases 1 through 4 execute sequentially (dependency chain). Phases 5 and 6 can e
 
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
-| 1. Foundation | 0/4 | Planning complete | - |
+| 1. Foundation | 4/4 | Complete | 2026-02-04 |
 | 2. Admin Core | 0/TBD | Not started | - |
 | 3. Employee Experience | 0/TBD | Not started | - |
 | 4. Validation Engine | 0/TBD | Not started | - |
