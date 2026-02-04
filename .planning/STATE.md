@@ -5,72 +5,112 @@
 See: .planning/PROJECT.md (updated 2026-02-04)
 
 **Core value:** Employees get instant, trackable discounts across all MPM brands and locations -- replacing a manual, untrackable process.
-**Current focus:** Phase 1 COMPLETE (verified 5/5). Ready for Phase 2 - Admin Core.
+**Current focus:** ALL 6 PHASES COMPLETE. Milestone 1 fully delivered.
 
 ## Current Position
 
-Phase: 1 of 6 (Foundation) -- COMPLETE
-Plan: 4 of 4 in current phase (all done)
-Status: Phase complete
-Last activity: 2026-02-04 -- Completed 01-04-PLAN.md (Push & Deploy)
+Phase: 6 of 6 (Analytics & Reporting) -- COMPLETE
+Status: All phases complete
+Last activity: 2026-02-04 -- Completed Phase 6 (Analytics & Reporting)
 
-Progress: [████░░░░░░] ~33% (4 of ~12 total plans)
+Progress: [██████████] 100% (all phases complete)
 
-## Performance Metrics
+## What Was Built
 
-**Velocity:**
-- Total plans completed: 4
-- Average duration: ~12 minutes
-- Total execution time: ~0.8 hours
+### Phase 1: Foundation
+- Supabase auth (login, password reset, logout)
+- Profiles table with RLS, custom JWT role claim
+- Role-based routing (admin/employee)
+- Middleware auth guards
+- Vercel deployment
 
-**By Phase:**
+### Phase 2: Admin Core
+- Database: divisions, brands, employee_divisions, discount_rules, app_settings tables
+- 4 divisions pre-seeded (CPD, PPD, ACD, Fashion) with 17 brands
+- Employee management: list, search, filter, edit panel, status toggle
+- CSV bulk import with validation and partial import
+- Division/brand CRUD with accordion UI
+- Discount rules per division + global spending cap
+- Admin dashboard with live stats
 
-| Phase | Plans | Total | Avg/Plan |
-|-------|-------|-------|----------|
-| 1. Foundation | 4/4 | ~49m | ~12m |
+### Phase 3: Employee Experience
+- Employee dashboard with circular spending progress ring
+- Discount browsing by assigned divisions
+- QR code generation (90s expiry, gold-on-dark theme)
+- Manual code display (MPM-XXXXXX) with copy-to-clipboard
+- Countdown timer with color transitions
+- Transaction history with pagination
+- Mobile-first bottom tab navigation
 
-**Recent Trend:**
-- Last 5 plans: 01-01 (~15m), 01-02 (~6m), 01-03 (~10m), 01-04 (~18m)
-- Trend: Consistent (~12m avg), 01-04 took longer due to Vercel build debugging
+### Phase 4: Validation Engine
+- Atomic validate_and_redeem_code() DB function (race-condition safe)
+- QR scanner using native BarcodeDetector API
+- Manual code entry fallback
+- Full validation flow: scan/enter -> amount -> process -> result
+- Clear success/failure states with animated feedback
+- Recent validations sidebar
+- Validates: expired, already used, over limit, inactive employee
 
-*Updated after each plan completion*
+### Phase 5: PWA & Offline
+- Serwist service worker with precaching + runtime caching
+- Web App Manifest (standalone, dark theme)
+- Online/offline status indicator
+- Mobile install prompt (dismissable, 7-day cooldown)
+- SVG app icons
 
-## Accumulated Context
+### Phase 6: Analytics & Reporting
+- Analytics dashboard with 3 tabs (Overview, Employees, Divisions)
+- 6 overview stat cards with EUR formatting
+- Daily activity chart (pure CSS/SVG)
+- Monthly trends visualization (6 months)
+- Employee spending report with limit usage bars
+- Division usage report with sortable columns
+- Date range filter with presets
+- CSV export for all reports
 
-### Decisions
+## Database Schema
 
-Decisions are logged in PROJECT.md Key Decisions table.
-Recent decisions affecting current work:
+4 migrations:
+- `00001_foundation.sql` - profiles, auth triggers, JWT hook
+- `00002_admin_core.sql` - divisions, brands, employee_divisions, discount_rules, app_settings
+- `00003_employee_experience.sql` - discount_codes, transactions, DB functions
+- `00004_validation_engine.sql` - validate_and_redeem_code() atomic function
 
-- [Roadmap]: 6 phases derived from 31 requirements across 6 categories
-- [Roadmap]: Phases 5 and 6 (PWA + Analytics) can execute in parallel after Phase 4
-- [Roadmap]: Demo milestone = Phase 4 completion (full employee-to-cashier flow)
-- [01-01]: Use await cookies() throughout (Next.js 15 async API, forward-compatible with 16)
-- [01-01]: Use getUser() for all server-side auth checks, never getSession()
-- [01-01]: SUPABASE_SERVICE_ROLE_KEY has no NEXT_PUBLIC_ prefix
-- [01-01]: Enable RLS in same migration as CREATE TABLE
-- [01-02]: Use React 19 useActionState (not deprecated useFormState from react-dom)
-- [01-02]: Generic auth errors only -- never expose Supabase internals to client
-- [01-02]: Anti-email enumeration on password reset (always returns success)
-- [01-02]: Premium dark theme (#0A0A0B bg, #D4A853 gold accent) for auth pages
-- [01-04]: Pin Tailwind CSS to v4.0.17 (v4.1.x has build bug on Vercel Linux)
-- [01-04]: Remove --turbopack from build script (keep for dev only)
-- [01-04]: Place favicon.ico in public/ not src/app/
+## App Routes
 
-### Pending Todos
+```
+/                         - Auth/role router
+/login                    - Login page
+/reset-password           - Password reset request
+/update-password          - Set new password
+/dashboard                - Employee dashboard (discounts, QR, history)
+/admin                    - Admin dashboard (stats, quick links)
+/admin/employees          - Employee management (list, create, CSV import)
+/admin/divisions          - Division & brand CRUD
+/admin/discounts          - Discount rules configuration
+/admin/validate           - Cashier validation terminal
+/admin/analytics          - Usage analytics & reports
+/access-denied            - Unauthorized access page
+/manifest.webmanifest     - PWA manifest
+```
 
-- User must configure real Supabase env vars in .env.local before auth testing
-- User must run SQL migration against Supabase project
-- User must enable Custom Access Token Hook in Supabase Dashboard
-- User must set NEXT_PUBLIC_SITE_URL in .env.local for password reset redirects
-- User must set Vercel environment variables (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY, NEXT_PUBLIC_SITE_URL)
+## Tech Stack
 
-### Blockers/Concerns
+- Next.js 15.5.11, React 19.1.0, TypeScript
+- Tailwind CSS 4.0.17
+- Supabase (Auth, PostgreSQL, RLS)
+- Serwist (PWA service worker)
+- qrcode (QR generation)
+- Zod (validation)
+- Vercel (deployment)
 
-- [Research]: Phase 5 (PWA) -- Serwist + Next.js 15 App Router integration is recent (2025). Light validation needed during planning.
-- [Research]: Confirm Cyprus retail connectivity profile with stakeholder during Phase 5 planning.
-- [01-01]: SWC version mismatch warning (15.5.7 vs 15.5.11) -- non-blocking, cosmetic
-- [01-04]: Tailwind pinned to v4.0.17. Monitor for v4.1.x fix to upgrade later.
+## Pending User Actions
+
+- Run all 4 SQL migrations against Supabase project
+- Configure Supabase env vars in .env.local and Vercel
+- Enable Custom Access Token Hook in Supabase Dashboard
+- Replace placeholder PWA icons with branded assets
+- Test end-to-end with real Supabase project
 
 ## Key Links
 
@@ -80,6 +120,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-02-04 14:47 UTC
-Stopped at: Completed 01-04-PLAN.md -- Phase 1 fully complete
+Last session: 2026-02-04
+Stopped at: All 6 phases complete, milestone delivered
 Resume file: None

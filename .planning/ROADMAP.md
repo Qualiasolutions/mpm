@@ -13,11 +13,11 @@ The MPM Employee Discount Platform delivers a mobile-first PWA for 100+ employee
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Database schema, authentication, security architecture, and role-based access
-- [ ] **Phase 2: Admin Core** - Employee management, division/brand CRUD, and discount rule configuration
-- [ ] **Phase 3: Employee Experience** - Discount browsing, QR code generation, manual codes, and usage tracking
-- [ ] **Phase 4: Validation Engine** - QR scanning, code validation, transaction recording, and spending limit enforcement
-- [ ] **Phase 5: PWA & Offline** - Installable PWA, service worker caching, offline browsing, and connectivity indicators
-- [ ] **Phase 6: Analytics & Reporting** - Usage dashboards, per-employee and per-division reports, CSV export
+- [x] **Phase 2: Admin Core** - Employee management, division/brand CRUD, and discount rule configuration
+- [x] **Phase 3: Employee Experience** - Discount browsing, QR code generation, manual codes, and usage tracking
+- [x] **Phase 4: Validation Engine** - QR scanning, code validation, transaction recording, and spending limit enforcement
+- [x] **Phase 5: PWA & Offline** - Installable PWA, service worker caching, offline browsing, and connectivity indicators
+- [x] **Phase 6: Analytics & Reporting** - Usage dashboards, per-employee and per-division reports, CSV export
 
 ## Phase Details
 
@@ -49,11 +49,10 @@ Plans:
   3. Admin can create, edit, and delete divisions and brands in the system
   4. Admin can upload a CSV file to bulk-import multiple employee accounts at once
   5. Admin can set a discount percentage per division (e.g., 20% for CPD, 15% for Fashion) and a monthly spending cap per employee
-**Plans**: TBD
+**Plans**: 1 plan (executed as single commit)
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
+- [x] 02-01 -- Database migration, server actions, employee list/edit, division CRUD, discount rules, CSV import
 
 ### Phase 3: Employee Experience
 **Goal**: Employees can browse their available discounts, generate redemption codes, and track their spending against monthly limits
@@ -65,11 +64,10 @@ Plans:
   3. Employee can see a manual code (MPM-XXXX format) displayed alongside the QR code as a fallback
   4. Employee can view a history of their past discount transactions
   5. Employee can see their remaining monthly spending limit prominently on their dashboard
-**Plans**: TBD
+**Plans**: 1 plan (executed as single commit)
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [x] 03-01 -- Discount codes/transactions tables, employee server actions, dashboard UI, QR generation, transaction history
 
 ### Phase 4: Validation Engine
 **Goal**: Cashiers can validate employee discount codes at POS, and every redemption is atomically recorded with spending limits enforced in real time
@@ -81,11 +79,10 @@ Plans:
   3. Validation screen shows a clear success state (employee name, discount percentage, amount saved, remaining monthly limit) or a clear failure state (specific reason: expired, already used, over limit, inactive employee)
   4. Each generated code can only be redeemed once -- attempting to reuse a code shows "already used" error
   5. Every successful redemption is recorded as a transaction with employee, division, amounts, location, and timestamp
-**Plans**: TBD
+**Plans**: 1 plan (executed as single commit)
 
 Plans:
-- [ ] 04-01: TBD
-- [ ] 04-02: TBD
+- [x] 04-01 -- Atomic validate_and_redeem_code() DB function, validation server actions, QR scanner, manual entry, validation terminal UI
 
 ### Phase 5: PWA & Offline
 **Goal**: Employees can install the app on their phones and continue browsing discounts even with spotty connectivity at retail locations
@@ -96,10 +93,10 @@ Plans:
   2. Employee can browse previously loaded discounts when the device has no internet connection
   3. App displays a visible online/offline status indicator so the employee knows their connectivity state
   4. Previously generated QR codes are viewable from cache when offline
-**Plans**: TBD
+**Plans**: 1 plan (executed as single commit)
 
 Plans:
-- [ ] 05-01: TBD
+- [x] 05-01 -- Serwist service worker, web manifest, online/offline indicator, install prompt, PWA icons
 
 ### Phase 6: Analytics & Reporting
 **Goal**: Admins can understand discount program usage through dashboards and exportable reports for finance and HR
@@ -110,10 +107,10 @@ Plans:
   2. Admin can view a per-employee spending report and filter it by date range
   3. Admin can view a per-division usage breakdown showing which divisions have the most/least discount activity
   4. Admin can export any report view to a CSV file for use in spreadsheets
-**Plans**: TBD
+**Plans**: 1 plan (executed as single commit)
 
 Plans:
-- [ ] 06-01: TBD
+- [x] 06-01 -- Analytics server actions, overview dashboard, employee/division reports, date filtering, CSV export
 
 ## Progress
 
@@ -125,8 +122,8 @@ Phases 1 through 4 execute sequentially (dependency chain). Phases 5 and 6 can e
 | Phase | Plans Complete | Status | Completed |
 |-------|---------------|--------|-----------|
 | 1. Foundation | 4/4 | Complete | 2026-02-04 |
-| 2. Admin Core | 0/TBD | Not started | - |
-| 3. Employee Experience | 0/TBD | Not started | - |
-| 4. Validation Engine | 0/TBD | Not started | - |
-| 5. PWA & Offline | 0/TBD | Not started | - |
-| 6. Analytics & Reporting | 0/TBD | Not started | - |
+| 2. Admin Core | 1/1 | Complete | 2026-02-04 |
+| 3. Employee Experience | 1/1 | Complete | 2026-02-04 |
+| 4. Validation Engine | 1/1 | Complete | 2026-02-04 |
+| 5. PWA & Offline | 1/1 | Complete | 2026-02-04 |
+| 6. Analytics & Reporting | 1/1 | Complete | 2026-02-04 |
