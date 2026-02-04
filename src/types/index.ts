@@ -105,3 +105,46 @@ export type EmployeeDiscount = {
   discount_percentage: number
   brand_count: number
 }
+
+export type ValidationResult = {
+  success: boolean
+  error?: string
+  message?: string
+  transaction_id?: string
+  employee_name?: string
+  division_name?: string
+  division_code?: string
+  discount_percentage?: number
+  original_amount?: number
+  discount_amount?: number
+  final_amount?: number
+  remaining_limit?: number
+  details?: {
+    limit?: number
+    spent?: number
+    remaining?: number
+    requested?: number
+  }
+}
+
+export type CodeLookup = {
+  id: string
+  manual_code: string
+  status: string
+  employee_name: string
+  division_name: string
+  discount_percentage: number
+  expires_at: string
+  created_at: string
+}
+
+export type RecentValidation = {
+  id: string
+  employee_name: string
+  division_name: string
+  original_amount: number
+  discount_amount: number
+  final_amount: number
+  discount_percentage: number
+  created_at: string
+}

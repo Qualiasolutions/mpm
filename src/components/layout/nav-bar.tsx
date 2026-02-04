@@ -34,6 +34,9 @@ export function NavBar({ role, userName }: NavBarProps) {
               <NavLink href="/admin/employees">Employees</NavLink>
               <NavLink href="/admin/divisions">Divisions</NavLink>
               <NavLink href="/admin/discounts">Discounts</NavLink>
+              <NavLink href="/admin/validate" highlight>
+                Validate
+              </NavLink>
               <NavDivider />
               <NavLink href="/dashboard" subtle>
                 Employee View
@@ -82,6 +85,9 @@ export function NavBar({ role, userName }: NavBarProps) {
                   <MobileNavLink href="/admin/discounts">
                     Discounts
                   </MobileNavLink>
+                  <MobileNavLink href="/admin/validate" highlight>
+                    Validate
+                  </MobileNavLink>
                   <div className="my-1.5 border-t border-white/[0.06]" />
                   <MobileNavLink href="/dashboard">Employee View</MobileNavLink>
                 </>
@@ -115,18 +121,22 @@ function NavLink({
   href,
   children,
   subtle,
+  highlight,
 }: {
   href: string
   children: React.ReactNode
   subtle?: boolean
+  highlight?: boolean
 }) {
   return (
     <Link
       href={href}
       className={`rounded-md px-3 py-1.5 text-sm transition-colors hover:bg-white/5 ${
-        subtle
-          ? 'text-neutral-600 hover:text-neutral-400'
-          : 'text-neutral-400 hover:text-neutral-200'
+        highlight
+          ? 'border border-[#D4A853]/20 bg-[#D4A853]/[0.06] text-[#D4A853] hover:bg-[#D4A853]/[0.12]'
+          : subtle
+            ? 'text-neutral-600 hover:text-neutral-400'
+            : 'text-neutral-400 hover:text-neutral-200'
       }`}
     >
       {children}
@@ -141,14 +151,20 @@ function NavDivider() {
 function MobileNavLink({
   href,
   children,
+  highlight,
 }: {
   href: string
   children: React.ReactNode
+  highlight?: boolean
 }) {
   return (
     <Link
       href={href}
-      className="block px-4 py-2 text-sm text-neutral-400 transition-colors hover:bg-white/5 hover:text-neutral-200"
+      className={`block px-4 py-2 text-sm transition-colors hover:bg-white/5 ${
+        highlight
+          ? 'text-[#D4A853] hover:text-[#D4A853]'
+          : 'text-neutral-400 hover:text-neutral-200'
+      }`}
     >
       {children}
     </Link>

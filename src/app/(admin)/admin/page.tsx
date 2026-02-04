@@ -25,6 +25,39 @@ export default async function AdminDashboardPage() {
 
       {/* Navigation Cards */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Validate Code - Primary Action */}
+        <Link
+          href="/admin/validate"
+          className="group relative overflow-hidden rounded-lg border-2 border-[#D4A853]/30 bg-[#D4A853]/[0.05] p-6 transition-all hover:border-[#D4A853]/50 hover:bg-[#D4A853]/[0.1] sm:col-span-2 lg:col-span-1"
+        >
+          <div className="absolute right-0 top-0 h-20 w-20 translate-x-4 -translate-y-4 rounded-full bg-[#D4A853]/[0.06]" />
+          <div className="absolute bottom-0 right-8 h-12 w-12 translate-y-3 rounded-full bg-[#D4A853]/[0.04]" />
+          <div className="relative">
+            <div className="mb-3 text-[#D4A853]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="9 11 12 14 22 4" />
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+              </svg>
+            </div>
+            <h3 className="text-base font-medium text-[#D4A853] transition-colors group-hover:text-[#D4A853]">
+              Validate Code
+            </h3>
+            <p className="mt-1 text-xs text-neutral-500">
+              Scan QR or enter code to apply employee discount
+            </p>
+          </div>
+        </Link>
+
         {/* Employee Management */}
         <Link
           href="/admin/employees"
