@@ -1,6 +1,7 @@
 'use server'
 
 import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 import type {
   AnalyticsOverview,
   EmployeeReportRow,
@@ -116,10 +117,18 @@ export async function getEmployeeReport(
   // Get all active employees with their divisions
   const { data: employees, error: empError } = await supabase
     .from('profiles')
-    .select('id, first_name, last_name, email, monthly_spending_limit')
+    .select('id, first_name, last_name, monthly_spending_limit')
     .eq('is_active', true)
 
   if (empError) return { error: 'Failed to fetch employees' }
+
+  // Fetch auth users to get emails (email lives in auth.users, not profiles)
+  const adminClient = createAdminClient()
+  const { data: authData } = await adminClient.auth.admin.listUsers({ perPage: 1000 })
+  const emailMap = new Map<string, string>()
+  for (const u of authData?.users || []) {
+    emailMap.set(u.id, u.email || '')
+  }
 
   // Get employee divisions
   const { data: empDivisions } = await supabase
@@ -186,8 +195,8 @@ export async function getEmployeeReport(
 
     return {
       id: emp.id,
-      name: [emp.first_name, emp.last_name].filter(Boolean).join(' ') || emp.email,
-      email: emp.email,
+      name: [emp.first_name, emp.last_name].filter(Boolean).join(' ') || emailMap.get(emp.id) || '',
+      email: emailMap.get(emp.id) || '',
       division_names: divMap.get(emp.id) || [],
       transaction_count: txnData.count,
       total_original: txnData.original,
