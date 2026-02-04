@@ -85,13 +85,13 @@ export function AnalyticsDashboard({
   return (
     <div className="space-y-6">
       {/* Date Filter */}
-      <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-5 py-4">
+      <div className="rounded-2xl border border-slate-200 bg-white px-5 py-4">
         <DateFilter onFilterChange={handleFilterChange} />
       </div>
 
       {/* Loading indicator */}
       {isPending && (
-        <div className="flex items-center gap-2 text-xs text-neutral-500">
+        <div className="flex items-center gap-2 text-xs text-slate-400">
           <svg
             className="h-3.5 w-3.5 animate-spin"
             viewBox="0 0 24 24"
@@ -116,7 +116,7 @@ export function AnalyticsDashboard({
       )}
 
       {/* Tabs */}
-      <div className="flex gap-1 border-b border-white/[0.06]">
+      <div className="flex gap-1 border-b border-slate-200">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -124,13 +124,13 @@ export function AnalyticsDashboard({
             onClick={() => setActiveTab(tab.id)}
             className={`relative px-4 py-2.5 text-sm font-medium transition-colors ${
               activeTab === tab.id
-                ? 'text-[#D4A853]'
-                : 'text-neutral-500 hover:text-neutral-300'
+                ? 'text-teal-600'
+                : 'text-slate-400 hover:text-slate-700'
             }`}
           >
             {tab.label}
             {activeTab === tab.id && (
-              <span className="absolute bottom-0 left-0 right-0 h-px bg-[#D4A853]" />
+              <span className="absolute bottom-0 left-0 right-0 h-px bg-teal-600" />
             )}
           </button>
         ))}

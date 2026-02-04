@@ -4,16 +4,13 @@ export default function AuthLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-[#0A0A0B] px-4">
-      <div className="w-full max-w-md">
-        <div className="mb-10 text-center">
-          <h1 className="text-2xl font-light tracking-[0.3em] text-[#D4A853]">
-            MPM
-          </h1>
-          <p className="mt-1 text-xs tracking-[0.15em] text-neutral-500">
-            EMPLOYEE PORTAL
-          </p>
-        </div>
+    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-[#f8fafc] p-4 relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-teal-400/10 rounded-full blur-[100px]" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-indigo-400/10 rounded-full blur-[100px]" />
+      </div>
+      <div className="w-full max-w-md relative z-10">
         {children}
       </div>
     </div>

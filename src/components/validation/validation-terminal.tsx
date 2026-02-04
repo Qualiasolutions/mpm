@@ -123,12 +123,12 @@ export function ValidationTerminal({
       <div className="space-y-5">
         {/* Processing State */}
         {flowState === 'processing' && (
-          <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-12 text-center sm:p-16">
-            <div className="mx-auto mb-5 h-10 w-10 animate-spin rounded-full border-2 border-[#D4A853]/20 border-t-[#D4A853]" />
-            <p className="text-base text-neutral-300">
+          <div className="rounded-2xl border border-slate-200 bg-white p-12 text-center sm:p-16">
+            <div className="mx-auto mb-5 h-10 w-10 animate-spin rounded-full border-2 border-teal-200 border-t-teal-600" />
+            <p className="text-base text-slate-700">
               Validating discount code...
             </p>
-            <p className="mt-1 text-sm text-neutral-600">
+            <p className="mt-1 text-sm text-slate-400">
               Please wait
             </p>
           </div>
@@ -145,7 +145,7 @@ export function ValidationTerminal({
         {/* Amount Entry (after QR scan) */}
         {flowState === 'amount-entry' && scannedCode && (
           <div className="space-y-4">
-            <div className="rounded-xl border border-green-500/15 bg-green-500/[0.03] p-4">
+            <div className="rounded-2xl border border-green-500/15 bg-green-500/[0.03] p-4">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-500/[0.1]">
                   <svg
@@ -158,7 +158,7 @@ export function ValidationTerminal({
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="text-green-400"
+                    className="text-emerald-600"
                   >
                     <rect x="3" y="3" width="18" height="18" rx="2" />
                     <path d="M7 7h.01" />
@@ -171,10 +171,10 @@ export function ValidationTerminal({
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-green-400">
+                  <p className="text-sm font-medium text-emerald-600">
                     QR Code Scanned
                   </p>
-                  <p className="font-mono text-xs text-neutral-400">
+                  <p className="font-mono text-xs text-slate-500">
                     {scannedCode}
                   </p>
                 </div>
@@ -186,13 +186,13 @@ export function ValidationTerminal({
               <div className="space-y-1.5">
                 <label
                   htmlFor="scan-amount"
-                  className="block text-xs font-medium uppercase tracking-wider text-neutral-500"
+                  className="block text-xs font-medium uppercase tracking-wider text-slate-400"
                 >
                   Purchase Amount
                 </label>
                 <div className="relative">
                   <div className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2">
-                    <span className="text-lg text-neutral-500">EUR</span>
+                    <span className="text-lg text-slate-400">EUR</span>
                   </div>
                   <input
                     id="scan-amount"
@@ -209,15 +209,15 @@ export function ValidationTerminal({
                         if (amountError) setAmountError('')
                       }
                     }}
-                    className={`w-full rounded-lg border bg-white/[0.02] py-3.5 pl-16 pr-4 text-right text-2xl font-light tabular-nums text-neutral-100 placeholder:text-neutral-700 focus:outline-none focus:ring-1 ${
+                    className={`w-full rounded-lg border bg-white py-3.5 pl-16 pr-4 text-right text-2xl font-light tabular-nums text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-1 ${
                       amountError
                         ? 'border-red-500/30 focus:ring-red-500/30'
-                        : 'border-white/[0.06] focus:ring-[#D4A853]/30'
+                        : 'border-slate-200 focus:ring-teal-200'
                     }`}
                   />
                 </div>
                 {amountError && (
-                  <p className="text-xs text-red-400">{amountError}</p>
+                  <p className="text-xs text-red-600">{amountError}</p>
                 )}
               </div>
 
@@ -225,10 +225,10 @@ export function ValidationTerminal({
               <div className="space-y-1.5">
                 <label
                   htmlFor="scan-location"
-                  className="block text-xs font-medium uppercase tracking-wider text-neutral-500"
+                  className="block text-xs font-medium uppercase tracking-wider text-slate-400"
                 >
                   Store / Location{' '}
-                  <span className="normal-case tracking-normal text-neutral-700">
+                  <span className="normal-case tracking-normal text-slate-300">
                     (optional)
                   </span>
                 </label>
@@ -239,7 +239,7 @@ export function ValidationTerminal({
                   placeholder="e.g. Limassol Store"
                   value={locationForScan}
                   onChange={(e) => setLocationForScan(e.target.value)}
-                  className="w-full rounded-lg border border-white/[0.06] bg-white/[0.02] px-4 py-3 text-sm text-neutral-200 placeholder:text-neutral-700 focus:outline-none focus:ring-1 focus:ring-[#D4A853]/30"
+                  className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-1 focus:ring-teal-200"
                 />
               </div>
 
@@ -247,14 +247,14 @@ export function ValidationTerminal({
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="flex-1 rounded-lg border border-white/[0.06] bg-white/[0.02] px-4 py-3.5 text-sm text-neutral-400 transition-colors active:scale-[0.98] hover:bg-white/[0.05] hover:text-neutral-200"
+                  className="flex-1 rounded-lg border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-500 transition-colors active:scale-[0.98] hover:bg-slate-50 hover:text-slate-700"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={!amountForScan}
-                  className="flex-[2] rounded-lg bg-[#D4A853] px-6 py-3.5 text-sm font-medium text-[#0A0A0B] transition-all active:scale-[0.98] hover:bg-[#D4A853]/90 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="flex-[2] rounded-lg bg-teal-600 px-6 py-3.5 text-sm font-medium text-white transition-all active:scale-[0.98] hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   Validate Code
                 </button>
@@ -267,13 +267,13 @@ export function ValidationTerminal({
         {flowState === 'input' && (
           <>
             {/* Tab Toggle */}
-            <div className="flex rounded-lg border border-white/[0.06] bg-white/[0.02] p-1">
+            <div className="flex rounded-2xl border border-slate-200 bg-white p-1">
               <button
                 onClick={() => setActiveTab('scan')}
-                className={`flex flex-1 items-center justify-center gap-2 rounded-md px-4 py-3 text-sm font-medium transition-all ${
+                className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-medium transition-all ${
                   activeTab === 'scan'
-                    ? 'bg-[#D4A853]/[0.12] text-[#D4A853]'
-                    : 'text-neutral-500 hover:text-neutral-300'
+                    ? 'bg-teal-50 text-teal-600'
+                    : 'text-slate-400 hover:text-slate-700'
                 }`}
               >
                 <svg
@@ -294,10 +294,10 @@ export function ValidationTerminal({
               </button>
               <button
                 onClick={() => setActiveTab('manual')}
-                className={`flex flex-1 items-center justify-center gap-2 rounded-md px-4 py-3 text-sm font-medium transition-all ${
+                className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-medium transition-all ${
                   activeTab === 'manual'
-                    ? 'bg-[#D4A853]/[0.12] text-[#D4A853]'
-                    : 'text-neutral-500 hover:text-neutral-300'
+                    ? 'bg-teal-50 text-teal-600'
+                    : 'text-slate-400 hover:text-slate-700'
                 }`}
               >
                 <svg

@@ -58,12 +58,12 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
 
   // Color map for division chips
   const chipColors = [
-    'bg-[#D4A853]/10 text-[#D4A853]/80 border-[#D4A853]/20',
-    'bg-sky-500/10 text-sky-400/80 border-sky-500/20',
-    'bg-violet-500/10 text-violet-400/80 border-violet-500/20',
-    'bg-emerald-500/10 text-emerald-400/80 border-emerald-500/20',
-    'bg-rose-500/10 text-rose-400/80 border-rose-500/20',
-    'bg-amber-500/10 text-amber-400/80 border-amber-500/20',
+    'bg-teal-50 text-teal-600 border-teal-200',
+    'bg-sky-50 text-sky-600 border-sky-200',
+    'bg-violet-50 text-violet-600 border-violet-200',
+    'bg-emerald-50 text-emerald-600 border-emerald-200',
+    'bg-rose-50 text-rose-600 border-rose-200',
+    'bg-amber-50 text-amber-600 border-amber-200',
   ]
 
   function getDivisionColor(index: number) {
@@ -72,13 +72,13 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
 
   return (
     <>
-      <div className="rounded-lg border border-white/[0.06] bg-white/[0.02]">
+      <div className="rounded-2xl border border-slate-200 bg-white">
         {/* Toolbar */}
-        <div className="flex flex-col gap-4 border-b border-white/[0.06] px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 border-b border-slate-200 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
           {/* Search */}
           <div className="relative max-w-xs flex-1">
             <svg
-              className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-neutral-600"
+              className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -97,12 +97,12 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
               placeholder="Search by name or email..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] py-2 pl-9 pr-3.5 text-sm text-neutral-200 placeholder-neutral-600 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+              className="w-full rounded-md border border-slate-300 bg-white py-2 pl-9 pr-3.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
             />
           </div>
 
           {/* Filter Tabs */}
-          <div className="flex gap-1 rounded-md border border-white/[0.06] bg-white/[0.01] p-0.5">
+          <div className="flex gap-1 rounded-md border border-slate-200 bg-slate-50 p-0.5">
             {tabs.map((tab) => (
               <button
                 key={tab.key}
@@ -110,12 +110,12 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
                 onClick={() => setFilter(tab.key)}
                 className={`rounded px-3 py-1.5 text-xs font-medium transition-colors ${
                   filter === tab.key
-                    ? 'bg-white/[0.08] text-neutral-200'
-                    : 'text-neutral-500 hover:text-neutral-300'
+                    ? 'bg-slate-200 text-slate-800'
+                    : 'text-slate-400 hover:text-slate-700'
                 }`}
               >
                 {tab.label}
-                <span className="ml-1.5 tabular-nums text-neutral-600">
+                <span className="ml-1.5 tabular-nums text-slate-400">
                   {tab.count}
                 </span>
               </button>
@@ -127,30 +127,30 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
             <thead>
-              <tr className="border-b border-white/[0.06]">
-                <th className="px-5 py-3 text-xs font-medium uppercase tracking-wider text-neutral-500">
+              <tr className="border-b border-slate-200">
+                <th className="px-5 py-3 text-xs font-medium uppercase tracking-wider text-slate-400">
                   Name
                 </th>
-                <th className="px-5 py-3 text-xs font-medium uppercase tracking-wider text-neutral-500">
+                <th className="px-5 py-3 text-xs font-medium uppercase tracking-wider text-slate-400">
                   Email
                 </th>
-                <th className="hidden px-5 py-3 text-xs font-medium uppercase tracking-wider text-neutral-500 md:table-cell">
+                <th className="hidden px-5 py-3 text-xs font-medium uppercase tracking-wider text-slate-400 md:table-cell">
                   Divisions
                 </th>
-                <th className="px-5 py-3 text-xs font-medium uppercase tracking-wider text-neutral-500">
+                <th className="px-5 py-3 text-xs font-medium uppercase tracking-wider text-slate-400">
                   Status
                 </th>
-                <th className="px-5 py-3 text-xs font-medium uppercase tracking-wider text-neutral-500">
+                <th className="px-5 py-3 text-xs font-medium uppercase tracking-wider text-slate-400">
                   Actions
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/[0.04]">
+            <tbody className="divide-y divide-slate-100">
               {filtered.length === 0 && (
                 <tr>
                   <td
                     colSpan={5}
-                    className="px-5 py-12 text-center text-sm text-neutral-600"
+                    className="px-5 py-12 text-center text-sm text-slate-400"
                   >
                     {search
                       ? 'No employees match your search.'
@@ -161,21 +161,21 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
               {filtered.map((emp) => (
                 <tr
                   key={emp.id}
-                  className="transition-colors hover:bg-white/[0.02]"
+                  className="transition-colors hover:bg-slate-50"
                 >
                   {/* Name */}
                   <td className="whitespace-nowrap px-5 py-3.5">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/[0.06] text-xs font-medium text-neutral-400">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-xs font-medium text-slate-500">
                         {(emp.first_name?.[0] ?? '').toUpperCase()}
                         {(emp.last_name?.[0] ?? '').toUpperCase()}
                       </div>
                       <div>
-                        <p className="font-medium text-neutral-200">
+                        <p className="font-medium text-slate-800">
                           {emp.first_name ?? ''} {emp.last_name ?? ''}
                         </p>
                         {emp.role === 'admin' && (
-                          <span className="text-[10px] font-medium uppercase tracking-wider text-[#D4A853]/60">
+                          <span className="text-[10px] font-medium uppercase tracking-wider text-teal-600">
                             Admin
                           </span>
                         )}
@@ -184,7 +184,7 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
                   </td>
 
                   {/* Email */}
-                  <td className="whitespace-nowrap px-5 py-3.5 text-neutral-400">
+                  <td className="whitespace-nowrap px-5 py-3.5 text-slate-500">
                     {emp.email}
                   </td>
 
@@ -192,7 +192,7 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
                   <td className="hidden px-5 py-3.5 md:table-cell">
                     <div className="flex flex-wrap gap-1.5">
                       {emp.divisions.length === 0 && (
-                        <span className="text-xs text-neutral-600">--</span>
+                        <span className="text-xs text-slate-400">--</span>
                       )}
                       {emp.divisions.map((div, i) => (
                         <span
@@ -208,13 +208,13 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
                   {/* Status */}
                   <td className="whitespace-nowrap px-5 py-3.5">
                     {emp.is_active ? (
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-medium text-emerald-400">
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[11px] font-medium text-emerald-600">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                         Active
                       </span>
                     ) : (
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-red-500/20 bg-red-500/10 px-2.5 py-0.5 text-[11px] font-medium text-red-400">
-                        <span className="h-1.5 w-1.5 rounded-full bg-red-400" />
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-red-200 bg-red-50 px-2.5 py-0.5 text-[11px] font-medium text-red-600">
+                        <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
                         Inactive
                       </span>
                     )}
@@ -226,7 +226,7 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
                       <button
                         type="button"
                         onClick={() => setEditingEmployee(emp)}
-                        className="rounded-md px-2.5 py-1.5 text-xs text-neutral-400 transition-colors hover:bg-white/5 hover:text-neutral-200"
+                        className="rounded-md px-2.5 py-1.5 text-xs text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-800"
                         title="Edit employee"
                       >
                         <svg
@@ -250,8 +250,8 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
                         disabled={togglingId}
                         className={`rounded-md px-2.5 py-1.5 text-xs transition-colors ${
                           emp.is_active
-                            ? 'text-red-400/60 hover:bg-red-500/5 hover:text-red-400'
-                            : 'text-emerald-400/60 hover:bg-emerald-500/5 hover:text-emerald-400'
+                            ? 'text-red-500 hover:bg-red-50 hover:text-red-700'
+                            : 'text-emerald-600 hover:bg-emerald-50 hover:text-emerald-700'
                         } disabled:opacity-50`}
                         title={
                           emp.is_active
@@ -301,8 +301,8 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
         </div>
 
         {/* Footer */}
-        <div className="border-t border-white/[0.06] px-5 py-3">
-          <p className="text-xs text-neutral-600">
+        <div className="border-t border-slate-200 px-5 py-3">
+          <p className="text-xs text-slate-400">
             Showing {filtered.length} of {employees.length} employees
           </p>
         </div>

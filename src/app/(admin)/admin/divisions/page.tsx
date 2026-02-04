@@ -7,7 +7,7 @@ export default async function DivisionsPage() {
 
   return (
     <div className="space-y-8">
-      <h1 className="text-2xl font-light tracking-wide text-neutral-200">
+      <h1 className="text-2xl font-semibold tracking-tight text-slate-900">
         Division Management
       </h1>
 

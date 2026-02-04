@@ -23,14 +23,14 @@ type SortDir = 'asc' | 'desc'
 
 // Stable color palette for division codes
 const CODE_COLORS = [
-  { border: 'border-blue-500/30', bg: 'bg-blue-500/10', text: 'text-blue-400' },
-  { border: 'border-purple-500/30', bg: 'bg-purple-500/10', text: 'text-purple-400' },
-  { border: 'border-emerald-500/30', bg: 'bg-emerald-500/10', text: 'text-emerald-400' },
-  { border: 'border-amber-500/30', bg: 'bg-amber-500/10', text: 'text-amber-400' },
-  { border: 'border-rose-500/30', bg: 'bg-rose-500/10', text: 'text-rose-400' },
-  { border: 'border-cyan-500/30', bg: 'bg-cyan-500/10', text: 'text-cyan-400' },
-  { border: 'border-indigo-500/30', bg: 'bg-indigo-500/10', text: 'text-indigo-400' },
-  { border: 'border-teal-500/30', bg: 'bg-teal-500/10', text: 'text-teal-400' },
+  { border: 'border-blue-500/30', bg: 'bg-blue-500/10', text: 'text-blue-600' },
+  { border: 'border-purple-500/30', bg: 'bg-purple-500/10', text: 'text-purple-600' },
+  { border: 'border-emerald-500/30', bg: 'bg-emerald-500/10', text: 'text-emerald-600' },
+  { border: 'border-amber-500/30', bg: 'bg-amber-500/10', text: 'text-amber-600' },
+  { border: 'border-rose-500/30', bg: 'bg-rose-500/10', text: 'text-rose-600' },
+  { border: 'border-cyan-500/30', bg: 'bg-cyan-500/10', text: 'text-cyan-600' },
+  { border: 'border-indigo-500/30', bg: 'bg-indigo-500/10', text: 'text-indigo-600' },
+  { border: 'border-teal-500/30', bg: 'bg-teal-500/10', text: 'text-teal-600' },
 ]
 
 function getCodeColor(index: number) {
@@ -94,17 +94,17 @@ export function DivisionReport({ rows, dateFrom, dateTo }: DivisionReportProps) 
   }, [dateFrom, dateTo])
 
   return (
-    <div className="rounded-lg border border-white/[0.06] bg-white/[0.02]">
+    <div className="rounded-2xl border border-slate-200 bg-white">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-white/[0.06] px-5 py-4">
-        <h2 className="text-sm font-medium uppercase tracking-wider text-neutral-500">
+      <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
+        <h2 className="text-sm font-medium uppercase tracking-wider text-slate-400">
           Division Report
         </h2>
         <button
           type="button"
           onClick={handleExport}
           disabled={exporting}
-          className="flex items-center gap-1.5 rounded-md border border-white/[0.08] bg-white/[0.03] px-3 py-1.5 text-xs text-neutral-400 transition-colors hover:bg-white/[0.06] hover:text-neutral-200 disabled:opacity-50"
+          className="flex items-center gap-1.5 rounded-md border border-slate-300 bg-white px-3 py-1.5 text-xs text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700 disabled:opacity-50"
         >
           {exporting ? (
             <svg
@@ -151,7 +151,7 @@ export function DivisionReport({ rows, dateFrom, dateTo }: DivisionReportProps) 
       <div className="overflow-x-auto">
         <table className="w-full text-left text-sm">
           <thead>
-            <tr className="border-b border-white/[0.06]">
+            <tr className="border-b border-slate-200">
               <SortableHeader
                 label="Division"
                 field="name"
@@ -216,12 +216,12 @@ export function DivisionReport({ rows, dateFrom, dateTo }: DivisionReportProps) 
               />
             </tr>
           </thead>
-          <tbody className="divide-y divide-white/[0.04]">
+          <tbody className="divide-y divide-slate-100">
             {sorted.length === 0 ? (
               <tr>
                 <td
                   colSpan={8}
-                  className="px-5 py-12 text-center text-sm text-neutral-600"
+                  className="px-5 py-12 text-center text-sm text-slate-400"
                 >
                   No division data available.
                 </td>
@@ -232,9 +232,9 @@ export function DivisionReport({ rows, dateFrom, dateTo }: DivisionReportProps) 
                 return (
                   <tr
                     key={row.id}
-                    className="transition-colors hover:bg-white/[0.02]"
+                    className="transition-colors hover:bg-slate-50"
                   >
-                    <td className="whitespace-nowrap px-5 py-3.5 font-medium text-neutral-200">
+                    <td className="whitespace-nowrap px-5 py-3.5 font-medium text-slate-800">
                       {row.name}
                     </td>
                     <td className="whitespace-nowrap px-5 py-3.5">
@@ -244,22 +244,22 @@ export function DivisionReport({ rows, dateFrom, dateTo }: DivisionReportProps) 
                         {row.code}
                       </span>
                     </td>
-                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-neutral-300">
+                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-slate-700">
                       {row.transaction_count}
                     </td>
-                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-neutral-300">
+                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-slate-700">
                       {formatCurrency(row.total_original)}
                     </td>
-                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-[#D4A853]">
+                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-teal-600">
                       {formatCurrency(row.total_discount)}
                     </td>
-                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-neutral-300">
+                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-slate-700">
                       {formatCurrency(row.total_final)}
                     </td>
-                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-neutral-300">
+                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-slate-700">
                       {row.unique_employees}
                     </td>
-                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-neutral-400">
+                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-slate-500">
                       {row.avg_discount_pct.toFixed(1)}%
                     </td>
                   </tr>
@@ -272,8 +272,8 @@ export function DivisionReport({ rows, dateFrom, dateTo }: DivisionReportProps) 
 
       {/* Footer */}
       {sorted.length > 0 && (
-        <div className="border-t border-white/[0.06] px-5 py-3">
-          <p className="text-[11px] text-neutral-600">
+        <div className="border-t border-slate-200 px-5 py-3">
+          <p className="text-[11px] text-slate-400">
             {sorted.length} division{sorted.length !== 1 ? 's' : ''}
           </p>
         </div>
@@ -301,14 +301,14 @@ function SortableHeader({
 
   return (
     <th
-      className={`cursor-pointer select-none whitespace-nowrap px-5 py-3 text-xs font-medium uppercase tracking-wider text-neutral-500 transition-colors hover:text-neutral-300 ${className}`}
+      className={`cursor-pointer select-none whitespace-nowrap px-5 py-3 text-xs font-medium uppercase tracking-wider text-slate-400 transition-colors hover:text-slate-700 ${className}`}
       onClick={() => onSort(field)}
     >
       <span className="inline-flex items-center gap-1">
         {label}
         <span
           className={`inline-flex flex-col leading-none ${
-            isActive ? 'text-[#D4A853]' : 'text-neutral-700'
+            isActive ? 'text-teal-600' : 'text-slate-300'
           }`}
         >
           <svg
@@ -317,8 +317,8 @@ function SortableHeader({
             viewBox="0 0 8 5"
             className={`${
               isActive && direction === 'asc'
-                ? 'text-[#D4A853]'
-                : 'text-neutral-700'
+                ? 'text-teal-600'
+                : 'text-slate-300'
             }`}
           >
             <path d="M4 0L8 5H0L4 0Z" fill="currentColor" />
@@ -329,8 +329,8 @@ function SortableHeader({
             viewBox="0 0 8 5"
             className={`${
               isActive && direction === 'desc'
-                ? 'text-[#D4A853]'
-                : 'text-neutral-700'
+                ? 'text-teal-600'
+                : 'text-slate-300'
             }`}
           >
             <path d="M4 5L0 0H8L4 5Z" fill="currentColor" />

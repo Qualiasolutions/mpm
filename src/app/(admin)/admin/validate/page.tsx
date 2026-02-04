@@ -8,10 +8,10 @@ export default async function ValidatePage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-light tracking-wide text-neutral-200">
+        <h1 className="text-2xl font-semibold tracking-tight text-slate-900">
           Validate Discount Code
         </h1>
-        <p className="mt-1 text-sm text-neutral-500">
+        <p className="mt-1 text-sm text-slate-500">
           Scan or enter a discount code to apply the employee discount
         </p>
       </div>

@@ -154,28 +154,28 @@ export function OverviewCards({ overview }: OverviewCardsProps) {
       {cards.map((card) => (
         <div
           key={card.label}
-          className={`rounded-lg p-4 transition-colors ${
+          className={`rounded-2xl p-4 transition-colors ${
             card.accent
-              ? 'border border-[#D4A853]/20 bg-[#D4A853]/[0.04]'
-              : 'border border-white/[0.06] bg-white/[0.02]'
+              ? 'border border-teal-200 bg-teal-50'
+              : 'border border-slate-200 bg-white'
           }`}
         >
           <div className="flex items-start justify-between">
             <div className="min-w-0">
               <p
                 className={`truncate text-xl font-light tabular-nums sm:text-2xl ${
-                  card.accent ? 'text-[#D4A853]' : 'text-neutral-100'
+                  card.accent ? 'text-teal-600' : 'text-slate-900'
                 }`}
               >
                 {card.value}
               </p>
-              <p className="mt-1 text-[10px] font-medium uppercase tracking-wider text-neutral-500">
+              <p className="mt-1 text-[10px] font-medium uppercase tracking-wider text-slate-400">
                 {card.label}
               </p>
             </div>
             <div
               className={`flex-shrink-0 ${
-                card.accent ? 'text-[#D4A853]/40' : 'text-neutral-600'
+                card.accent ? 'text-teal-600/40' : 'text-slate-400'
               }`}
             >
               {card.icon}

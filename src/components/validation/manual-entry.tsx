@@ -79,13 +79,13 @@ export function ManualEntry({ onSubmit, isProcessing }: ManualEntryProps) {
       <div className="space-y-1.5">
         <label
           htmlFor="discount-code"
-          className="block text-xs font-medium uppercase tracking-wider text-neutral-500"
+          className="block text-xs font-medium uppercase tracking-wider text-slate-400"
         >
           Discount Code
         </label>
         <div className="flex items-stretch">
-          <div className="flex items-center rounded-l-lg border border-r-0 border-white/[0.06] bg-white/[0.04] px-3.5">
-            <span className="font-mono text-sm text-[#D4A853]/70">MPM-</span>
+          <div className="flex items-center rounded-l-lg border border-r-0 border-slate-200 bg-slate-100 px-3.5">
+            <span className="font-mono text-sm text-teal-600/70">MPM-</span>
           </div>
           <input
             ref={codeInputRef}
@@ -98,15 +98,15 @@ export function ManualEntry({ onSubmit, isProcessing }: ManualEntryProps) {
             value={code}
             onChange={handleCodeChange}
             disabled={isProcessing}
-            className={`flex-1 rounded-r-lg border bg-white/[0.02] px-4 py-3.5 font-mono text-lg tracking-[0.15em] text-neutral-100 placeholder:text-neutral-700 focus:outline-none focus:ring-1 disabled:opacity-50 ${
+            className={`flex-1 rounded-r-lg border bg-white px-4 py-3.5 font-mono text-lg tracking-[0.15em] text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-1 disabled:opacity-50 ${
               errors.code
                 ? 'border-red-500/30 focus:ring-red-500/30'
-                : 'border-white/[0.06] focus:ring-[#D4A853]/30'
+                : 'border-slate-200 focus:ring-teal-200'
             }`}
           />
         </div>
         {errors.code && (
-          <p className="text-xs text-red-400">{errors.code}</p>
+          <p className="text-xs text-red-600">{errors.code}</p>
         )}
       </div>
 
@@ -114,13 +114,13 @@ export function ManualEntry({ onSubmit, isProcessing }: ManualEntryProps) {
       <div className="space-y-1.5">
         <label
           htmlFor="purchase-amount"
-          className="block text-xs font-medium uppercase tracking-wider text-neutral-500"
+          className="block text-xs font-medium uppercase tracking-wider text-slate-400"
         >
           Purchase Amount
         </label>
         <div className="relative">
           <div className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2">
-            <span className="text-lg text-neutral-500">EUR</span>
+            <span className="text-lg text-slate-400">EUR</span>
           </div>
           <input
             id="purchase-amount"
@@ -131,15 +131,15 @@ export function ManualEntry({ onSubmit, isProcessing }: ManualEntryProps) {
             value={amount}
             onChange={handleAmountChange}
             disabled={isProcessing}
-            className={`w-full rounded-lg border bg-white/[0.02] py-3.5 pl-16 pr-4 text-right text-2xl font-light tabular-nums text-neutral-100 placeholder:text-neutral-700 focus:outline-none focus:ring-1 disabled:opacity-50 ${
+            className={`w-full rounded-lg border bg-white py-3.5 pl-16 pr-4 text-right text-2xl font-light tabular-nums text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-1 disabled:opacity-50 ${
               errors.amount
                 ? 'border-red-500/30 focus:ring-red-500/30'
-                : 'border-white/[0.06] focus:ring-[#D4A853]/30'
+                : 'border-slate-200 focus:ring-teal-200'
             }`}
           />
         </div>
         {errors.amount && (
-          <p className="text-xs text-red-400">{errors.amount}</p>
+          <p className="text-xs text-red-600">{errors.amount}</p>
         )}
       </div>
 
@@ -147,10 +147,10 @@ export function ManualEntry({ onSubmit, isProcessing }: ManualEntryProps) {
       <div className="space-y-1.5">
         <label
           htmlFor="store-location"
-          className="block text-xs font-medium uppercase tracking-wider text-neutral-500"
+          className="block text-xs font-medium uppercase tracking-wider text-slate-400"
         >
           Store / Location{' '}
-          <span className="normal-case tracking-normal text-neutral-700">
+          <span className="normal-case tracking-normal text-slate-300">
             (optional)
           </span>
         </label>
@@ -162,7 +162,7 @@ export function ManualEntry({ onSubmit, isProcessing }: ManualEntryProps) {
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           disabled={isProcessing}
-          className="w-full rounded-lg border border-white/[0.06] bg-white/[0.02] px-4 py-3 text-sm text-neutral-200 placeholder:text-neutral-700 focus:outline-none focus:ring-1 focus:ring-[#D4A853]/30 disabled:opacity-50"
+          className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-1 focus:ring-teal-200 disabled:opacity-50"
         />
       </div>
 
@@ -170,11 +170,11 @@ export function ManualEntry({ onSubmit, isProcessing }: ManualEntryProps) {
       <button
         type="submit"
         disabled={isProcessing || !code || !amount}
-        className="mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-[#D4A853] px-6 py-4 text-base font-medium text-[#0A0A0B] transition-all active:scale-[0.98] hover:bg-[#D4A853]/90 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-[#D4A853]"
+        className="mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-teal-600 px-6 py-4 text-base font-medium text-white transition-all active:scale-[0.98] hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-teal-600"
       >
         {isProcessing ? (
           <>
-            <span className="h-4 w-4 animate-spin rounded-full border-2 border-[#0A0A0B]/20 border-t-[#0A0A0B]" />
+            <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/20 border-t-white" />
             Validating...
           </>
         ) : (

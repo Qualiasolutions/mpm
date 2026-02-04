@@ -26,7 +26,7 @@ export default async function DashboardLayout({
     .single()
 
   return (
-    <div className="min-h-screen bg-[#0A0A0B]">
+    <div className="min-h-screen bg-[#f8fafc]">
       <OnlineStatus />
       <NavBar
         role={profile?.role ?? 'employee'}

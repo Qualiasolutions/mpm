@@ -102,10 +102,10 @@ export function EmployeeReport({ rows, dateFrom, dateTo }: EmployeeReportProps) 
   }, [dateFrom, dateTo])
 
   return (
-    <div className="rounded-lg border border-white/[0.06] bg-white/[0.02]">
+    <div className="rounded-2xl border border-slate-200 bg-white">
       {/* Header */}
-      <div className="flex flex-col gap-3 border-b border-white/[0.06] px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
-        <h2 className="text-sm font-medium uppercase tracking-wider text-neutral-500">
+      <div className="flex flex-col gap-3 border-b border-slate-200 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <h2 className="text-sm font-medium uppercase tracking-wider text-slate-400">
           Employee Report
         </h2>
         <div className="flex items-center gap-2">
@@ -120,7 +120,7 @@ export function EmployeeReport({ rows, dateFrom, dateTo }: EmployeeReportProps) 
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="absolute left-2.5 top-1/2 -translate-y-1/2 text-neutral-600"
+              className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400"
             >
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -130,14 +130,14 @@ export function EmployeeReport({ rows, dateFrom, dateTo }: EmployeeReportProps) 
               placeholder="Search employees..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-48 rounded-md border border-white/[0.08] bg-white/[0.03] py-1.5 pl-8 pr-3 text-sm text-neutral-200 outline-none transition-colors placeholder:text-neutral-600 focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+              className="w-48 rounded-md border border-slate-300 bg-white py-1.5 pl-8 pr-3 text-sm text-slate-800 outline-none transition-colors placeholder:text-slate-400 focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
             />
           </div>
           <button
             type="button"
             onClick={handleExport}
             disabled={exporting}
-            className="flex items-center gap-1.5 rounded-md border border-white/[0.08] bg-white/[0.03] px-3 py-1.5 text-xs text-neutral-400 transition-colors hover:bg-white/[0.06] hover:text-neutral-200 disabled:opacity-50"
+            className="flex items-center gap-1.5 rounded-md border border-slate-300 bg-white px-3 py-1.5 text-xs text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700 disabled:opacity-50"
           >
             {exporting ? (
               <svg
@@ -185,7 +185,7 @@ export function EmployeeReport({ rows, dateFrom, dateTo }: EmployeeReportProps) 
       <div className="overflow-x-auto">
         <table className="w-full text-left text-sm">
           <thead>
-            <tr className="border-b border-white/[0.06]">
+            <tr className="border-b border-slate-200">
               <SortableHeader
                 label="Employee"
                 field="name"
@@ -250,12 +250,12 @@ export function EmployeeReport({ rows, dateFrom, dateTo }: EmployeeReportProps) 
               />
             </tr>
           </thead>
-          <tbody className="divide-y divide-white/[0.04]">
+          <tbody className="divide-y divide-slate-100">
             {filteredAndSorted.length === 0 ? (
               <tr>
                 <td
                   colSpan={8}
-                  className="px-5 py-12 text-center text-sm text-neutral-600"
+                  className="px-5 py-12 text-center text-sm text-slate-400"
                 >
                   {search
                     ? 'No employees match your search.'
@@ -266,14 +266,14 @@ export function EmployeeReport({ rows, dateFrom, dateTo }: EmployeeReportProps) 
               filteredAndSorted.map((row) => (
                 <tr
                   key={row.id}
-                  className="transition-colors hover:bg-white/[0.02]"
+                  className="transition-colors hover:bg-slate-50"
                 >
                   <td className="whitespace-nowrap px-5 py-3">
                     <div>
-                      <p className="font-medium text-neutral-200">
+                      <p className="font-medium text-slate-800">
                         {row.name}
                       </p>
-                      <p className="text-[11px] text-neutral-600">
+                      <p className="text-[11px] text-slate-400">
                         {row.email}
                       </p>
                     </div>
@@ -284,31 +284,31 @@ export function EmployeeReport({ rows, dateFrom, dateTo }: EmployeeReportProps) 
                         row.division_names.map((name) => (
                           <span
                             key={name}
-                            className="rounded-md border border-white/[0.06] bg-white/[0.03] px-1.5 py-0.5 text-[10px] text-neutral-400"
+                            className="rounded-md border border-slate-200 bg-slate-50 px-1.5 py-0.5 text-[10px] text-slate-500"
                           >
                             {name}
                           </span>
                         ))
                       ) : (
-                        <span className="text-[11px] text-neutral-600">
+                        <span className="text-[11px] text-slate-400">
                           None
                         </span>
                       )}
                     </div>
                   </td>
-                  <td className="whitespace-nowrap px-5 py-3 text-right tabular-nums text-neutral-300">
+                  <td className="whitespace-nowrap px-5 py-3 text-right tabular-nums text-slate-700">
                     {row.transaction_count}
                   </td>
-                  <td className="whitespace-nowrap px-5 py-3 text-right tabular-nums text-neutral-300">
+                  <td className="whitespace-nowrap px-5 py-3 text-right tabular-nums text-slate-700">
                     {formatCurrency(row.total_original)}
                   </td>
-                  <td className="whitespace-nowrap px-5 py-3 text-right tabular-nums text-[#D4A853]">
+                  <td className="whitespace-nowrap px-5 py-3 text-right tabular-nums text-teal-600">
                     {formatCurrency(row.total_discount)}
                   </td>
-                  <td className="whitespace-nowrap px-5 py-3 text-right tabular-nums text-neutral-300">
+                  <td className="whitespace-nowrap px-5 py-3 text-right tabular-nums text-slate-700">
                     {formatCurrency(row.total_final)}
                   </td>
-                  <td className="whitespace-nowrap px-5 py-3 text-right tabular-nums text-neutral-400">
+                  <td className="whitespace-nowrap px-5 py-3 text-right tabular-nums text-slate-500">
                     {formatCurrency(row.monthly_limit)}
                   </td>
                   <td className="whitespace-nowrap px-5 py-3">
@@ -323,8 +323,8 @@ export function EmployeeReport({ rows, dateFrom, dateTo }: EmployeeReportProps) 
 
       {/* Footer */}
       {filteredAndSorted.length > 0 && (
-        <div className="border-t border-white/[0.06] px-5 py-3">
-          <p className="text-[11px] text-neutral-600">
+        <div className="border-t border-slate-200 px-5 py-3">
+          <p className="text-[11px] text-slate-400">
             {filteredAndSorted.length} employee
             {filteredAndSorted.length !== 1 ? 's' : ''}
             {search ? ' (filtered)' : ''}
@@ -354,14 +354,14 @@ function SortableHeader({
 
   return (
     <th
-      className={`cursor-pointer select-none whitespace-nowrap px-5 py-3 text-xs font-medium uppercase tracking-wider text-neutral-500 transition-colors hover:text-neutral-300 ${className}`}
+      className={`cursor-pointer select-none whitespace-nowrap px-5 py-3 text-xs font-medium uppercase tracking-wider text-slate-400 transition-colors hover:text-slate-700 ${className}`}
       onClick={() => onSort(field)}
     >
       <span className="inline-flex items-center gap-1">
         {label}
         <span
           className={`inline-flex flex-col leading-none ${
-            isActive ? 'text-[#D4A853]' : 'text-neutral-700'
+            isActive ? 'text-teal-600' : 'text-slate-300'
           }`}
         >
           <svg
@@ -370,8 +370,8 @@ function SortableHeader({
             viewBox="0 0 8 5"
             className={`${
               isActive && direction === 'asc'
-                ? 'text-[#D4A853]'
-                : 'text-neutral-700'
+                ? 'text-teal-600'
+                : 'text-slate-300'
             }`}
           >
             <path d="M4 0L8 5H0L4 0Z" fill="currentColor" />
@@ -382,8 +382,8 @@ function SortableHeader({
             viewBox="0 0 8 5"
             className={`${
               isActive && direction === 'desc'
-                ? 'text-[#D4A853]'
-                : 'text-neutral-700'
+                ? 'text-teal-600'
+                : 'text-slate-300'
             }`}
           >
             <path d="M4 5L0 0H8L4 5Z" fill="currentColor" />
@@ -405,14 +405,14 @@ function UsageBar({ percentage }: { percentage: number }) {
 
   const textColorClass =
     clampedPct >= 90
-      ? 'text-red-400'
+      ? 'text-red-600'
       : clampedPct >= 70
         ? 'text-yellow-400'
-        : 'text-emerald-400'
+        : 'text-emerald-600'
 
   return (
     <div className="flex items-center gap-2">
-      <div className="h-1.5 w-16 overflow-hidden rounded-full bg-white/[0.06]">
+      <div className="h-1.5 w-16 overflow-hidden rounded-full bg-slate-100">
         <div
           className={`h-full rounded-full transition-all ${colorClass}`}
           style={{ width: `${clampedPct}%` }}

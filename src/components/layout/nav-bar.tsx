@@ -11,18 +11,18 @@ export function NavBar({ role, userName }: NavBarProps) {
   const displayName = userName || 'User'
 
   return (
-    <nav className="border-b border-white/[0.06] bg-[#0A0A0B]">
+    <nav className="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Branding */}
         <Link
           href={isAdmin ? '/admin' : '/'}
-          className="flex items-center gap-3"
+          className="flex items-center gap-2"
         >
-          <span className="text-lg font-light tracking-[0.25em] text-[#D4A853]">
+          <span className="text-xl font-black tracking-tight text-slate-900">
             MPM
           </span>
-          <span className="hidden text-[10px] tracking-[0.12em] text-neutral-600 sm:inline">
-            EMPLOYEE PORTAL
+          <span className="hidden text-[10px] font-bold tracking-[0.1em] text-slate-400 uppercase sm:inline">
+            Discounts
           </span>
         </Link>
 
@@ -56,7 +56,7 @@ export function NavBar({ role, userName }: NavBarProps) {
         <div className="flex items-center gap-2">
           {/* Mobile Menu */}
           <details className="relative md:hidden">
-            <summary className="list-none rounded-md px-2.5 py-1.5 text-sm text-neutral-400 transition-colors hover:bg-white/5 hover:text-neutral-200">
+            <summary className="list-none rounded-lg px-2.5 py-1.5 text-sm text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -73,26 +73,16 @@ export function NavBar({ role, userName }: NavBarProps) {
                 <line x1="3" y1="18" x2="21" y2="18" />
               </svg>
             </summary>
-            <div className="absolute right-0 top-full z-50 mt-2 w-48 rounded-lg border border-white/[0.06] bg-[#111113] py-1.5 shadow-xl">
+            <div className="absolute right-0 top-full z-50 mt-2 w-48 rounded-xl border border-slate-200 bg-white py-1.5 shadow-xl">
               {isAdmin ? (
                 <>
                   <MobileNavLink href="/admin">Dashboard</MobileNavLink>
-                  <MobileNavLink href="/admin/employees">
-                    Employees
-                  </MobileNavLink>
-                  <MobileNavLink href="/admin/divisions">
-                    Divisions
-                  </MobileNavLink>
-                  <MobileNavLink href="/admin/discounts">
-                    Discounts
-                  </MobileNavLink>
-                  <MobileNavLink href="/admin/validate" highlight>
-                    Validate
-                  </MobileNavLink>
-                  <MobileNavLink href="/admin/analytics">
-                    Analytics
-                  </MobileNavLink>
-                  <div className="my-1.5 border-t border-white/[0.06]" />
+                  <MobileNavLink href="/admin/employees">Employees</MobileNavLink>
+                  <MobileNavLink href="/admin/divisions">Divisions</MobileNavLink>
+                  <MobileNavLink href="/admin/discounts">Discounts</MobileNavLink>
+                  <MobileNavLink href="/admin/validate" highlight>Validate</MobileNavLink>
+                  <MobileNavLink href="/admin/analytics">Analytics</MobileNavLink>
+                  <div className="my-1.5 border-t border-slate-100" />
                   <MobileNavLink href="/dashboard">Employee View</MobileNavLink>
                 </>
               ) : (
@@ -106,10 +96,10 @@ export function NavBar({ role, userName }: NavBarProps) {
           </details>
 
           {/* User Info */}
-          <div className="flex items-center gap-2 border-l border-white/[0.06] pl-3">
+          <div className="flex items-center gap-2 border-l border-slate-200 pl-3">
             <div className="hidden flex-col items-end sm:flex">
-              <span className="text-sm text-neutral-300">{displayName}</span>
-              <span className="text-[10px] uppercase tracking-wider text-neutral-600">
+              <span className="text-sm font-medium text-slate-700">{displayName}</span>
+              <span className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">
                 {role}
               </span>
             </div>
@@ -135,12 +125,12 @@ function NavLink({
   return (
     <Link
       href={href}
-      className={`rounded-md px-3 py-1.5 text-sm transition-colors hover:bg-white/5 ${
+      className={`rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
         highlight
-          ? 'border border-[#D4A853]/20 bg-[#D4A853]/[0.06] text-[#D4A853] hover:bg-[#D4A853]/[0.12]'
+          ? 'bg-teal-600 text-white hover:bg-teal-700 shadow-sm'
           : subtle
-            ? 'text-neutral-600 hover:text-neutral-400'
-            : 'text-neutral-400 hover:text-neutral-200'
+            ? 'text-slate-400 hover:text-slate-600 hover:bg-slate-50'
+            : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
       }`}
     >
       {children}
@@ -149,7 +139,7 @@ function NavLink({
 }
 
 function NavDivider() {
-  return <div className="mx-1 h-4 w-px bg-white/[0.06]" />
+  return <div className="mx-1 h-4 w-px bg-slate-200" />
 }
 
 function MobileNavLink({
@@ -164,10 +154,10 @@ function MobileNavLink({
   return (
     <Link
       href={href}
-      className={`block px-4 py-2 text-sm transition-colors hover:bg-white/5 ${
+      className={`block px-4 py-2 text-sm transition-colors hover:bg-slate-50 ${
         highlight
-          ? 'text-[#D4A853] hover:text-[#D4A853]'
-          : 'text-neutral-400 hover:text-neutral-200'
+          ? 'text-teal-600 font-medium hover:text-teal-700'
+          : 'text-slate-600 hover:text-slate-900'
       }`}
     >
       {children}

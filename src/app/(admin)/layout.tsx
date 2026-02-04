@@ -10,7 +10,6 @@ export default async function AdminLayout({
 }) {
   const supabase = await createClient()
 
-  // Auth check: redirect unauthenticated users to login
   const {
     data: { user },
   } = await supabase.auth.getUser()
@@ -19,7 +18,6 @@ export default async function AdminLayout({
     redirect('/login')
   }
 
-  // Role check: only admins can access (admin) routes
   const { data: profile } = await supabase
     .from('profiles')
     .select('role, first_name')
@@ -31,7 +29,7 @@ export default async function AdminLayout({
   }
 
   return (
-    <div className="min-h-screen bg-[#0A0A0B]">
+    <div className="min-h-screen bg-[#f8fafc]">
       <OnlineStatus />
       <NavBar role="admin" userName={profile.first_name ?? null} />
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">

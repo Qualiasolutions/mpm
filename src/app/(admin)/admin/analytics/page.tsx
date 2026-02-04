@@ -55,7 +55,7 @@ export default async function AnalyticsPage() {
 
   return (
     <div className="space-y-8">
-      <h1 className="text-2xl font-light tracking-wide text-neutral-200">
+      <h1 className="text-2xl font-semibold tracking-tight text-slate-900">
         Analytics & Reporting
       </h1>
 

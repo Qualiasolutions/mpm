@@ -56,14 +56,14 @@ export default async function DashboardPage() {
     <div className="space-y-6">
       {/* Welcome Header */}
       <div className="flex items-center gap-4">
-        <h1 className="text-2xl font-light tracking-wide text-neutral-200">
+        <h1 className="text-2xl font-light tracking-wide text-slate-800">
           Welcome, {firstName}
         </h1>
         <span
           className={`rounded-full px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider ${
             isAdmin
-              ? 'bg-[#D4A853]/10 text-[#D4A853]'
-              : 'bg-white/[0.06] text-neutral-500'
+              ? 'bg-teal-50 text-teal-600'
+              : 'bg-slate-100 text-slate-400'
           }`}
         >
           {role}
@@ -74,7 +74,7 @@ export default async function DashboardPage() {
       {isAdmin && (
         <Link
           href="/admin"
-          className="group flex items-center gap-3 rounded-lg border border-[#D4A853]/10 bg-[#D4A853]/[0.03] px-5 py-3.5 transition-colors hover:border-[#D4A853]/20 hover:bg-[#D4A853]/[0.06]"
+          className="group flex items-center gap-3 rounded-2xl border border-teal-100 bg-teal-50 px-5 py-3.5 transition-colors hover:border-teal-200 hover:bg-teal-100"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -86,15 +86,15 @@ export default async function DashboardPage() {
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-[#D4A853]/60"
+            className="text-teal-500"
           >
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
           </svg>
           <div>
-            <div className="text-sm font-medium text-[#D4A853]/80 transition-colors group-hover:text-[#D4A853]">
+            <div className="text-sm font-medium text-teal-600 transition-colors group-hover:text-teal-700">
               Admin Dashboard
             </div>
-            <div className="text-xs text-neutral-600">
+            <div className="text-xs text-slate-400">
               Manage employees, divisions, and discount rules
             </div>
           </div>
@@ -108,7 +108,7 @@ export default async function DashboardPage() {
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="ml-auto text-neutral-700 transition-colors group-hover:text-neutral-500"
+            className="ml-auto text-slate-300 transition-colors group-hover:text-slate-500"
           >
             <polyline points="9 18 15 12 9 6" />
           </svg>

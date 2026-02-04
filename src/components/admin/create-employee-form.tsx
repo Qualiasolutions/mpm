@@ -17,19 +17,19 @@ export function CreateEmployeeForm() {
   }
 
   return (
-    <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-6">
-      <h2 className="mb-6 text-lg font-light tracking-wide text-neutral-200">
+    <div className="rounded-2xl border border-slate-200 bg-white p-6">
+      <h2 className="mb-6 text-lg font-light tracking-wide text-slate-800">
         Create New Employee
       </h2>
 
       {state?.error && (
-        <div className="mb-5 rounded-md border border-red-500/20 bg-red-500/5 px-4 py-3 text-sm text-red-400">
+        <div className="mb-5 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
           {state.error}
         </div>
       )}
 
       {state?.success && (
-        <div className="mb-5 rounded-md border border-emerald-500/20 bg-emerald-500/5 px-4 py-3 text-sm text-emerald-400">
+        <div className="mb-5 rounded-md border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-600">
           {state.message}
         </div>
       )}
@@ -39,7 +39,7 @@ export function CreateEmployeeForm() {
           <div>
             <label
               htmlFor="firstName"
-              className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-500"
+              className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400"
             >
               First Name
             </label>
@@ -48,7 +48,7 @@ export function CreateEmployeeForm() {
               name="firstName"
               type="text"
               required
-              className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5 text-sm text-neutral-200 placeholder-neutral-600 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+              className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
               placeholder="Enter first name"
             />
           </div>
@@ -56,7 +56,7 @@ export function CreateEmployeeForm() {
           <div>
             <label
               htmlFor="lastName"
-              className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-500"
+              className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400"
             >
               Last Name
             </label>
@@ -65,7 +65,7 @@ export function CreateEmployeeForm() {
               name="lastName"
               type="text"
               required
-              className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5 text-sm text-neutral-200 placeholder-neutral-600 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+              className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
               placeholder="Enter last name"
             />
           </div>
@@ -74,7 +74,7 @@ export function CreateEmployeeForm() {
         <div>
           <label
             htmlFor="email"
-            className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-500"
+            className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400"
           >
             Email Address
           </label>
@@ -83,7 +83,7 @@ export function CreateEmployeeForm() {
             name="email"
             type="email"
             required
-            className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5 text-sm text-neutral-200 placeholder-neutral-600 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+            className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
             placeholder="employee@company.com"
           />
         </div>
@@ -91,7 +91,7 @@ export function CreateEmployeeForm() {
         <div>
           <label
             htmlFor="role"
-            className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-500"
+            className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400"
           >
             Role
           </label>
@@ -99,12 +99,12 @@ export function CreateEmployeeForm() {
             id="role"
             name="role"
             defaultValue="employee"
-            className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5 text-sm text-neutral-200 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+            className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
           >
-            <option value="employee" className="bg-[#111113]">
+            <option value="employee" className="bg-white">
               Employee
             </option>
-            <option value="admin" className="bg-[#111113]">
+            <option value="admin" className="bg-white">
               Admin
             </option>
           </select>
@@ -113,7 +113,7 @@ export function CreateEmployeeForm() {
         <button
           type="submit"
           disabled={isPending}
-          className="flex w-full items-center justify-center rounded-md bg-[#D4A853] px-4 py-2.5 text-sm font-medium text-[#0A0A0B] transition-all hover:bg-[#D4A853]/90 disabled:cursor-not-allowed disabled:opacity-50"
+          className="flex w-full items-center justify-center rounded-md bg-teal-600 px-4 py-2.5 text-sm font-medium text-white transition-all hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {isPending ? (
             <span className="flex items-center gap-2">

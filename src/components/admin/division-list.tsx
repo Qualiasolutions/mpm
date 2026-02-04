@@ -52,7 +52,7 @@ export function DivisionList({ divisions }: DivisionListProps) {
         <button
           type="button"
           onClick={() => setShowAddDivision(!showAddDivision)}
-          className="flex items-center gap-2 rounded-md bg-[#D4A853] px-4 py-2 text-sm font-medium text-[#0A0A0B] transition-all hover:bg-[#D4A853]/90"
+          className="flex items-center gap-2 rounded-md bg-teal-600 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-teal-700"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -78,14 +78,14 @@ export function DivisionList({ divisions }: DivisionListProps) {
       )}
 
       {/* Division List */}
-      <div className="rounded-lg border border-white/[0.06] bg-white/[0.02]">
+      <div className="rounded-2xl border border-slate-200 bg-white">
         {divisions.length === 0 && (
-          <div className="px-5 py-12 text-center text-sm text-neutral-600">
+          <div className="px-5 py-12 text-center text-sm text-slate-400">
             No divisions yet. Create your first division above.
           </div>
         )}
 
-        <div className="divide-y divide-white/[0.04]">
+        <div className="divide-y divide-slate-100">
           {divisions.map((div) => {
             const isExpanded = expandedId === div.id
             const isEditing = editingDivisionId === div.id
@@ -100,13 +100,13 @@ export function DivisionList({ divisions }: DivisionListProps) {
                   />
                 ) : (
                   <div
-                    className="flex items-center gap-4 px-5 py-4 transition-colors hover:bg-white/[0.02]"
+                    className="flex items-center gap-4 px-5 py-4 transition-colors hover:bg-slate-50"
                   >
                     {/* Expand Toggle */}
                     <button
                       type="button"
                       onClick={() => toggleExpand(div.id)}
-                      className="text-neutral-500 transition-colors hover:text-neutral-300"
+                      className="text-slate-400 transition-colors hover:text-slate-700"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -128,30 +128,30 @@ export function DivisionList({ divisions }: DivisionListProps) {
 
                     {/* Name */}
                     <div className="min-w-0 flex-1">
-                      <p className="font-medium text-neutral-200">
+                      <p className="font-medium text-slate-800">
                         {div.name}
                       </p>
                     </div>
 
                     {/* Code */}
-                    <span className="rounded-md border border-white/[0.06] bg-white/[0.03] px-2 py-0.5 text-xs font-mono text-neutral-400">
+                    <span className="rounded-md border border-slate-200 bg-slate-50 px-2 py-0.5 text-xs font-mono text-slate-500">
                       {div.code}
                     </span>
 
                     {/* Brand Count */}
-                    <span className="text-xs text-neutral-500">
+                    <span className="text-xs text-slate-400">
                       {div.brands.length} brand{div.brands.length !== 1 ? 's' : ''}
                     </span>
 
                     {/* Status */}
                     {div.is_active ? (
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-0.5 text-[11px] font-medium text-emerald-400">
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[11px] font-medium text-emerald-600">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                         Active
                       </span>
                     ) : (
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-red-500/20 bg-red-500/10 px-2.5 py-0.5 text-[11px] font-medium text-red-400">
-                        <span className="h-1.5 w-1.5 rounded-full bg-red-400" />
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-red-200 bg-red-50 px-2.5 py-0.5 text-[11px] font-medium text-red-600">
+                        <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
                         Inactive
                       </span>
                     )}
@@ -161,7 +161,7 @@ export function DivisionList({ divisions }: DivisionListProps) {
                       <button
                         type="button"
                         onClick={() => setEditingDivisionId(div.id)}
-                        className="rounded-md px-2 py-1.5 text-neutral-500 transition-colors hover:bg-white/5 hover:text-neutral-300"
+                        className="rounded-md px-2 py-1.5 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700"
                         title="Edit division"
                       >
                         <svg
@@ -183,7 +183,7 @@ export function DivisionList({ divisions }: DivisionListProps) {
                         type="button"
                         onClick={() => handleDeleteDivision(div.id)}
                         disabled={deletingId}
-                        className="rounded-md px-2 py-1.5 text-red-400/50 transition-colors hover:bg-red-500/5 hover:text-red-400 disabled:opacity-50"
+                        className="rounded-md px-2 py-1.5 text-red-500 transition-colors hover:bg-red-50 hover:text-red-700 disabled:opacity-50"
                         title="Delete division"
                       >
                         <svg
@@ -207,10 +207,10 @@ export function DivisionList({ divisions }: DivisionListProps) {
 
                 {/* Expanded Brands Section */}
                 {isExpanded && !isEditing && (
-                  <div className="border-t border-white/[0.04] bg-white/[0.01] px-5 py-4 pl-14">
+                  <div className="border-t border-slate-100 bg-slate-50 px-5 py-4 pl-14">
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
-                        <h4 className="text-xs font-medium uppercase tracking-wider text-neutral-500">
+                        <h4 className="text-xs font-medium uppercase tracking-wider text-slate-400">
                           Brands
                         </h4>
                         <button
@@ -222,7 +222,7 @@ export function DivisionList({ divisions }: DivisionListProps) {
                                 : div.id
                             )
                           }
-                          className="flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs text-[#D4A853]/70 transition-colors hover:bg-[#D4A853]/[0.05] hover:text-[#D4A853]"
+                          className="flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs text-teal-600 transition-colors hover:bg-teal-50 hover:text-teal-700"
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -252,7 +252,7 @@ export function DivisionList({ divisions }: DivisionListProps) {
 
                       {/* Brand List */}
                       {div.brands.length === 0 && (
-                        <p className="text-xs text-neutral-600">
+                        <p className="text-xs text-slate-400">
                           No brands in this division yet.
                         </p>
                       )}
@@ -273,18 +273,18 @@ export function DivisionList({ divisions }: DivisionListProps) {
                           return (
                             <div
                               key={brand.id}
-                              className="flex items-center justify-between rounded-md px-3 py-2 transition-colors hover:bg-white/[0.03]"
+                              className="flex items-center justify-between rounded-md px-3 py-2 transition-colors hover:bg-white"
                             >
                               <div className="flex items-center gap-3">
-                                <span className="text-sm text-neutral-300">
+                                <span className="text-sm text-slate-700">
                                   {brand.name}
                                 </span>
                                 {brand.is_active ? (
-                                  <span className="text-[10px] text-emerald-400/60">
+                                  <span className="text-[10px] text-emerald-600">
                                     Active
                                   </span>
                                 ) : (
-                                  <span className="text-[10px] text-red-400/60">
+                                  <span className="text-[10px] text-red-500">
                                     Inactive
                                   </span>
                                 )}
@@ -293,7 +293,7 @@ export function DivisionList({ divisions }: DivisionListProps) {
                                 <button
                                   type="button"
                                   onClick={() => setEditingBrandId(brand.id)}
-                                  className="rounded p-1 text-neutral-600 transition-colors hover:bg-white/5 hover:text-neutral-400"
+                                  className="rounded p-1 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-600"
                                   title="Edit brand"
                                 >
                                   <svg
@@ -317,7 +317,7 @@ export function DivisionList({ divisions }: DivisionListProps) {
                                     handleDeleteBrand(brand.id)
                                   }
                                   disabled={deletingId}
-                                  className="rounded p-1 text-red-400/40 transition-colors hover:bg-red-500/5 hover:text-red-400 disabled:opacity-50"
+                                  className="rounded p-1 text-red-400 transition-colors hover:bg-red-50 hover:text-red-700 disabled:opacity-50"
                                   title="Delete brand"
                                 >
                                   <svg
@@ -352,7 +352,7 @@ export function DivisionList({ divisions }: DivisionListProps) {
   )
 }
 
-/* ─── Inline Forms ───────────────────────────────────────────────── */
+/* --- Inline Forms -------------------------------------------------------- */
 
 function AddDivisionForm({ onDone }: { onDone: () => void }) {
   const [state, formAction, isPending] = useActionState<ActionState, FormData>(
@@ -366,13 +366,13 @@ function AddDivisionForm({ onDone }: { onDone: () => void }) {
   }
 
   return (
-    <div className="rounded-lg border border-[#D4A853]/15 bg-[#D4A853]/[0.03] p-5">
-      <h3 className="mb-4 text-sm font-medium text-neutral-200">
+    <div className="rounded-lg border border-teal-200 bg-teal-50 p-5">
+      <h3 className="mb-4 text-sm font-medium text-slate-800">
         New Division
       </h3>
 
       {state?.error && (
-        <div className="mb-4 rounded-md border border-red-500/20 bg-red-500/5 px-3 py-2 text-xs text-red-400">
+        <div className="mb-4 rounded-md border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-600">
           {state.error}
         </div>
       )}
@@ -380,40 +380,40 @@ function AddDivisionForm({ onDone }: { onDone: () => void }) {
       <form action={formAction} className="space-y-4">
         <div className="grid gap-4 sm:grid-cols-3">
           <div>
-            <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-500">
+            <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400">
               Name
             </label>
             <input
               name="name"
               type="text"
               required
-              className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5 text-sm text-neutral-200 placeholder-neutral-600 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+              className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
               placeholder="e.g. Fashion"
             />
           </div>
           <div>
-            <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-500">
+            <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400">
               Code
             </label>
             <input
               name="code"
               type="text"
               required
-              className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5 text-sm text-neutral-200 placeholder-neutral-600 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+              className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
               placeholder="e.g. FASH"
             />
           </div>
           <div>
-            <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-500">
+            <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400">
               Description
-              <span className="ml-1 normal-case tracking-normal text-neutral-600">
+              <span className="ml-1 normal-case tracking-normal text-slate-400">
                 (optional)
               </span>
             </label>
             <input
               name="description"
               type="text"
-              className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5 text-sm text-neutral-200 placeholder-neutral-600 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+              className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
               placeholder="Brief description"
             />
           </div>
@@ -422,7 +422,7 @@ function AddDivisionForm({ onDone }: { onDone: () => void }) {
           <button
             type="submit"
             disabled={isPending}
-            className="flex items-center gap-2 rounded-md bg-[#D4A853] px-4 py-2 text-sm font-medium text-[#0A0A0B] transition-all hover:bg-[#D4A853]/90 disabled:cursor-not-allowed disabled:opacity-50"
+            className="flex items-center gap-2 rounded-md bg-teal-600 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {isPending ? (
               <>
@@ -455,7 +455,7 @@ function AddDivisionForm({ onDone }: { onDone: () => void }) {
           <button
             type="button"
             onClick={onDone}
-            className="rounded-md px-3 py-2 text-sm text-neutral-400 transition-colors hover:bg-white/5 hover:text-neutral-200"
+            className="rounded-md px-3 py-2 text-sm text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-800"
           >
             Cancel
           </button>
@@ -482,9 +482,9 @@ function EditDivisionForm({
   }
 
   return (
-    <div className="bg-white/[0.03] px-5 py-4">
+    <div className="bg-slate-50 px-5 py-4">
       {state?.error && (
-        <div className="mb-3 rounded-md border border-red-500/20 bg-red-500/5 px-3 py-2 text-xs text-red-400">
+        <div className="mb-3 rounded-md border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-600">
           {state.error}
         </div>
       )}
@@ -492,7 +492,7 @@ function EditDivisionForm({
       <form action={formAction} className="flex flex-wrap items-end gap-3">
         <input type="hidden" name="id" value={division.id} />
         <div className="flex-1">
-          <label className="mb-1 block text-xs font-medium uppercase tracking-wider text-neutral-500">
+          <label className="mb-1 block text-xs font-medium uppercase tracking-wider text-slate-400">
             Name
           </label>
           <input
@@ -500,11 +500,11 @@ function EditDivisionForm({
             type="text"
             required
             defaultValue={division.name}
-            className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3 py-2 text-sm text-neutral-200 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
           />
         </div>
         <div className="w-24">
-          <label className="mb-1 block text-xs font-medium uppercase tracking-wider text-neutral-500">
+          <label className="mb-1 block text-xs font-medium uppercase tracking-wider text-slate-400">
             Code
           </label>
           <input
@@ -512,33 +512,33 @@ function EditDivisionForm({
             type="text"
             required
             defaultValue={division.code}
-            className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3 py-2 text-sm text-neutral-200 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
           />
         </div>
         <div className="flex-1">
-          <label className="mb-1 block text-xs font-medium uppercase tracking-wider text-neutral-500">
+          <label className="mb-1 block text-xs font-medium uppercase tracking-wider text-slate-400">
             Description
           </label>
           <input
             name="description"
             type="text"
             defaultValue={division.description ?? ''}
-            className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3 py-2 text-sm text-neutral-200 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
           />
         </div>
         <div className="w-28">
-          <label className="mb-1 block text-xs font-medium uppercase tracking-wider text-neutral-500">
+          <label className="mb-1 block text-xs font-medium uppercase tracking-wider text-slate-400">
             Status
           </label>
           <select
             name="isActive"
             defaultValue={division.is_active ? 'true' : 'false'}
-            className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3 py-2 text-sm text-neutral-200 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
           >
-            <option value="true" className="bg-[#111113]">
+            <option value="true" className="bg-white">
               Active
             </option>
-            <option value="false" className="bg-[#111113]">
+            <option value="false" className="bg-white">
               Inactive
             </option>
           </select>
@@ -547,14 +547,14 @@ function EditDivisionForm({
           <button
             type="submit"
             disabled={isPending}
-            className="rounded-md bg-[#D4A853] px-3 py-2 text-sm font-medium text-[#0A0A0B] transition-all hover:bg-[#D4A853]/90 disabled:opacity-50"
+            className="rounded-md bg-teal-600 px-3 py-2 text-sm font-medium text-white transition-all hover:bg-teal-700 disabled:opacity-50"
           >
             {isPending ? 'Saving...' : 'Save'}
           </button>
           <button
             type="button"
             onClick={onDone}
-            className="rounded-md px-3 py-2 text-sm text-neutral-400 transition-colors hover:bg-white/5 hover:text-neutral-200"
+            className="rounded-md px-3 py-2 text-sm text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-800"
           >
             Cancel
           </button>
@@ -581,35 +581,35 @@ function AddBrandForm({
   }
 
   return (
-    <div className="rounded-md border border-[#D4A853]/10 bg-[#D4A853]/[0.02] p-3">
+    <div className="rounded-md border border-teal-200 bg-teal-50 p-3">
       {state?.error && (
-        <div className="mb-2 text-xs text-red-400">{state.error}</div>
+        <div className="mb-2 text-xs text-red-600">{state.error}</div>
       )}
       <form action={formAction} className="flex items-end gap-3">
         <input type="hidden" name="divisionId" value={divisionId} />
         <div className="flex-1">
-          <label className="mb-1 block text-xs font-medium uppercase tracking-wider text-neutral-500">
+          <label className="mb-1 block text-xs font-medium uppercase tracking-wider text-slate-400">
             Brand Name
           </label>
           <input
             name="name"
             type="text"
             required
-            className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3 py-2 text-sm text-neutral-200 placeholder-neutral-600 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
             placeholder="e.g. Gucci"
           />
         </div>
         <button
           type="submit"
           disabled={isPending}
-          className="rounded-md bg-[#D4A853] px-3 py-2 text-sm font-medium text-[#0A0A0B] transition-all hover:bg-[#D4A853]/90 disabled:opacity-50"
+          className="rounded-md bg-teal-600 px-3 py-2 text-sm font-medium text-white transition-all hover:bg-teal-700 disabled:opacity-50"
         >
           {isPending ? 'Adding...' : 'Add'}
         </button>
         <button
           type="button"
           onClick={onDone}
-          className="rounded-md px-3 py-2 text-sm text-neutral-400 transition-colors hover:bg-white/5 hover:text-neutral-200"
+          className="rounded-md px-3 py-2 text-sm text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-800"
         >
           Cancel
         </button>
@@ -635,9 +635,9 @@ function EditBrandForm({
   }
 
   return (
-    <div className="rounded-md bg-white/[0.03] px-3 py-2">
+    <div className="rounded-md bg-slate-50 px-3 py-2">
       {state?.error && (
-        <div className="mb-2 text-xs text-red-400">{state.error}</div>
+        <div className="mb-2 text-xs text-red-600">{state.error}</div>
       )}
       <form action={formAction} className="flex items-end gap-3">
         <input type="hidden" name="id" value={brand.id} />
@@ -647,32 +647,32 @@ function EditBrandForm({
             type="text"
             required
             defaultValue={brand.name}
-            className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3 py-1.5 text-sm text-neutral-200 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+            className="w-full rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
           />
         </div>
         <select
           name="isActive"
           defaultValue={brand.is_active ? 'true' : 'false'}
-          className="rounded-md border border-white/[0.08] bg-white/[0.03] px-2 py-1.5 text-sm text-neutral-200 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+          className="rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
         >
-          <option value="true" className="bg-[#111113]">
+          <option value="true" className="bg-white">
             Active
           </option>
-          <option value="false" className="bg-[#111113]">
+          <option value="false" className="bg-white">
             Inactive
           </option>
         </select>
         <button
           type="submit"
           disabled={isPending}
-          className="rounded-md bg-[#D4A853] px-3 py-1.5 text-sm font-medium text-[#0A0A0B] transition-all hover:bg-[#D4A853]/90 disabled:opacity-50"
+          className="rounded-md bg-teal-600 px-3 py-1.5 text-sm font-medium text-white transition-all hover:bg-teal-700 disabled:opacity-50"
         >
           {isPending ? 'Saving...' : 'Save'}
         </button>
         <button
           type="button"
           onClick={onDone}
-          className="rounded-md px-2 py-1.5 text-sm text-neutral-400 transition-colors hover:bg-white/5 hover:text-neutral-200"
+          className="rounded-md px-2 py-1.5 text-sm text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-800"
         >
           Cancel
         </button>

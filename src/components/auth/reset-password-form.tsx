@@ -13,13 +13,13 @@ export function ResetPasswordForm() {
   if (state?.success) {
     return (
       <div className="space-y-5">
-        <div className="rounded-md border border-[#D4A853]/20 bg-[#D4A853]/5 px-4 py-3 text-sm text-[#D4A853]">
+        <div className="rounded-md border border-teal-200 bg-teal-50 px-4 py-3 text-sm text-teal-600">
           Check your email for a reset link. It may take a minute to arrive.
         </div>
         <div className="text-center">
           <Link
             href="/login"
-            className="text-xs text-neutral-500 transition-colors duration-200 hover:text-[#D4A853]"
+            className="text-xs text-slate-400 transition-colors duration-200 hover:text-teal-600"
           >
             Back to login
           </Link>
@@ -31,7 +31,7 @@ export function ResetPasswordForm() {
   return (
     <form action={formAction} className="space-y-5">
       {state?.error && (
-        <div className="rounded-md border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+        <div className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
           {state.error}
         </div>
       )}
@@ -39,7 +39,7 @@ export function ResetPasswordForm() {
       <div>
         <label
           htmlFor="email"
-          className="mb-1.5 block text-xs font-medium tracking-wide text-neutral-400"
+          className="mb-1.5 block text-xs font-medium tracking-wide text-slate-500"
         >
           Email
         </label>
@@ -50,14 +50,14 @@ export function ResetPasswordForm() {
           autoComplete="email"
           required
           placeholder="name@mpmimports.com.cy"
-          className="w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3.5 py-2.5 text-sm text-neutral-100 placeholder-neutral-600 outline-none transition-colors duration-200 focus:border-[#D4A853]/50 focus:ring-1 focus:ring-[#D4A853]/25"
+          className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition-colors duration-200 focus:border-teal-500 focus:ring-1 focus:ring-teal-200"
         />
       </div>
 
       <button
         type="submit"
         disabled={isPending}
-        className="flex w-full items-center justify-center rounded-md bg-[#D4A853] px-4 py-2.5 text-sm font-medium tracking-wide text-[#0A0A0B] transition-all duration-200 hover:bg-[#E0B96A] disabled:cursor-not-allowed disabled:opacity-50"
+        className="flex w-full items-center justify-center rounded-md bg-teal-600 px-4 py-2.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {isPending ? (
           <span className="flex items-center gap-2">
@@ -90,7 +90,7 @@ export function ResetPasswordForm() {
       <div className="text-center">
         <Link
           href="/login"
-          className="text-xs text-neutral-500 transition-colors duration-200 hover:text-[#D4A853]"
+          className="text-xs text-slate-400 transition-colors duration-200 hover:text-teal-600"
         >
           Back to login
         </Link>

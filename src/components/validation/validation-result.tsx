@@ -56,9 +56,9 @@ function SuccessView({
   return (
     <div className="animate-fade-in-up space-y-5">
       {/* Success Header */}
-      <div className="rounded-xl border border-green-500/20 bg-green-500/[0.05] p-6 text-center sm:p-8">
+      <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6 text-center sm:p-8">
         {/* Animated Checkmark */}
-        <div className="animate-scale-in mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-green-500/[0.15]">
+        <div className="animate-scale-in mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-emerald-100">
           <svg
             width="40"
             height="40"
@@ -68,71 +68,71 @@ function SuccessView({
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-green-400"
+            className="text-emerald-600"
           >
             <polyline points="20 6 9 17 4 12" className="animate-draw-check" />
           </svg>
         </div>
 
-        <h2 className="mb-1 text-xl font-medium text-green-400">
+        <h2 className="mb-1 text-xl font-medium text-emerald-600">
           Discount Applied
         </h2>
-        <p className="text-sm text-neutral-400">
+        <p className="text-sm text-slate-500">
           Transaction #{result.transaction_id?.slice(0, 8)}
         </p>
       </div>
 
       {/* Employee Info */}
-      <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4">
+      <div className="rounded-2xl border border-slate-200 bg-white p-4">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm text-neutral-500">Employee</p>
-            <p className="text-base font-medium text-neutral-200">
+            <p className="text-sm text-slate-400">Employee</p>
+            <p className="text-base font-medium text-slate-800">
               {result.employee_name}
             </p>
           </div>
           <div className="text-right">
-            <p className="text-sm text-neutral-500">Division</p>
-            <p className="text-base text-neutral-200">
+            <p className="text-sm text-slate-400">Division</p>
+            <p className="text-base text-slate-800">
               {result.division_name}
             </p>
           </div>
         </div>
-        <div className="mt-3 flex items-center justify-center rounded-lg bg-[#D4A853]/[0.08] py-2">
-          <span className="text-lg font-medium text-[#D4A853]">
+        <div className="mt-3 flex items-center justify-center rounded-lg bg-teal-50 py-2">
+          <span className="text-lg font-medium text-teal-600">
             {result.discount_percentage}% Discount
           </span>
         </div>
       </div>
 
       {/* Amounts - Large, clear for cashiers */}
-      <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
+      <div className="rounded-2xl border border-slate-200 bg-white p-5">
         <div className="space-y-3">
           {/* Original */}
           <div className="flex items-center justify-between">
-            <span className="text-sm text-neutral-500">Original Amount</span>
-            <span className="text-lg tabular-nums text-neutral-400 line-through">
+            <span className="text-sm text-slate-400">Original Amount</span>
+            <span className="text-lg tabular-nums text-slate-500 line-through">
               {formatCurrency(result.original_amount ?? 0)}
             </span>
           </div>
 
           {/* Discount */}
           <div className="flex items-center justify-between">
-            <span className="text-sm text-green-400/80">Discount Saved</span>
-            <span className="text-lg tabular-nums text-green-400">
+            <span className="text-sm text-emerald-600/80">Discount Saved</span>
+            <span className="text-lg tabular-nums text-emerald-600">
               -{formatCurrency(result.discount_amount ?? 0)}
             </span>
           </div>
 
           {/* Divider */}
-          <div className="border-t border-white/[0.06]" />
+          <div className="border-t border-slate-200" />
 
           {/* Final Amount - Extra large */}
           <div className="flex items-center justify-between py-1">
-            <span className="text-base font-medium text-neutral-300">
+            <span className="text-base font-medium text-slate-700">
               Amount to Charge
             </span>
-            <span className="text-3xl font-medium tabular-nums text-neutral-100 sm:text-4xl">
+            <span className="text-3xl font-medium tabular-nums text-slate-900 sm:text-4xl">
               {formatCurrency(result.final_amount ?? 0)}
             </span>
           </div>
@@ -141,11 +141,11 @@ function SuccessView({
 
       {/* Remaining limit */}
       {result.remaining_limit !== undefined && (
-        <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-3 text-center">
-          <span className="text-xs text-neutral-500">
+        <div className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-center">
+          <span className="text-xs text-slate-400">
             Employee remaining monthly limit:{' '}
           </span>
-          <span className="text-sm font-medium tabular-nums text-neutral-300">
+          <span className="text-sm font-medium tabular-nums text-slate-700">
             {formatCurrency(result.remaining_limit)}
           </span>
         </div>
@@ -154,7 +154,7 @@ function SuccessView({
       {/* New Validation button */}
       <button
         onClick={onReset}
-        className="w-full rounded-lg bg-[#D4A853] px-6 py-4 text-base font-medium text-[#0A0A0B] transition-all active:scale-[0.98] hover:bg-[#D4A853]/90"
+        className="w-full rounded-lg bg-teal-600 px-6 py-4 text-base font-medium text-white transition-all active:scale-[0.98] hover:bg-teal-700"
       >
         New Validation
       </button>
@@ -179,9 +179,9 @@ function FailureView({
   return (
     <div className="animate-fade-in-up space-y-5">
       {/* Failure Header */}
-      <div className="rounded-xl border border-red-500/20 bg-red-500/[0.05] p-6 text-center sm:p-8">
+      <div className="rounded-2xl border border-red-200 bg-red-50 p-6 text-center sm:p-8">
         {/* Animated X */}
-        <div className="animate-scale-in mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-red-500/[0.15]">
+        <div className="animate-scale-in mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-red-100">
           <svg
             width="36"
             height="36"
@@ -191,7 +191,7 @@ function FailureView({
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-red-400"
+            className="text-red-600"
           >
             <line x1="18" y1="6" x2="6" y2="18" className="animate-draw-x" />
             <line
@@ -205,43 +205,43 @@ function FailureView({
           </svg>
         </div>
 
-        <h2 className="mb-1 text-xl font-medium text-red-400">
+        <h2 className="mb-1 text-xl font-medium text-red-600">
           {errorInfo.title}
         </h2>
-        <p className="text-sm text-neutral-400">{errorInfo.description}</p>
+        <p className="text-sm text-slate-500">{errorInfo.description}</p>
       </div>
 
       {/* Over limit details */}
       {result.error === 'over_limit' && result.details && (
-        <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
-          <h3 className="mb-3 text-xs font-medium uppercase tracking-wider text-neutral-500">
+        <div className="rounded-2xl border border-slate-200 bg-white p-5">
+          <h3 className="mb-3 text-xs font-medium uppercase tracking-wider text-slate-400">
             Limit Details
           </h3>
           <div className="space-y-2.5">
             <div className="flex items-center justify-between">
-              <span className="text-sm text-neutral-500">Monthly Limit</span>
-              <span className="text-sm tabular-nums text-neutral-300">
+              <span className="text-sm text-slate-400">Monthly Limit</span>
+              <span className="text-sm tabular-nums text-slate-700">
                 {formatCurrency(result.details.limit ?? 0)}
               </span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-sm text-neutral-500">Already Spent</span>
-              <span className="text-sm tabular-nums text-neutral-300">
+              <span className="text-sm text-slate-400">Already Spent</span>
+              <span className="text-sm tabular-nums text-slate-700">
                 {formatCurrency(result.details.spent ?? 0)}
               </span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-sm text-neutral-500">Remaining</span>
-              <span className="text-sm tabular-nums text-[#D4A853]">
+              <span className="text-sm text-slate-400">Remaining</span>
+              <span className="text-sm tabular-nums text-teal-600">
                 {formatCurrency(result.details.remaining ?? 0)}
               </span>
             </div>
-            <div className="border-t border-white/[0.06]" />
+            <div className="border-t border-slate-200" />
             <div className="flex items-center justify-between">
-              <span className="text-sm text-neutral-500">
+              <span className="text-sm text-slate-400">
                 Requested Amount
               </span>
-              <span className="text-sm tabular-nums text-red-400">
+              <span className="text-sm tabular-nums text-red-600">
                 {formatCurrency(result.details.requested ?? 0)}
               </span>
             </div>
@@ -252,7 +252,7 @@ function FailureView({
       {/* Try Again button */}
       <button
         onClick={onReset}
-        className="w-full rounded-lg bg-[#D4A853] px-6 py-4 text-base font-medium text-[#0A0A0B] transition-all active:scale-[0.98] hover:bg-[#D4A853]/90"
+        className="w-full rounded-lg bg-teal-600 px-6 py-4 text-base font-medium text-white transition-all active:scale-[0.98] hover:bg-teal-700"
       >
         Try Again
       </button>

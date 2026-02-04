@@ -50,8 +50,8 @@ export function OnlineStatus() {
         text-sm font-medium
         transition-all duration-300 ease-out
         ${showOffline
-          ? 'bg-[#1a1a1c] border-b border-[#D4A853]/30 text-[#D4A853]'
-          : 'bg-[#0f2a1a] border-b border-emerald-500/30 text-emerald-400'
+          ? 'bg-teal-50 border-b border-teal-300 text-teal-600'
+          : 'bg-emerald-50 border-b border-emerald-300 text-emerald-600'
         }
         ${showBanner ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
       `}

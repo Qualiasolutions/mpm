@@ -16,19 +16,19 @@ export function EmployeePageTabs({
   return (
     <div className="space-y-6">
       {/* Tab Buttons */}
-      <div className="flex gap-1 border-b border-white/[0.06]">
+      <div className="flex gap-1 border-b border-slate-200">
         <button
           type="button"
           onClick={() => setTab('manage')}
           className={`relative px-4 py-2.5 text-sm font-medium transition-colors ${
             tab === 'manage'
-              ? 'text-[#D4A853]'
-              : 'text-neutral-500 hover:text-neutral-300'
+              ? 'text-teal-600'
+              : 'text-slate-400 hover:text-slate-700'
           }`}
         >
           Manage
           {tab === 'manage' && (
-            <span className="absolute bottom-0 left-0 right-0 h-px bg-[#D4A853]" />
+            <span className="absolute bottom-0 left-0 right-0 h-px bg-teal-600" />
           )}
         </button>
         <button
@@ -36,13 +36,13 @@ export function EmployeePageTabs({
           onClick={() => setTab('import')}
           className={`relative px-4 py-2.5 text-sm font-medium transition-colors ${
             tab === 'import'
-              ? 'text-[#D4A853]'
-              : 'text-neutral-500 hover:text-neutral-300'
+              ? 'text-teal-600'
+              : 'text-slate-400 hover:text-slate-700'
           }`}
         >
           Import CSV
           {tab === 'import' && (
-            <span className="absolute bottom-0 left-0 right-0 h-px bg-[#D4A853]" />
+            <span className="absolute bottom-0 left-0 right-0 h-px bg-teal-600" />
           )}
         </button>
       </div>

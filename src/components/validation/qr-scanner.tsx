@@ -147,10 +147,10 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
   if (cameraState === 'idle' && hasBarcodeDetector !== false) {
     return (
       <div className="space-y-4">
-        <div className="relative overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02]">
+        <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white">
           {/* Placeholder viewfinder */}
           <div className="flex aspect-[4/3] flex-col items-center justify-center p-8">
-            <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-2xl bg-[#D4A853]/[0.08] animate-pulse-ring">
+            <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-2xl bg-teal-50 animate-pulse-ring">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="36"
@@ -161,21 +161,21 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-[#D4A853]"
+                className="text-teal-600"
               >
                 <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
                 <circle cx="12" cy="13" r="4" />
               </svg>
             </div>
-            <p className="mb-1 text-sm text-neutral-300">
+            <p className="mb-1 text-sm text-slate-700">
               Scan QR Code
             </p>
-            <p className="mb-6 text-xs text-neutral-600">
+            <p className="mb-6 text-xs text-slate-400">
               Point the camera at an employee&apos;s discount QR code
             </p>
             <button
               onClick={startCamera}
-              className="rounded-lg bg-[#D4A853] px-8 py-3.5 text-sm font-medium text-[#0A0A0B] transition-all active:scale-[0.98] hover:bg-[#D4A853]/90"
+              className="rounded-lg bg-teal-600 px-8 py-3.5 text-sm font-medium text-white transition-all active:scale-[0.98] hover:bg-teal-700"
             >
               Start Camera
             </button>
@@ -188,8 +188,8 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
   // No BarcodeDetector support
   if (cameraState === 'no-detector' || hasBarcodeDetector === false) {
     return (
-      <div className="rounded-xl border border-yellow-500/15 bg-yellow-500/[0.03] p-6 text-center">
-        <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-yellow-500/[0.1]">
+      <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6 text-center">
+        <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-amber-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -200,17 +200,17 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-yellow-400"
+            className="text-amber-600"
           >
             <circle cx="12" cy="12" r="10" />
             <line x1="12" y1="8" x2="12" y2="12" />
             <line x1="12" y1="16" x2="12.01" y2="16" />
           </svg>
         </div>
-        <p className="mb-1 text-sm font-medium text-yellow-400">
+        <p className="mb-1 text-sm font-medium text-amber-600">
           Camera Scanning Not Supported
         </p>
-        <p className="text-xs text-neutral-500">
+        <p className="text-xs text-slate-400">
           This browser does not support QR code scanning.
           <br />
           Please use the manual entry tab instead.
@@ -222,10 +222,10 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
   // Requesting permission
   if (cameraState === 'requesting') {
     return (
-      <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-10 text-center">
-        <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-[#D4A853]/20 border-t-[#D4A853]" />
-        <p className="text-sm text-neutral-400">Requesting camera access...</p>
-        <p className="mt-1 text-xs text-neutral-600">
+      <div className="rounded-2xl border border-slate-200 bg-white p-10 text-center">
+        <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-teal-200 border-t-teal-600" />
+        <p className="text-sm text-slate-500">Requesting camera access...</p>
+        <p className="mt-1 text-xs text-slate-400">
           Please allow camera permission when prompted
         </p>
       </div>
@@ -235,8 +235,8 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
   // Permission denied
   if (cameraState === 'denied') {
     return (
-      <div className="rounded-xl border border-red-500/15 bg-red-500/[0.03] p-6 text-center">
-        <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-red-500/[0.1]">
+      <div className="rounded-2xl border border-red-200 bg-red-50 p-6 text-center">
+        <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-red-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -247,22 +247,22 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-red-400"
+            className="text-red-600"
           >
             <line x1="1" y1="1" x2="23" y2="23" />
             <path d="M21 21H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2v9.34" />
             <path d="M14.12 14.12A3 3 0 1 1 9.88 9.88" />
           </svg>
         </div>
-        <p className="mb-1 text-sm font-medium text-red-400">
+        <p className="mb-1 text-sm font-medium text-red-600">
           Camera Access Denied
         </p>
-        <p className="mb-4 text-xs text-neutral-500">
+        <p className="mb-4 text-xs text-slate-400">
           Allow camera access in your browser settings to scan QR codes.
         </p>
         <button
           onClick={() => setCameraState('idle')}
-          className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-6 py-3 text-sm text-neutral-400 transition-colors active:scale-[0.98] hover:bg-white/[0.05] hover:text-neutral-200"
+          className="rounded-lg border border-slate-200 bg-white px-6 py-3 text-sm text-slate-500 transition-colors active:scale-[0.98] hover:bg-slate-50 hover:text-slate-700"
         >
           Try Again
         </button>
@@ -273,8 +273,8 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
   // Camera not available
   if (cameraState === 'unsupported') {
     return (
-      <div className="rounded-xl border border-yellow-500/15 bg-yellow-500/[0.03] p-6 text-center">
-        <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-yellow-500/[0.1]">
+      <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6 text-center">
+        <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-amber-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -285,17 +285,17 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-yellow-400"
+            className="text-amber-600"
           >
             <circle cx="12" cy="12" r="10" />
             <line x1="12" y1="8" x2="12" y2="12" />
             <line x1="12" y1="16" x2="12.01" y2="16" />
           </svg>
         </div>
-        <p className="mb-1 text-sm font-medium text-yellow-400">
+        <p className="mb-1 text-sm font-medium text-amber-600">
           Camera Not Available
         </p>
-        <p className="text-xs text-neutral-500">
+        <p className="text-xs text-slate-400">
           No camera detected on this device.
           <br />
           Please use the manual entry tab instead.
@@ -307,7 +307,7 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
   // Active camera state
   return (
     <div className="space-y-3">
-      <div className="relative overflow-hidden rounded-xl border border-[#D4A853]/20 bg-black">
+      <div className="relative overflow-hidden rounded-2xl border border-teal-200 bg-black">
         {/* Video feed */}
         <video
           ref={videoRef}
@@ -330,20 +330,20 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
             }} />
 
             {/* Corner brackets */}
-            <div className="absolute left-0 top-0 h-6 w-6 border-l-2 border-t-2 border-[#D4A853] rounded-tl" />
-            <div className="absolute right-0 top-0 h-6 w-6 border-r-2 border-t-2 border-[#D4A853] rounded-tr" />
-            <div className="absolute bottom-0 left-0 h-6 w-6 border-b-2 border-l-2 border-[#D4A853] rounded-bl" />
-            <div className="absolute bottom-0 right-0 h-6 w-6 border-b-2 border-r-2 border-[#D4A853] rounded-br" />
+            <div className="absolute left-0 top-0 h-6 w-6 border-l-2 border-t-2 border-teal-500 rounded-tl" />
+            <div className="absolute right-0 top-0 h-6 w-6 border-r-2 border-t-2 border-teal-500 rounded-tr" />
+            <div className="absolute bottom-0 left-0 h-6 w-6 border-b-2 border-l-2 border-teal-500 rounded-bl" />
+            <div className="absolute bottom-0 right-0 h-6 w-6 border-b-2 border-r-2 border-teal-500 rounded-br" />
 
             {/* Scanning line */}
-            <div className="animate-scan-line absolute left-2 right-2 h-0.5 bg-gradient-to-r from-transparent via-[#D4A853] to-transparent" />
+            <div className="animate-scan-line absolute left-2 right-2 h-0.5 bg-gradient-to-r from-transparent via-teal-500 to-transparent" />
           </div>
         </div>
 
         {/* Status indicator */}
         <div className="absolute bottom-3 left-0 right-0 text-center">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-black/70 px-3 py-1.5 text-xs text-neutral-300 backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-400" />
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
             Scanning...
           </span>
         </div>
@@ -352,7 +352,7 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
       {/* Stop button */}
       <button
         onClick={stopCamera}
-        className="w-full rounded-lg border border-white/[0.06] bg-white/[0.02] px-4 py-3 text-sm text-neutral-400 transition-colors active:scale-[0.98] hover:bg-white/[0.05] hover:text-neutral-200"
+        className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-500 transition-colors active:scale-[0.98] hover:bg-slate-50 hover:text-slate-700"
       >
         Stop Camera
       </button>

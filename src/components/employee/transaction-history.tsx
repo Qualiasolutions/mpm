@@ -33,8 +33,8 @@ export function TransactionHistory({
 
   if (transactions.length === 0) {
     return (
-      <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-5 py-12 text-center">
-        <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-white/[0.04]">
+      <div className="rounded-2xl border border-slate-200 bg-white px-5 py-12 text-center">
+        <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-slate-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -45,7 +45,7 @@ export function TransactionHistory({
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-neutral-600"
+            className="text-slate-400"
           >
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
             <polyline points="14 2 14 8 20 8" />
@@ -53,8 +53,8 @@ export function TransactionHistory({
             <line x1="9" y1="15" x2="15" y2="15" />
           </svg>
         </div>
-        <p className="text-sm text-neutral-400">No transactions yet</p>
-        <p className="mt-1 text-xs text-neutral-600">
+        <p className="text-sm text-slate-500">No transactions yet</p>
+        <p className="mt-1 text-xs text-slate-400">
           Your discount usage will appear here
         </p>
       </div>
@@ -64,10 +64,10 @@ export function TransactionHistory({
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <h3 className="text-sm font-medium text-neutral-400">
+        <h3 className="text-sm font-medium text-slate-500">
           Transaction History
         </h3>
-        <span className="text-xs text-neutral-600">{total} total</span>
+        <span className="text-xs text-slate-400">{total} total</span>
       </div>
 
       <div className="space-y-2">
@@ -80,11 +80,11 @@ export function TransactionHistory({
         <button
           onClick={loadMore}
           disabled={isPending}
-          className="w-full rounded-lg border border-white/[0.06] bg-white/[0.02] px-4 py-3 text-sm text-neutral-400 transition-colors active:scale-[0.98] hover:bg-white/[0.05] hover:text-neutral-200 disabled:opacity-50"
+          className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-500 transition-colors active:scale-[0.98] hover:bg-slate-50 hover:text-slate-700 disabled:opacity-50"
         >
           {isPending ? (
             <span className="flex items-center justify-center gap-2">
-              <span className="h-3.5 w-3.5 animate-spin rounded-full border border-neutral-600 border-t-neutral-300" />
+              <span className="h-3.5 w-3.5 animate-spin rounded-full border border-slate-400 border-t-slate-700" />
               Loading...
             </span>
           ) : (
@@ -101,33 +101,33 @@ function TransactionItem({ transaction }: { transaction: Transaction }) {
   const formattedDate = formatRelativeDate(date)
 
   return (
-    <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-4 transition-colors hover:border-white/[0.08]">
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 transition-colors hover:border-slate-300">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
-            <span className="truncate text-sm text-neutral-200">
+            <span className="truncate text-sm text-slate-800">
               {transaction.division_name || 'Unknown Division'}
             </span>
-            <span className="flex-shrink-0 rounded bg-[#D4A853]/[0.1] px-1.5 py-0.5 text-[10px] font-medium text-[#D4A853]">
+            <span className="flex-shrink-0 rounded bg-teal-50 px-1.5 py-0.5 text-[10px] font-medium text-teal-600">
               -{transaction.discount_percentage}%
             </span>
           </div>
-          <p className="mt-0.5 text-xs text-neutral-600">{formattedDate}</p>
+          <p className="mt-0.5 text-xs text-slate-400">{formattedDate}</p>
           {transaction.location && (
-            <p className="mt-0.5 text-xs text-neutral-600">
+            <p className="mt-0.5 text-xs text-slate-400">
               {transaction.location}
             </p>
           )}
         </div>
 
         <div className="flex-shrink-0 text-right">
-          <p className="text-sm text-neutral-200">
+          <p className="text-sm text-slate-800">
             {formatCurrency(transaction.final_amount)}
           </p>
-          <p className="mt-0.5 text-xs text-green-400/70">
+          <p className="mt-0.5 text-xs text-emerald-600">
             Saved {formatCurrency(transaction.discount_amount)}
           </p>
-          <p className="text-[10px] text-neutral-600 line-through">
+          <p className="text-[10px] text-slate-400 line-through">
             {formatCurrency(transaction.original_amount)}
           </p>
         </div>

@@ -99,23 +99,23 @@ export function InstallPrompt() {
           className="
             flex items-center gap-3
             rounded-xl
-            border border-[#D4A853]/20
-            bg-[#141416]/95 backdrop-blur-md
+            border border-teal-200
+            bg-white/95 backdrop-blur-md
             px-4 py-3
-            shadow-lg shadow-black/40
+            shadow-lg shadow-slate-200/40
           "
         >
           {/* App icon */}
-          <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-lg bg-[#D4A853]/10 border border-[#D4A853]/20">
-            <span className="text-[#D4A853] font-bold text-sm">MPM</span>
+          <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-lg bg-teal-50 border border-teal-200">
+            <span className="text-teal-600 font-bold text-sm">MPM</span>
           </div>
 
           {/* Text */}
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-white/90 truncate">
+            <p className="text-sm font-medium text-slate-800 truncate">
               Install MPM Discounts
             </p>
-            <p className="text-xs text-white/50">
+            <p className="text-xs text-slate-400">
               Quick access from your home screen
             </p>
           </div>
@@ -127,8 +127,8 @@ export function InstallPrompt() {
               className="
                 px-3 py-1.5
                 text-xs font-medium
-                text-white/50
-                hover:text-white/80
+                text-slate-400
+                hover:text-slate-600
                 transition-colors
                 rounded-md
               "
@@ -141,9 +141,9 @@ export function InstallPrompt() {
               className="
                 px-4 py-1.5
                 text-xs font-semibold
-                text-[#0A0A0B]
-                bg-[#D4A853]
-                hover:bg-[#e0b964]
+                text-white
+                bg-teal-600
+                hover:bg-teal-700
                 rounded-md
                 transition-colors
               "

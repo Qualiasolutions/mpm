@@ -55,7 +55,6 @@ export function EmployeeDashboard({
     setView('dashboard')
   }
 
-  // If there's an active code, pre-populate the generate view
   const handleActiveCodeClick = () => {
     if (activeCode) {
       const discount = discounts.find(
@@ -77,82 +76,49 @@ export function EmployeeDashboard({
       {/* Dashboard View */}
       {view === 'dashboard' && (
         <div className="space-y-6">
-          {/* Spending Summary */}
           <SpendingSummary summary={spending} />
 
           {/* Active Code Banner */}
           {activeCode && activeCode.status === 'active' && (
             <button
               onClick={handleActiveCodeClick}
-              className="w-full rounded-lg border border-[#D4A853]/20 bg-[#D4A853]/[0.05] p-4 text-left transition-all active:scale-[0.98] hover:bg-[#D4A853]/[0.08]"
+              className="w-full rounded-2xl border border-teal-200 bg-teal-50 p-4 text-left transition-all active:scale-[0.98] hover:bg-teal-100/70"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#D4A853]/[0.12]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-[#D4A853]"
-                  >
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <path d="M7 7h.01" />
-                    <path d="M17 7h.01" />
-                    <path d="M7 17h.01" />
-                    <path d="M17 17h.01" />
-                    <rect x="7" y="7" width="3" height="3" />
-                    <rect x="14" y="7" width="3" height="3" />
-                    <rect x="7" y="14" width="3" height="3" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-teal-600">
+                    <rect x="3" y="3" width="18" height="18" rx="2" /><path d="M7 7h.01" /><path d="M17 7h.01" /><path d="M7 17h.01" /><path d="M17 17h.01" /><rect x="7" y="7" width="3" height="3" /><rect x="14" y="7" width="3" height="3" /><rect x="7" y="14" width="3" height="3" />
                   </svg>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-sm font-medium text-[#D4A853]">
+                  <p className="text-sm font-semibold text-teal-700">
                     Active code: {activeCode.manual_code}
                   </p>
-                  <p className="text-xs text-neutral-500">
+                  <p className="text-xs text-teal-600/70">
                     Tap to view QR code and details
                   </p>
                 </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="flex-shrink-0 text-[#D4A853]/50"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 text-teal-400">
                   <polyline points="9 18 15 12 9 6" />
                 </svg>
               </div>
             </button>
           )}
 
-          {/* Discount List */}
           <DiscountList
             discounts={discounts}
             onSelectDiscount={handleSelectDiscount}
             atSpendingLimit={atSpendingLimit}
           />
 
-          {/* Recent Transactions Preview */}
+          {/* Recent Transactions */}
           {recentTransactions.length > 0 && (
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <h3 className="text-sm font-medium text-neutral-400">
-                  Recent Activity
-                </h3>
+                <h3 className="text-sm font-semibold text-slate-800">Recent Activity</h3>
                 <button
                   onClick={() => setView('history')}
-                  className="text-xs text-[#D4A853]/70 transition-colors hover:text-[#D4A853]"
+                  className="text-xs font-medium text-teal-600 transition-colors hover:text-teal-700"
                 >
                   View all
                 </button>
@@ -183,23 +149,13 @@ export function EmployeeDashboard({
           <div className="flex items-center gap-3">
             <button
               onClick={handleBack}
-              className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.02] text-neutral-400 transition-colors active:scale-95 hover:bg-white/[0.05] hover:text-neutral-200"
+              className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 transition-colors active:scale-95 hover:bg-slate-50 hover:text-slate-700"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="15 18 9 12 15 6" />
               </svg>
             </button>
-            <h2 className="text-base font-medium text-neutral-200">
+            <h2 className="text-base font-semibold text-slate-800">
               Transaction History
             </h2>
           </div>
@@ -212,7 +168,7 @@ export function EmployeeDashboard({
       )}
 
       {/* Bottom Tab Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-white/[0.06] bg-[#0A0A0B]/95 backdrop-blur-md">
+      <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200 bg-white/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-lg items-center justify-around">
           <TabButton
             active={view === 'dashboard'}
@@ -222,19 +178,8 @@ export function EmployeeDashboard({
             }}
             label="Home"
             icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                <polyline points="9 22 9 12 15 12 15 22" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" />
               </svg>
             }
           />
@@ -249,21 +194,8 @@ export function EmployeeDashboard({
             }}
             label="Discounts"
             icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="9" cy="9" r="2" />
-                <circle cx="15" cy="15" r="2" />
-                <line x1="7.5" y1="16.5" x2="16.5" y2="7.5" />
-                <rect x="2" y="2" width="20" height="20" rx="2" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="9" cy="9" r="2" /><circle cx="15" cy="15" r="2" /><line x1="7.5" y1="16.5" x2="16.5" y2="7.5" /><rect x="2" y="2" width="20" height="20" rx="2" />
               </svg>
             }
           />
@@ -272,19 +204,8 @@ export function EmployeeDashboard({
             onClick={() => setView('history')}
             label="History"
             icon={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
               </svg>
             }
           />
@@ -310,12 +231,12 @@ function TabButton({
       onClick={onClick}
       className={`flex min-h-[56px] min-w-[64px] flex-col items-center justify-center gap-1 px-4 py-2 transition-colors ${
         active
-          ? 'text-[#D4A853]'
-          : 'text-neutral-600 hover:text-neutral-400'
+          ? 'text-teal-600'
+          : 'text-slate-400 hover:text-slate-600'
       }`}
     >
       {icon}
-      <span className="text-[10px] font-medium tracking-wide">{label}</span>
+      <span className="text-[10px] font-semibold tracking-wide">{label}</span>
     </button>
   )
 }
@@ -325,34 +246,23 @@ function RecentTransactionItem({ transaction }: { transaction: Transaction }) {
   const formattedDate = formatRelativeDate(date)
 
   return (
-    <div className="flex items-center gap-3 rounded-lg border border-white/[0.06] bg-white/[0.02] p-3 transition-colors hover:border-white/[0.08]">
-      <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-green-500/[0.08]">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="text-green-400/70"
-        >
+    <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-3 transition-colors hover:bg-slate-50">
+      <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-50">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-600">
           <polyline points="20 6 9 17 4 12" />
         </svg>
       </div>
       <div className="min-w-0 flex-1">
-        <span className="block truncate text-sm text-neutral-300">
+        <span className="block truncate text-sm font-medium text-slate-700">
           {transaction.division_name || 'Division'}
         </span>
-        <span className="text-xs text-neutral-600">{formattedDate}</span>
+        <span className="text-xs text-slate-400">{formattedDate}</span>
       </div>
       <div className="flex-shrink-0 text-right">
-        <span className="block text-sm text-neutral-200">
+        <span className="block text-sm font-semibold text-slate-800">
           {formatCurrency(transaction.final_amount)}
         </span>
-        <span className="text-[10px] text-green-400/70">
+        <span className="text-[10px] font-medium text-emerald-600">
           -{formatCurrency(transaction.discount_amount)}
         </span>
       </div>

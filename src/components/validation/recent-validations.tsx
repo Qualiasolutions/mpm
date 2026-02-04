@@ -62,22 +62,22 @@ export function RecentValidations({
   }
 
   return (
-    <div className="rounded-xl border border-white/[0.06] bg-white/[0.02]">
+    <div className="rounded-2xl border border-slate-200 bg-white">
       {/* Toggle Header */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-white/[0.02]"
+        className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-slate-50"
       >
         <div className="flex items-center gap-2">
-          <h3 className="text-sm font-medium text-neutral-400">
+          <h3 className="text-sm font-medium text-slate-500">
             Recent Validations
           </h3>
           {isPending && (
-            <span className="h-3 w-3 animate-spin rounded-full border border-neutral-600 border-t-neutral-300" />
+            <span className="h-3 w-3 animate-spin rounded-full border border-slate-300 border-t-slate-700" />
           )}
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-xs tabular-nums text-neutral-600">
+          <span className="text-xs tabular-nums text-slate-400">
             {validations.length}
           </span>
           <svg
@@ -90,7 +90,7 @@ export function RecentValidations({
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className={`text-neutral-600 transition-transform ${
+            className={`text-slate-400 transition-transform ${
               isExpanded ? 'rotate-180' : ''
             }`}
           >
@@ -101,15 +101,15 @@ export function RecentValidations({
 
       {/* Validation List */}
       {isExpanded && (
-        <div className="border-t border-white/[0.06]">
+        <div className="border-t border-slate-200">
           {validations.length === 0 ? (
             <div className="px-4 py-6 text-center">
-              <p className="text-sm text-neutral-500">
+              <p className="text-sm text-slate-400">
                 No recent validations
               </p>
             </div>
           ) : (
-            <div className="max-h-[400px] divide-y divide-white/[0.04] overflow-y-auto">
+            <div className="max-h-[400px] divide-y divide-slate-100 overflow-y-auto">
               {validations.map((v) => (
                 <ValidationItem key={v.id} validation={v} />
               ))}
@@ -126,17 +126,17 @@ function ValidationItem({ validation }: { validation: RecentValidation }) {
   const formattedDate = formatRelativeDate(date)
 
   return (
-    <div className="flex items-center justify-between gap-3 px-4 py-3 transition-colors hover:bg-white/[0.02]">
+    <div className="flex items-center justify-between gap-3 px-4 py-3 transition-colors hover:bg-slate-50">
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2">
-          <span className="truncate text-sm text-neutral-200">
+          <span className="truncate text-sm text-slate-800">
             {validation.employee_name}
           </span>
-          <span className="flex-shrink-0 rounded bg-[#D4A853]/[0.1] px-1.5 py-0.5 text-[10px] font-medium text-[#D4A853]">
+          <span className="flex-shrink-0 rounded bg-teal-50 px-1.5 py-0.5 text-[10px] font-medium text-teal-600">
             -{validation.discount_percentage}%
           </span>
         </div>
-        <div className="mt-0.5 flex items-center gap-2 text-xs text-neutral-600">
+        <div className="mt-0.5 flex items-center gap-2 text-xs text-slate-400">
           <span>{validation.division_name}</span>
           <span>--</span>
           <span>{formattedDate}</span>
@@ -144,10 +144,10 @@ function ValidationItem({ validation }: { validation: RecentValidation }) {
       </div>
 
       <div className="flex-shrink-0 text-right">
-        <p className="text-sm tabular-nums text-neutral-200">
+        <p className="text-sm tabular-nums text-slate-800">
           {formatCurrency(validation.final_amount)}
         </p>
-        <p className="text-[10px] tabular-nums text-green-400/70">
+        <p className="text-[10px] tabular-nums text-emerald-600/70">
           Saved {formatCurrency(validation.discount_amount)}
         </p>
       </div>

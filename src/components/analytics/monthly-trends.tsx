@@ -60,11 +60,11 @@ export function MonthlyTrends({ trends }: MonthlyTrendsProps) {
 
   if (trends.length === 0) {
     return (
-      <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-6">
-        <h3 className="mb-4 text-sm font-medium uppercase tracking-wider text-neutral-500">
+      <div className="rounded-2xl border border-slate-200 bg-white p-6">
+        <h3 className="mb-4 text-sm font-medium uppercase tracking-wider text-slate-400">
           Monthly Trends
         </h3>
-        <div className="flex h-32 items-center justify-center text-sm text-neutral-600">
+        <div className="flex h-32 items-center justify-center text-sm text-slate-400">
           No monthly data available yet.
         </div>
       </div>
@@ -72,8 +72,8 @@ export function MonthlyTrends({ trends }: MonthlyTrendsProps) {
   }
 
   return (
-    <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-6">
-      <h3 className="mb-6 text-sm font-medium uppercase tracking-wider text-neutral-500">
+    <div className="rounded-2xl border border-slate-200 bg-white p-6">
+      <h3 className="mb-6 text-sm font-medium uppercase tracking-wider text-slate-400">
         Monthly Trends
       </h3>
 
@@ -82,7 +82,7 @@ export function MonthlyTrends({ trends }: MonthlyTrendsProps) {
           <div key={t.month} className="space-y-2">
             {/* Month header */}
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-neutral-300">
+              <span className="text-sm font-medium text-slate-700">
                 {formatMonth(t.month)}
               </span>
               <div className="flex items-center gap-4">
@@ -90,7 +90,7 @@ export function MonthlyTrends({ trends }: MonthlyTrendsProps) {
                 {t.txnChange !== null && (
                   <ChangeIndicator value={t.txnChange} label="txns" />
                 )}
-                <span className="text-xs tabular-nums text-neutral-500">
+                <span className="text-xs tabular-nums text-slate-400">
                   {t.unique_employees} employee{t.unique_employees !== 1 ? 's' : ''}
                 </span>
               </div>
@@ -98,12 +98,12 @@ export function MonthlyTrends({ trends }: MonthlyTrendsProps) {
 
             {/* Transaction bar */}
             <div className="flex items-center gap-3">
-              <span className="w-14 text-right text-[11px] tabular-nums text-neutral-500">
+              <span className="w-14 text-right text-[11px] tabular-nums text-slate-400">
                 {t.transactions} txn{t.transactions !== 1 ? 's' : ''}
               </span>
-              <div className="h-2 flex-1 overflow-hidden rounded-full bg-white/[0.04]">
+              <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-100">
                 <div
-                  className="h-full rounded-full bg-[#D4A853]/70 transition-all duration-500"
+                  className="h-full rounded-full bg-[#0d9488]/70 transition-all duration-500"
                   style={{
                     width: `${(t.transactions / maxTransactions) * 100}%`,
                   }}
@@ -113,12 +113,12 @@ export function MonthlyTrends({ trends }: MonthlyTrendsProps) {
 
             {/* Amount bar */}
             <div className="flex items-center gap-3">
-              <span className="w-14 text-right text-[11px] tabular-nums text-neutral-500">
+              <span className="w-14 text-right text-[11px] tabular-nums text-slate-400">
                 {formatCurrency(t.total_original)}
               </span>
-              <div className="h-2 flex-1 overflow-hidden rounded-full bg-white/[0.04]">
+              <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-100">
                 <div
-                  className="h-full rounded-full bg-[#D4A853]/40 transition-all duration-500"
+                  className="h-full rounded-full bg-[#0d9488]/40 transition-all duration-500"
                   style={{
                     width: `${(t.total_original / maxAmount) * 100}%`,
                   }}
@@ -128,10 +128,10 @@ export function MonthlyTrends({ trends }: MonthlyTrendsProps) {
 
             {/* Savings row */}
             <div className="flex items-center gap-3">
-              <span className="w-14 text-right text-[11px] tabular-nums text-emerald-500/70">
+              <span className="w-14 text-right text-[11px] tabular-nums text-emerald-600/70">
                 {formatCurrency(t.total_discount)}
               </span>
-              <span className="text-[10px] text-neutral-600">saved</span>
+              <span className="text-[10px] text-slate-400">saved</span>
               {t.amtChange !== null && (
                 <ChangeIndicator value={t.amtChange} label="vol" />
               )}
@@ -146,7 +146,7 @@ export function MonthlyTrends({ trends }: MonthlyTrendsProps) {
 function ChangeIndicator({ value, label }: { value: number; label: string }) {
   if (Math.abs(value) < 0.1) {
     return (
-      <span className="text-[10px] tabular-nums text-neutral-600">
+      <span className="text-[10px] tabular-nums text-slate-400">
         -- {label}
       </span>
     )
@@ -157,7 +157,7 @@ function ChangeIndicator({ value, label }: { value: number; label: string }) {
   return (
     <span
       className={`inline-flex items-center gap-0.5 text-[10px] tabular-nums ${
-        isPositive ? 'text-emerald-400' : 'text-red-400'
+        isPositive ? 'text-emerald-600' : 'text-red-600'
       }`}
     >
       {/* Arrow */}

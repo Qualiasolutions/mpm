@@ -71,7 +71,7 @@ export function EditEmployeePanel({
     <div className="fixed inset-0 z-50 flex justify-end">
       {/* Backdrop */}
       <div
-        className={`absolute inset-0 bg-black/60 transition-opacity duration-200 ${
+        className={`absolute inset-0 bg-black/30 transition-opacity duration-200 ${
           isVisible ? 'opacity-100' : 'opacity-0'
         }`}
         onClick={handleClose}
@@ -79,20 +79,20 @@ export function EditEmployeePanel({
 
       {/* Panel */}
       <div
-        className={`relative w-full max-w-lg transform border-l border-white/[0.06] bg-[#0E0E10] shadow-2xl transition-transform duration-200 ease-out ${
+        className={`relative w-full max-w-lg transform border-l border-slate-200 bg-white shadow-2xl transition-transform duration-200 ease-out ${
           isVisible ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <div className="flex h-full flex-col overflow-y-auto">
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-white/[0.06] px-6 py-4">
-            <h2 className="text-lg font-light tracking-wide text-neutral-200">
+          <div className="flex items-center justify-between border-b border-slate-200 px-6 py-4">
+            <h2 className="text-lg font-light tracking-wide text-slate-800">
               Edit Employee
             </h2>
             <button
               type="button"
               onClick={handleClose}
-              className="rounded-md p-1.5 text-neutral-500 transition-colors hover:bg-white/5 hover:text-neutral-300"
+              className="rounded-md p-1.5 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -113,13 +113,13 @@ export function EditEmployeePanel({
 
           {/* Messages */}
           {state?.error && (
-            <div className="mx-6 mt-4 rounded-md border border-red-500/20 bg-red-500/5 px-4 py-3 text-sm text-red-400">
+            <div className="mx-6 mt-4 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
               {state.error}
             </div>
           )}
 
           {state?.success && (
-            <div className="mx-6 mt-4 rounded-md border border-emerald-500/20 bg-emerald-500/5 px-4 py-3 text-sm text-emerald-400">
+            <div className="mx-6 mt-4 rounded-md border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-600">
               {state.message || 'Employee updated successfully.'}
             </div>
           )}
@@ -130,10 +130,10 @@ export function EditEmployeePanel({
 
             {/* Email (read-only) */}
             <div>
-              <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-500">
+              <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400">
                 Email
               </label>
-              <p className="rounded-md border border-white/[0.04] bg-white/[0.01] px-3.5 py-2.5 text-sm text-neutral-500">
+              <p className="rounded-md border border-slate-100 bg-slate-50 px-3.5 py-2.5 text-sm text-slate-400">
                 {employee.email}
               </p>
             </div>
@@ -143,7 +143,7 @@ export function EditEmployeePanel({
               <div>
                 <label
                   htmlFor="edit-firstName"
-                  className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-500"
+                  className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400"
                 >
                   First Name
                 </label>
@@ -152,14 +152,14 @@ export function EditEmployeePanel({
                   name="firstName"
                   type="text"
                   defaultValue={employee.first_name ?? ''}
-                  className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5 text-sm text-neutral-200 placeholder-neutral-600 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+                  className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
                   placeholder="First name"
                 />
               </div>
               <div>
                 <label
                   htmlFor="edit-lastName"
-                  className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-500"
+                  className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400"
                 >
                   Last Name
                 </label>
@@ -168,7 +168,7 @@ export function EditEmployeePanel({
                   name="lastName"
                   type="text"
                   defaultValue={employee.last_name ?? ''}
-                  className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5 text-sm text-neutral-200 placeholder-neutral-600 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+                  className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
                   placeholder="Last name"
                 />
               </div>
@@ -178,7 +178,7 @@ export function EditEmployeePanel({
             <div>
               <label
                 htmlFor="edit-role"
-                className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-500"
+                className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400"
               >
                 Role
               </label>
@@ -186,12 +186,12 @@ export function EditEmployeePanel({
                 id="edit-role"
                 name="role"
                 defaultValue={employee.role}
-                className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5 text-sm text-neutral-200 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+                className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
               >
-                <option value="employee" className="bg-[#111113]">
+                <option value="employee" className="bg-white">
                   Employee
                 </option>
-                <option value="admin" className="bg-[#111113]">
+                <option value="admin" className="bg-white">
                   Admin
                 </option>
               </select>
@@ -201,10 +201,10 @@ export function EditEmployeePanel({
             <div>
               <label
                 htmlFor="edit-employeeId"
-                className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-500"
+                className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400"
               >
                 Employee ID
-                <span className="ml-1 normal-case tracking-normal text-neutral-600">
+                <span className="ml-1 normal-case tracking-normal text-slate-400">
                   (optional)
                 </span>
               </label>
@@ -213,7 +213,7 @@ export function EditEmployeePanel({
                 name="employeeIdCode"
                 type="text"
                 defaultValue={employee.employee_id ?? ''}
-                className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5 text-sm text-neutral-200 placeholder-neutral-600 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+                className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
                 placeholder="e.g. EMP-001"
               />
             </div>
@@ -222,10 +222,10 @@ export function EditEmployeePanel({
             <div>
               <label
                 htmlFor="edit-phone"
-                className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-500"
+                className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400"
               >
                 Phone
-                <span className="ml-1 normal-case tracking-normal text-neutral-600">
+                <span className="ml-1 normal-case tracking-normal text-slate-400">
                   (optional)
                 </span>
               </label>
@@ -234,7 +234,7 @@ export function EditEmployeePanel({
                 name="phone"
                 type="tel"
                 defaultValue={employee.phone ?? ''}
-                className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] px-3.5 py-2.5 text-sm text-neutral-200 placeholder-neutral-600 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+                className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
                 placeholder="+30 ..."
               />
             </div>
@@ -243,12 +243,12 @@ export function EditEmployeePanel({
             <div>
               <label
                 htmlFor="edit-spendingLimit"
-                className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-neutral-500"
+                className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400"
               >
                 Monthly Spending Limit (EUR)
               </label>
               <div className="relative">
-                <span className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-sm text-neutral-600">
+                <span className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-sm text-slate-400">
                   EUR
                 </span>
                 <input
@@ -258,7 +258,7 @@ export function EditEmployeePanel({
                   step="0.01"
                   min="0"
                   defaultValue={employee.monthly_spending_limit ?? ''}
-                  className="w-full rounded-md border border-white/[0.08] bg-white/[0.03] py-2.5 pl-14 pr-3.5 text-sm text-neutral-200 placeholder-neutral-600 outline-none transition-colors focus:border-[#D4A853]/40 focus:ring-1 focus:ring-[#D4A853]/20"
+                  className="w-full rounded-md border border-slate-300 bg-white py-2.5 pl-14 pr-3.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
                   placeholder="0.00"
                 />
               </div>
@@ -266,7 +266,7 @@ export function EditEmployeePanel({
 
             {/* Divisions */}
             <div>
-              <label className="mb-2 block text-xs font-medium uppercase tracking-wider text-neutral-500">
+              <label className="mb-2 block text-xs font-medium uppercase tracking-wider text-slate-400">
                 Division Assignments
               </label>
               {/* Hidden input for comma-separated division IDs */}
@@ -275,9 +275,9 @@ export function EditEmployeePanel({
                 name="divisionIds"
                 value={selectedDivisions.join(',')}
               />
-              <div className="space-y-2 rounded-md border border-white/[0.06] bg-white/[0.01] p-3">
+              <div className="space-y-2 rounded-md border border-slate-200 bg-slate-50 p-3">
                 {divisions.length === 0 && (
-                  <p className="text-sm text-neutral-600">
+                  <p className="text-sm text-slate-400">
                     No divisions available.
                   </p>
                 )}
@@ -286,18 +286,18 @@ export function EditEmployeePanel({
                   return (
                     <label
                       key={div.id}
-                      className="flex cursor-pointer items-center gap-3 rounded-md px-2 py-1.5 transition-colors hover:bg-white/[0.03]"
+                      className="flex cursor-pointer items-center gap-3 rounded-md px-2 py-1.5 transition-colors hover:bg-slate-100"
                     >
                       <input
                         type="checkbox"
                         checked={isChecked}
                         onChange={() => toggleDivision(div.id)}
-                        className="h-4 w-4 rounded border-white/20 bg-white/5 text-[#D4A853] accent-[#D4A853]"
+                        className="h-4 w-4 rounded border-slate-300 bg-white text-teal-600 accent-teal-600"
                       />
-                      <span className="text-sm text-neutral-300">
+                      <span className="text-sm text-slate-700">
                         {div.name}
                       </span>
-                      <span className="text-xs text-neutral-600">
+                      <span className="text-xs text-slate-400">
                         {div.code}
                       </span>
                     </label>
@@ -307,11 +307,11 @@ export function EditEmployeePanel({
             </div>
 
             {/* Actions */}
-            <div className="flex items-center gap-3 border-t border-white/[0.06] pt-5">
+            <div className="flex items-center gap-3 border-t border-slate-200 pt-5">
               <button
                 type="submit"
                 disabled={isPending}
-                className="flex items-center gap-2 rounded-md bg-[#D4A853] px-5 py-2.5 text-sm font-medium text-[#0A0A0B] transition-all hover:bg-[#D4A853]/90 disabled:cursor-not-allowed disabled:opacity-50"
+                className="flex items-center gap-2 rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isPending ? (
                   <>
@@ -344,7 +344,7 @@ export function EditEmployeePanel({
               <button
                 type="button"
                 onClick={handleClose}
-                className="rounded-md px-4 py-2.5 text-sm text-neutral-400 transition-colors hover:bg-white/5 hover:text-neutral-200"
+                className="rounded-md px-4 py-2.5 text-sm text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700"
               >
                 Cancel
               </button>

@@ -13,7 +13,7 @@ export function LoginForm() {
   return (
     <form action={formAction} className="space-y-5">
       {state?.error && (
-        <div className="rounded-md border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+        <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
           {state.error}
         </div>
       )}
@@ -21,7 +21,7 @@ export function LoginForm() {
       <div>
         <label
           htmlFor="email"
-          className="mb-1.5 block text-xs font-medium tracking-wide text-neutral-400"
+          className="mb-1.5 block text-sm font-medium text-slate-700"
         >
           Email
         </label>
@@ -32,14 +32,14 @@ export function LoginForm() {
           autoComplete="email"
           required
           placeholder="name@mpmimports.com.cy"
-          className="w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3.5 py-2.5 text-sm text-neutral-100 placeholder-neutral-600 outline-none transition-colors duration-200 focus:border-[#D4A853]/50 focus:ring-1 focus:ring-[#D4A853]/25"
+          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none transition-all duration-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
         />
       </div>
 
       <div>
         <label
           htmlFor="password"
-          className="mb-1.5 block text-xs font-medium tracking-wide text-neutral-400"
+          className="mb-1.5 block text-sm font-medium text-slate-700"
         >
           Password
         </label>
@@ -51,14 +51,14 @@ export function LoginForm() {
           required
           minLength={6}
           placeholder="Enter your password"
-          className="w-full rounded-md border border-neutral-800 bg-neutral-900/50 px-3.5 py-2.5 text-sm text-neutral-100 placeholder-neutral-600 outline-none transition-colors duration-200 focus:border-[#D4A853]/50 focus:ring-1 focus:ring-[#D4A853]/25"
+          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none transition-all duration-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
         />
       </div>
 
       <button
         type="submit"
         disabled={isPending}
-        className="flex w-full items-center justify-center rounded-md bg-[#D4A853] px-4 py-2.5 text-sm font-medium tracking-wide text-[#0A0A0B] transition-all duration-200 hover:bg-[#E0B96A] disabled:cursor-not-allowed disabled:opacity-50"
+        className="flex w-full items-center justify-center rounded-xl bg-teal-600 px-4 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-teal-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 shadow-lg shadow-teal-600/25"
       >
         {isPending ? (
           <span className="flex items-center gap-2">
@@ -91,7 +91,7 @@ export function LoginForm() {
       <div className="text-center">
         <Link
           href="/reset-password"
-          className="text-xs text-neutral-500 transition-colors duration-200 hover:text-[#D4A853]"
+          className="text-sm text-slate-500 transition-colors duration-200 hover:text-teal-600"
         >
           Forgot password?
         </Link>

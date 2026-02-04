@@ -27,17 +27,10 @@ export function SpendingSummary({ summary }: SpendingSummaryProps) {
       ? '#ef4444'
       : summary.percentage >= 70
         ? '#eab308'
-        : '#22c55e'
-
-  const ringGlow =
-    summary.percentage >= 90
-      ? 'drop-shadow(0 0 6px rgba(239,68,68,0.4))'
-      : summary.percentage >= 70
-        ? 'drop-shadow(0 0 6px rgba(234,179,8,0.3))'
-        : 'drop-shadow(0 0 6px rgba(34,197,94,0.3))'
+        : '#0d9488'
 
   return (
-    <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-5">
+    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
       <div className="flex items-center gap-5">
         {/* Progress Ring */}
         <div className="relative flex-shrink-0">
@@ -46,18 +39,15 @@ export function SpendingSummary({ summary }: SpendingSummaryProps) {
             height="140"
             viewBox="0 0 140 140"
             className="rotate-[-90deg]"
-            style={{ filter: ringGlow }}
           >
-            {/* Background track */}
             <circle
               cx="70"
               cy="70"
               r={radius}
               fill="none"
-              stroke="rgba(255,255,255,0.04)"
+              stroke="#f1f5f9"
               strokeWidth={strokeWidth}
             />
-            {/* Progress arc */}
             <circle
               cx="70"
               cy="70"
@@ -74,12 +64,11 @@ export function SpendingSummary({ summary }: SpendingSummaryProps) {
             />
           </svg>
 
-          {/* Center text */}
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="text-2xl font-light tracking-tight text-neutral-100">
+            <span className="text-2xl font-bold tracking-tight text-slate-900">
               {formatCurrency(summary.remaining)}
             </span>
-            <span className="mt-0.5 text-[10px] uppercase tracking-wider text-neutral-500">
+            <span className="mt-0.5 text-[10px] uppercase tracking-wider text-slate-400 font-semibold">
               remaining
             </span>
           </div>
@@ -87,13 +76,12 @@ export function SpendingSummary({ summary }: SpendingSummaryProps) {
 
         {/* Details */}
         <div className="min-w-0 flex-1">
-          <h3 className="text-sm font-medium text-neutral-300">Monthly Spending</h3>
-          <p className="mt-1 text-xs text-neutral-500">
+          <h3 className="text-sm font-semibold text-slate-800">Monthly Spending</h3>
+          <p className="mt-1 text-xs text-slate-500">
             {formatCurrency(summary.spent)} of {formatCurrency(summary.limit)} used
           </p>
 
-          {/* Linear bar (supplementary) */}
-          <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/[0.04]">
+          <div className="mt-3 h-2 overflow-hidden rounded-full bg-slate-100">
             <div
               className="h-full rounded-full transition-all duration-1000 ease-out"
               style={{
@@ -103,7 +91,7 @@ export function SpendingSummary({ summary }: SpendingSummaryProps) {
             />
           </div>
 
-          <div className="mt-2 flex items-center justify-between text-[10px] text-neutral-600">
+          <div className="mt-2 flex items-center justify-between text-[10px] text-slate-400 font-medium">
             <span>{summary.percentage.toFixed(0)}% used</span>
             <span>Resets monthly</span>
           </div>

@@ -186,10 +186,10 @@ export function CsvImport() {
           onDragLeave={() => setDragOver(false)}
           onDrop={handleDrop}
           onClick={() => fileInputRef.current?.click()}
-          className={`flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed px-6 py-12 transition-colors ${
+          className={`flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed px-6 py-12 transition-colors ${
             dragOver
-              ? 'border-[#D4A853]/40 bg-[#D4A853]/[0.04]'
-              : 'border-white/[0.08] bg-white/[0.01] hover:border-white/[0.15] hover:bg-white/[0.02]'
+              ? 'border-teal-400 bg-teal-50'
+              : 'border-slate-300 bg-slate-50 hover:border-slate-400 hover:bg-white'
           }`}
         >
           <svg
@@ -202,23 +202,23 @@ export function CsvImport() {
             strokeWidth="1"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="mb-3 text-neutral-600"
+            className="mb-3 text-slate-400"
           >
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
             <polyline points="17 8 12 3 7 8" />
             <line x1="12" y1="3" x2="12" y2="15" />
           </svg>
-          <p className="text-sm text-neutral-400">
+          <p className="text-sm text-slate-500">
             {fileName ? (
-              <span className="text-[#D4A853]">{fileName}</span>
+              <span className="text-teal-600">{fileName}</span>
             ) : (
               <>
                 Drag and drop a CSV file, or{' '}
-                <span className="text-[#D4A853]">click to browse</span>
+                <span className="text-teal-600">click to browse</span>
               </>
             )}
           </p>
-          <p className="mt-1 text-xs text-neutral-600">
+          <p className="mt-1 text-xs text-slate-400">
             Required columns: email. Optional: first_name, last_name, role,
             divisions
           </p>
@@ -234,7 +234,7 @@ export function CsvImport() {
 
         {/* Parse Error */}
         {parseError && (
-          <div className="mt-4 rounded-md border border-red-500/20 bg-red-500/5 px-4 py-3 text-sm text-red-400">
+          <div className="mt-4 rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
             {parseError}
           </div>
         )}
@@ -243,94 +243,94 @@ export function CsvImport() {
         {parsedRows.length > 0 && (
           <div className="mt-6 space-y-4">
             <div className="flex items-center justify-between">
-              <h3 className="text-sm font-medium text-neutral-300">
+              <h3 className="text-sm font-medium text-slate-700">
                 Preview
-                <span className="ml-2 text-neutral-600">
+                <span className="ml-2 text-slate-400">
                   ({parsedRows.length} rows)
                 </span>
               </h3>
               <div className="flex items-center gap-3 text-xs">
-                <span className="text-emerald-400">
+                <span className="text-emerald-600">
                   {validCount} valid
                 </span>
                 {invalidCount > 0 && (
-                  <span className="text-red-400">
+                  <span className="text-red-600">
                     {invalidCount} invalid
                   </span>
                 )}
               </div>
             </div>
 
-            <div className="overflow-x-auto rounded-lg border border-white/[0.06]">
+            <div className="overflow-x-auto rounded-2xl border border-slate-200">
               <table className="w-full text-left text-sm">
                 <thead>
-                  <tr className="border-b border-white/[0.06] bg-white/[0.02]">
-                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-neutral-500">
+                  <tr className="border-b border-slate-200 bg-white">
+                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400">
                       Row
                     </th>
-                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-neutral-500">
+                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400">
                       First Name
                     </th>
-                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-neutral-500">
+                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400">
                       Last Name
                     </th>
-                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-neutral-500">
+                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400">
                       Email
                     </th>
-                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-neutral-500">
+                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400">
                       Role
                     </th>
-                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-neutral-500">
+                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400">
                       Divisions
                     </th>
-                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-neutral-500">
+                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400">
                       Status
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/[0.04]">
+                <tbody className="divide-y divide-slate-100">
                   {parsedRows.map((row) => (
                     <tr
                       key={row.rowIndex}
                       className={
                         row.valid
-                          ? 'bg-emerald-500/[0.02]'
-                          : 'bg-red-500/[0.03]'
+                          ? 'bg-emerald-50/50'
+                          : 'bg-red-50/50'
                       }
                     >
-                      <td className="px-4 py-2.5 tabular-nums text-neutral-600">
+                      <td className="px-4 py-2.5 tabular-nums text-slate-400">
                         {row.rowIndex}
                       </td>
-                      <td className="px-4 py-2.5 text-neutral-300">
+                      <td className="px-4 py-2.5 text-slate-700">
                         {row.first_name || (
-                          <span className="text-neutral-600">--</span>
+                          <span className="text-slate-400">--</span>
                         )}
                       </td>
-                      <td className="px-4 py-2.5 text-neutral-300">
+                      <td className="px-4 py-2.5 text-slate-700">
                         {row.last_name || (
-                          <span className="text-neutral-600">--</span>
+                          <span className="text-slate-400">--</span>
                         )}
                       </td>
-                      <td className="px-4 py-2.5 text-neutral-300">
+                      <td className="px-4 py-2.5 text-slate-700">
                         {row.email || (
-                          <span className="text-neutral-600">--</span>
+                          <span className="text-slate-400">--</span>
                         )}
                       </td>
-                      <td className="px-4 py-2.5 text-neutral-400">
+                      <td className="px-4 py-2.5 text-slate-500">
                         {row.role}
                       </td>
-                      <td className="px-4 py-2.5 text-neutral-400">
+                      <td className="px-4 py-2.5 text-slate-500">
                         {row.divisions || (
-                          <span className="text-neutral-600">--</span>
+                          <span className="text-slate-400">--</span>
                         )}
                       </td>
                       <td className="px-4 py-2.5">
                         {row.valid ? (
-                          <span className="text-xs text-emerald-400">
+                          <span className="text-xs text-emerald-600">
                             Valid
                           </span>
                         ) : (
-                          <span className="text-xs text-red-400">
+                          <span className="text-xs text-red-600">
                             {row.error}
                           </span>
                         )}
@@ -346,7 +346,7 @@ export function CsvImport() {
               <button
                 type="submit"
                 disabled={isPending || validCount === 0}
-                className="flex items-center gap-2 rounded-md bg-[#D4A853] px-5 py-2.5 text-sm font-medium text-[#0A0A0B] transition-all hover:bg-[#D4A853]/90 disabled:cursor-not-allowed disabled:opacity-50"
+                className="flex items-center gap-2 rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isPending ? (
                   <>
@@ -379,7 +379,7 @@ export function CsvImport() {
               <button
                 type="button"
                 onClick={resetState}
-                className="rounded-md px-4 py-2.5 text-sm text-neutral-400 transition-colors hover:bg-white/5 hover:text-neutral-200"
+                className="rounded-md px-4 py-2.5 text-sm text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700"
               >
                 Clear
               </button>
@@ -390,34 +390,34 @@ export function CsvImport() {
 
       {/* Import Results */}
       {state?.error && (
-        <div className="rounded-md border border-red-500/20 bg-red-500/5 px-4 py-3 text-sm text-red-400">
+        <div className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
           {state.error}
         </div>
       )}
 
       {state?.success && state.result && (
-        <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-5">
-          <h3 className="text-sm font-medium text-neutral-200">
+        <div className="rounded-2xl border border-slate-200 bg-white p-5">
+          <h3 className="text-sm font-medium text-slate-800">
             Import Complete
           </h3>
           <div className="mt-3 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-md border border-emerald-500/15 bg-emerald-500/[0.04] p-3 text-center">
-              <p className="text-2xl font-light tabular-nums text-emerald-400">
+            <div className="rounded-md border border-emerald-200 bg-emerald-50 p-3 text-center">
+              <p className="text-2xl font-light tabular-nums text-emerald-600">
                 {state.result.imported}
               </p>
-              <p className="text-xs text-neutral-500">Imported</p>
+              <p className="text-xs text-slate-400">Imported</p>
             </div>
-            <div className="rounded-md border border-red-500/15 bg-red-500/[0.04] p-3 text-center">
-              <p className="text-2xl font-light tabular-nums text-red-400">
+            <div className="rounded-md border border-red-200 bg-red-50 p-3 text-center">
+              <p className="text-2xl font-light tabular-nums text-red-600">
                 {state.result.skipped.length}
               </p>
-              <p className="text-xs text-neutral-500">Skipped</p>
+              <p className="text-xs text-slate-400">Skipped</p>
             </div>
-            <div className="rounded-md border border-white/[0.06] bg-white/[0.02] p-3 text-center">
-              <p className="text-2xl font-light tabular-nums text-neutral-300">
+            <div className="rounded-md border border-slate-200 bg-white p-3 text-center">
+              <p className="text-2xl font-light tabular-nums text-slate-700">
                 {state.result.total}
               </p>
-              <p className="text-xs text-neutral-500">Total</p>
+              <p className="text-xs text-slate-400">Total</p>
             </div>
           </div>
 
@@ -427,7 +427,7 @@ export function CsvImport() {
               <button
                 type="button"
                 onClick={() => setShowSkipped(!showSkipped)}
-                className="flex items-center gap-2 text-xs text-neutral-400 transition-colors hover:text-neutral-200"
+                className="flex items-center gap-2 text-xs text-slate-500 transition-colors hover:text-slate-700"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -452,12 +452,12 @@ export function CsvImport() {
                   {state.result.skipped.map((skip, i) => (
                     <div
                       key={i}
-                      className="flex items-center gap-3 rounded-md bg-white/[0.02] px-3 py-2 text-xs"
+                      className="flex items-center gap-3 rounded-md bg-slate-50 px-3 py-2 text-xs"
                     >
-                      <span className="tabular-nums text-neutral-600">
+                      <span className="tabular-nums text-slate-400">
                         Row {skip.row}
                       </span>
-                      <span className="text-red-400/80">{skip.reason}</span>
+                      <span className="text-red-500">{skip.reason}</span>
                     </div>
                   ))}
                 </div>

@@ -65,13 +65,13 @@ export function ActivityChart({ data }: ActivityChartProps) {
 
   if (data.length === 0) {
     return (
-      <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-6">
+      <div className="rounded-2xl border border-slate-200 bg-white p-6">
         <div className="mb-4 flex items-center justify-between">
-          <h3 className="text-sm font-medium uppercase tracking-wider text-neutral-500">
+          <h3 className="text-sm font-medium uppercase tracking-wider text-slate-400">
             Daily Activity
           </h3>
         </div>
-        <div className="flex h-48 items-center justify-center text-sm text-neutral-600">
+        <div className="flex h-48 items-center justify-center text-sm text-slate-400">
           No transaction data available for the selected period.
         </div>
       </div>
@@ -79,20 +79,20 @@ export function ActivityChart({ data }: ActivityChartProps) {
   }
 
   return (
-    <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-6">
+    <div className="rounded-2xl border border-slate-200 bg-white p-6">
       {/* Header */}
       <div className="mb-6 flex items-center justify-between">
-        <h3 className="text-sm font-medium uppercase tracking-wider text-neutral-500">
+        <h3 className="text-sm font-medium uppercase tracking-wider text-slate-400">
           Daily Activity
         </h3>
-        <div className="flex rounded-md border border-white/[0.06] bg-white/[0.02]">
+        <div className="flex rounded-md border border-slate-200 bg-white">
           <button
             type="button"
             onClick={() => setViewMode('count')}
             className={`px-3 py-1 text-[11px] font-medium transition-colors ${
               viewMode === 'count'
-                ? 'bg-[#D4A853]/10 text-[#D4A853]'
-                : 'text-neutral-500 hover:text-neutral-300'
+                ? 'bg-teal-50 text-teal-600'
+                : 'text-slate-400 hover:text-slate-700'
             }`}
           >
             Count
@@ -102,8 +102,8 @@ export function ActivityChart({ data }: ActivityChartProps) {
             onClick={() => setViewMode('amount')}
             className={`px-3 py-1 text-[11px] font-medium transition-colors ${
               viewMode === 'amount'
-                ? 'bg-[#D4A853]/10 text-[#D4A853]'
-                : 'text-neutral-500 hover:text-neutral-300'
+                ? 'bg-teal-50 text-teal-600'
+                : 'text-slate-400 hover:text-slate-700'
             }`}
           >
             Amount
@@ -118,7 +118,7 @@ export function ActivityChart({ data }: ActivityChartProps) {
           {yLabels.map((label, i) => (
             <span
               key={i}
-              className="text-[10px] tabular-nums text-neutral-600"
+              className="text-[10px] tabular-nums text-slate-400"
             >
               {label}
             </span>
@@ -137,7 +137,7 @@ export function ActivityChart({ data }: ActivityChartProps) {
             {[0, 1, 2, 3, 4].map((i) => (
               <div
                 key={`grid-${i}`}
-                className="absolute left-0 right-0 border-t border-white/[0.04]"
+                className="absolute left-0 right-0 border-t border-slate-100"
                 style={{ top: `${(i / 4) * 100}%` }}
               />
             ))}
@@ -158,14 +158,14 @@ export function ActivityChart({ data }: ActivityChartProps) {
                 >
                   {/* Tooltip */}
                   {isHovered && (
-                    <div className="pointer-events-none absolute bottom-full z-10 mb-2 whitespace-nowrap rounded-md border border-white/[0.1] bg-[#111113] px-3 py-2 text-xs shadow-xl">
-                      <p className="font-medium text-neutral-200">
+                    <div className="pointer-events-none absolute bottom-full z-10 mb-2 whitespace-nowrap rounded-md border border-slate-200 bg-white px-3 py-2 text-xs shadow-xl">
+                      <p className="font-medium text-slate-800">
                         {formatDateFull(d.date)}
                       </p>
-                      <p className="mt-1 text-neutral-400">
+                      <p className="mt-1 text-slate-500">
                         {d.count} transaction{d.count !== 1 ? 's' : ''}
                       </p>
-                      <p className="text-neutral-400">
+                      <p className="text-slate-500">
                         {formatCurrency(d.amount)}
                       </p>
                     </div>
@@ -175,8 +175,8 @@ export function ActivityChart({ data }: ActivityChartProps) {
                   <div
                     className={`w-full min-w-[6px] max-w-[32px] rounded-t transition-all duration-150 ${
                       isHovered
-                        ? 'bg-[#D4A853]'
-                        : 'bg-[#D4A853]/60 hover:bg-[#D4A853]/80'
+                        ? 'bg-[#0d9488]'
+                        : 'bg-[#0d9488]/60 hover:bg-[#0d9488]/80'
                     }`}
                     style={{
                       height: `${Math.max(heightPct, value > 0 ? 2 : 0)}%`,
@@ -203,7 +203,7 @@ export function ActivityChart({ data }: ActivityChartProps) {
               return (
                 <div key={d.date} className="flex-1 text-center">
                   {showLabel && (
-                    <span className="text-[9px] tabular-nums text-neutral-600">
+                    <span className="text-[9px] tabular-nums text-slate-400">
                       {formatDate(d.date)}
                     </span>
                   )}

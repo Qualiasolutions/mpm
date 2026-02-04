@@ -82,8 +82,8 @@ export function CodeGenerator({
         width: 256,
         margin: 2,
         color: {
-          dark: '#D4A853',
-          light: '#0A0A0B',
+          dark: '#0d9488',
+          light: '#ffffff',
         },
       })
 
@@ -116,10 +116,10 @@ export function CodeGenerator({
 
   const timerColor =
     secondsRemaining <= 30
-      ? 'text-red-400'
+      ? 'text-red-600'
       : secondsRemaining <= 60
-        ? 'text-yellow-400'
-        : 'text-neutral-200'
+        ? 'text-amber-600'
+        : 'text-slate-800'
 
   return (
     <div className="space-y-4">
@@ -127,7 +127,7 @@ export function CodeGenerator({
       <div className="flex items-center gap-3">
         <button
           onClick={onBack}
-          className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.02] text-neutral-400 transition-colors active:scale-95 hover:bg-white/[0.05] hover:text-neutral-200"
+          className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-500 transition-colors active:scale-95 hover:bg-slate-50 hover:text-slate-700"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -144,15 +144,15 @@ export function CodeGenerator({
           </svg>
         </button>
         <div>
-          <h2 className="text-base font-medium text-neutral-200">{divisionName}</h2>
-          <p className="text-xs text-[#D4A853]">{discountPercentage}% discount</p>
+          <h2 className="text-base font-medium text-slate-800">{divisionName}</h2>
+          <p className="text-xs text-teal-600">{discountPercentage}% discount</p>
         </div>
       </div>
 
       {/* Idle State */}
       {state === 'idle' && (
-        <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-6 text-center">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#D4A853]/[0.08]">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 text-center">
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-teal-50">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="28"
@@ -163,7 +163,7 @@ export function CodeGenerator({
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="text-[#D4A853]"
+              className="text-teal-600"
             >
               <rect x="3" y="3" width="18" height="18" rx="2" />
               <path d="M7 7h.01" />
@@ -175,15 +175,15 @@ export function CodeGenerator({
               <rect x="7" y="14" width="3" height="3" />
             </svg>
           </div>
-          <p className="mb-1 text-sm text-neutral-300">
+          <p className="mb-1 text-sm text-slate-700">
             Generate a one-time discount code
           </p>
-          <p className="mb-5 text-xs text-neutral-500">
+          <p className="mb-5 text-xs text-slate-400">
             The code will expire after a set time
           </p>
           <button
             onClick={handleGenerate}
-            className="w-full rounded-lg bg-[#D4A853] px-5 py-3 text-sm font-medium text-[#0A0A0B] transition-all active:scale-[0.98] hover:bg-[#D4A853]/90"
+            className="w-full rounded-lg bg-teal-600 px-5 py-3 text-sm font-medium text-white transition-all active:scale-[0.98] hover:bg-teal-700"
           >
             Generate Code
           </button>
@@ -192,9 +192,9 @@ export function CodeGenerator({
 
       {/* Loading State */}
       {state === 'loading' && (
-        <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-10 text-center">
-          <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-[#D4A853]/20 border-t-[#D4A853]" />
-          <p className="text-sm text-neutral-400">Generating your code...</p>
+        <div className="rounded-2xl border border-slate-200 bg-white p-10 text-center">
+          <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-teal-200 border-t-teal-600" />
+          <p className="text-sm text-slate-500">Generating your code...</p>
         </div>
       )}
 
@@ -202,8 +202,8 @@ export function CodeGenerator({
       {state === 'active' && code && qrDataUrl && (
         <div className="space-y-4">
           {/* Timer */}
-          <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-4 text-center">
-            <p className="mb-1 text-[10px] uppercase tracking-wider text-neutral-500">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 text-center">
+            <p className="mb-1 text-[10px] uppercase tracking-wider text-slate-400">
               Expires in
             </p>
             <p
@@ -212,12 +212,12 @@ export function CodeGenerator({
               {formatTime(secondsRemaining)}
             </p>
             {secondsRemaining <= 30 && (
-              <p className="mt-1 text-[10px] text-red-400/70">Code expiring soon</p>
+              <p className="mt-1 text-[10px] text-red-500">Code expiring soon</p>
             )}
           </div>
 
           {/* QR Code */}
-          <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-5 text-center">
+          <div className="rounded-2xl border border-slate-200 bg-white p-5 text-center">
             <div className="mx-auto mb-3 inline-block overflow-hidden rounded-lg">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -228,23 +228,23 @@ export function CodeGenerator({
                 className="block"
               />
             </div>
-            <p className="text-[10px] text-neutral-600">
+            <p className="text-[10px] text-slate-400">
               Show this QR code at checkout
             </p>
           </div>
 
           {/* Manual Code */}
-          <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-4">
-            <p className="mb-2 text-center text-[10px] uppercase tracking-wider text-neutral-500">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4">
+            <p className="mb-2 text-center text-[10px] uppercase tracking-wider text-slate-400">
               Or use this code
             </p>
             <div className="flex items-center gap-2">
-              <div className="flex-1 rounded-lg bg-white/[0.03] px-4 py-3 text-center font-mono text-xl tracking-[0.15em] text-[#D4A853]">
+              <div className="flex-1 rounded-lg bg-slate-50 px-4 py-3 text-center font-mono text-xl tracking-[0.15em] text-teal-600">
                 {code.manual_code}
               </div>
               <button
                 onClick={handleCopy}
-                className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.02] text-neutral-400 transition-all active:scale-95 hover:bg-white/[0.05] hover:text-neutral-200"
+                className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-500 transition-all active:scale-95 hover:bg-slate-50 hover:text-slate-700"
               >
                 {copied ? (
                   <svg
@@ -257,7 +257,7 @@ export function CodeGenerator({
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="text-green-400"
+                    className="text-emerald-600"
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
@@ -280,7 +280,7 @@ export function CodeGenerator({
               </button>
             </div>
             {copied && (
-              <p className="mt-2 text-center text-xs text-green-400">
+              <p className="mt-2 text-center text-xs text-emerald-600">
                 Copied to clipboard
               </p>
             )}
@@ -290,8 +290,8 @@ export function CodeGenerator({
 
       {/* Expired State */}
       {state === 'expired' && (
-        <div className="rounded-lg border border-red-500/10 bg-red-500/[0.03] p-6 text-center">
-          <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-red-500/[0.1]">
+        <div className="rounded-2xl border border-red-200 bg-red-50 p-6 text-center">
+          <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-red-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="22"
@@ -302,19 +302,19 @@ export function CodeGenerator({
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="text-red-400"
+              className="text-red-500"
             >
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
           </div>
-          <p className="mb-1 text-sm font-medium text-red-400">Code Expired</p>
-          <p className="mb-4 text-xs text-neutral-500">
+          <p className="mb-1 text-sm font-medium text-red-600">Code Expired</p>
+          <p className="mb-4 text-xs text-slate-400">
             Generate a new code when you&apos;re ready
           </p>
           <button
             onClick={handleGenerate}
-            className="w-full rounded-lg bg-[#D4A853] px-5 py-3 text-sm font-medium text-[#0A0A0B] transition-all active:scale-[0.98] hover:bg-[#D4A853]/90"
+            className="w-full rounded-lg bg-teal-600 px-5 py-3 text-sm font-medium text-white transition-all active:scale-[0.98] hover:bg-teal-700"
           >
             Generate New Code
           </button>
@@ -323,8 +323,8 @@ export function CodeGenerator({
 
       {/* Error State */}
       {state === 'error' && (
-        <div className="rounded-lg border border-red-500/10 bg-red-500/[0.03] p-6 text-center">
-          <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-red-500/[0.1]">
+        <div className="rounded-2xl border border-red-200 bg-red-50 p-6 text-center">
+          <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-red-100">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="22"
@@ -335,27 +335,27 @@ export function CodeGenerator({
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="text-red-400"
+              className="text-red-500"
             >
               <circle cx="12" cy="12" r="10" />
               <line x1="15" y1="9" x2="9" y2="15" />
               <line x1="9" y1="9" x2="15" y2="15" />
             </svg>
           </div>
-          <p className="mb-1 text-sm font-medium text-red-400">
+          <p className="mb-1 text-sm font-medium text-red-600">
             Unable to generate code
           </p>
-          <p className="mb-4 text-xs text-neutral-500">{errorMessage}</p>
+          <p className="mb-4 text-xs text-slate-400">{errorMessage}</p>
           <div className="flex gap-3">
             <button
               onClick={onBack}
-              className="flex-1 rounded-lg border border-white/[0.06] bg-white/[0.02] px-4 py-3 text-sm text-neutral-400 transition-colors active:scale-[0.98] hover:bg-white/[0.05]"
+              className="flex-1 rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-500 transition-colors active:scale-[0.98] hover:bg-slate-50"
             >
               Go Back
             </button>
             <button
               onClick={handleGenerate}
-              className="flex-1 rounded-lg bg-[#D4A853] px-4 py-3 text-sm font-medium text-[#0A0A0B] transition-all active:scale-[0.98] hover:bg-[#D4A853]/90"
+              className="flex-1 rounded-lg bg-teal-600 px-4 py-3 text-sm font-medium text-white transition-all active:scale-[0.98] hover:bg-teal-700"
             >
               Try Again
             </button>
