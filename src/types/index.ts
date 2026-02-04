@@ -64,3 +64,44 @@ export type ImportActionState = {
   message?: string
   result?: ImportResult
 } | null
+
+export type DiscountCode = {
+  id: string
+  employee_id: string
+  division_id: string
+  discount_percentage: number
+  manual_code: string
+  qr_payload: string
+  status: 'active' | 'used' | 'expired'
+  expires_at: string
+  created_at: string
+  division_name?: string
+}
+
+export type Transaction = {
+  id: string
+  discount_code_id: string
+  employee_id: string
+  division_id: string
+  original_amount: number
+  discount_percentage: number
+  discount_amount: number
+  final_amount: number
+  location: string | null
+  validated_by: string | null
+  created_at: string
+  division_name?: string
+}
+
+export type SpendingSummary = {
+  limit: number
+  spent: number
+  remaining: number
+  percentage: number
+}
+
+export type EmployeeDiscount = {
+  division: { id: string; name: string; code: string }
+  discount_percentage: number
+  brand_count: number
+}

@@ -1,6 +1,13 @@
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
+import {
+  getMyDiscounts,
+  getMySpendingSummary,
+  getActiveCode,
+  getMyTransactions,
+} from '@/actions/employee'
+import { EmployeeDashboard } from '@/components/employee/employee-dashboard'
 
 export default async function DashboardPage() {
   const supabase = await createClient()
@@ -23,8 +30,30 @@ export default async function DashboardPage() {
   const role = profile?.role ?? 'employee'
   const isAdmin = role === 'admin'
 
+  // Fetch employee data in parallel
+  const [discountsResult, spendingResult, activeCodeResult, transactionsResult] =
+    await Promise.all([
+      getMyDiscounts(),
+      getMySpendingSummary(),
+      getActiveCode(),
+      getMyTransactions(1, 5),
+    ])
+
+  const discounts =
+    'error' in discountsResult ? [] : discountsResult.discounts
+  const spending =
+    'error' in spendingResult
+      ? { limit: 5000, spent: 0, remaining: 5000, percentage: 0 }
+      : spendingResult.summary
+  const activeCode =
+    'error' in activeCodeResult ? null : activeCodeResult.code
+  const transactions =
+    'error' in transactionsResult
+      ? { transactions: [], total: 0, page: 1, pages: 0 }
+      : transactionsResult
+
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       {/* Welcome Header */}
       <div className="flex items-center gap-4">
         <h1 className="text-2xl font-light tracking-wide text-neutral-200">
@@ -86,89 +115,14 @@ export default async function DashboardPage() {
         </Link>
       )}
 
-      {/* Placeholder Cards */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <DashboardCard
-          title="Your Discounts"
-          description="Your available discounts will appear here"
-          icon={
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="9" cy="9" r="2" />
-              <circle cx="15" cy="15" r="2" />
-              <line x1="7.5" y1="16.5" x2="16.5" y2="7.5" />
-              <rect x="2" y="2" width="20" height="20" rx="2" />
-            </svg>
-          }
-        />
-        <DashboardCard
-          title="Recent Activity"
-          description="Your discount usage history will appear here"
-          icon={
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
-          }
-        />
-        <DashboardCard
-          title="Your Profile"
-          description="Profile management coming soon"
-          icon={
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-              <circle cx="12" cy="7" r="4" />
-            </svg>
-          }
-        />
-      </div>
-    </div>
-  )
-}
-
-function DashboardCard({
-  title,
-  description,
-  icon,
-}: {
-  title: string
-  description: string
-  icon: React.ReactNode
-}) {
-  return (
-    <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-5 transition-colors hover:border-white/[0.1] hover:bg-white/[0.03]">
-      <div className="mb-3 text-neutral-600">{icon}</div>
-      <h3 className="text-sm font-medium text-neutral-300">{title}</h3>
-      <p className="mt-1 text-xs text-neutral-600">{description}</p>
+      {/* Employee Dashboard */}
+      <EmployeeDashboard
+        discounts={discounts}
+        spending={spending}
+        activeCode={activeCode}
+        recentTransactions={transactions.transactions}
+        totalTransactions={transactions.total}
+      />
     </div>
   )
 }
