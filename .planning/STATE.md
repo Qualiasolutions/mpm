@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-02-04)
 ## Current Position
 
 Phase: 1 of 6 (Foundation)
-Plan: 1 of 4 in current phase
+Plan: 2 of 4 in current phase
 Status: In progress
-Last activity: 2026-02-04 -- Completed 01-01-PLAN.md (Project scaffolding + Supabase foundation)
+Last activity: 2026-02-04 -- Completed 01-02-PLAN.md (Auth pages & Server Actions)
 
-Progress: [█░░░░░░░░░] ~8% (1 of ~12 total plans)
+Progress: [██░░░░░░░░] ~17% (2 of ~12 total plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: ~15 minutes
-- Total execution time: ~0.25 hours
+- Total plans completed: 2
+- Average duration: ~10 minutes
+- Total execution time: ~0.35 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 1. Foundation | 1/4 | ~15m | ~15m |
+| 1. Foundation | 2/4 | ~21m | ~10m |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (~15m)
-- Trend: Starting
+- Last 5 plans: 01-01 (~15m), 01-02 (~6m)
+- Trend: Accelerating
 
 *Updated after each plan completion*
 
@@ -49,12 +49,17 @@ Recent decisions affecting current work:
 - [01-01]: Use getUser() for all server-side auth checks, never getSession()
 - [01-01]: SUPABASE_SERVICE_ROLE_KEY has no NEXT_PUBLIC_ prefix
 - [01-01]: Enable RLS in same migration as CREATE TABLE
+- [01-02]: Use React 19 useActionState (not deprecated useFormState from react-dom)
+- [01-02]: Generic auth errors only -- never expose Supabase internals to client
+- [01-02]: Anti-email enumeration on password reset (always returns success)
+- [01-02]: Premium dark theme (#0A0A0B bg, #D4A853 gold accent) for auth pages
 
 ### Pending Todos
 
 - User must configure real Supabase env vars in .env.local before auth testing
 - User must run SQL migration against Supabase project
 - User must enable Custom Access Token Hook in Supabase Dashboard
+- User must set NEXT_PUBLIC_SITE_URL in .env.local for password reset redirects
 
 ### Blockers/Concerns
 
@@ -65,5 +70,5 @@ Recent decisions affecting current work:
 ## Session Continuity
 
 Last session: 2026-02-04
-Stopped at: Completed 01-01-PLAN.md
+Stopped at: Completed 01-02-PLAN.md
 Resume file: None
