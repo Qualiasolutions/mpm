@@ -108,7 +108,9 @@ export async function getMyDiscounts(): Promise<
     if (!div || !div.is_active) continue
 
     // Find an active discount rule for this division
-    const activeRule = div.discount_rules?.find((r) => r.is_active)
+    // discount_rules may be object (1:1 unique) or array depending on PostgREST version
+    const rules = Array.isArray(div.discount_rules) ? div.discount_rules : div.discount_rules ? [div.discount_rules] : []
+    const activeRule = rules.find((r) => r.is_active)
     if (!activeRule) continue
 
     discounts.push({
@@ -228,11 +230,12 @@ export async function generateDiscountCode(
     return { error: 'This division is currently inactive.' }
   }
 
-  const rules = division.discount_rules as unknown as {
-    discount_percentage: number
-    is_active: boolean
-  }[]
-  const activeRule = rules?.find((r) => r.is_active)
+  const rawRules = division.discount_rules as unknown as
+    | { discount_percentage: number; is_active: boolean }[]
+    | { discount_percentage: number; is_active: boolean }
+    | null
+  const rules = Array.isArray(rawRules) ? rawRules : rawRules ? [rawRules] : []
+  const activeRule = rules.find((r) => r.is_active)
 
   if (!activeRule) {
     return { error: 'No active discount rule for this division.' }

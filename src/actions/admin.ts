@@ -459,9 +459,10 @@ export async function getDivisions(): Promise<
   }
 
   const result: Division[] = (divisions || []).map((d) => {
-    // discount_rules is 1:1 via UNIQUE constraint, but Supabase returns array
-    const rules = d.discount_rules as unknown as DiscountRule[] | null
-    const rule = rules && rules.length > 0 ? rules[0] : null
+    // discount_rules is 1:1 via UNIQUE constraint — may be object or array
+    const rawRules = d.discount_rules as unknown as DiscountRule | DiscountRule[] | null
+    const rulesArr = Array.isArray(rawRules) ? rawRules : rawRules ? [rawRules] : []
+    const rule = rulesArr.length > 0 ? rulesArr[0] : null
 
     return {
       id: d.id,
