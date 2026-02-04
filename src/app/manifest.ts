@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Employee discount management for MPM Distributors Ltd',
     start_url: '/',
     display: 'standalone',
-    background_color: '#0A0A0B',
-    theme_color: '#D4A853',
+    background_color: '#f8fafc',
+    theme_color: '#0d9488',
     orientation: 'portrait',
     icons: [
       {
