@@ -1,0 +1,57 @@
+MPM Imports - Employee Discount App Intake
+Contact Info
+Name: CHRISTIANA KALLI
+
+Email: c.kalli@mpmimports.com.cy
+
+Phone: 99947041
+
+Company: MPM Imports LTD
+
+Role: Project Manager
+
+Employees: 100+
+
+Locations: 10+
+
+Business Center POS
+Version: Business Center cloud
+
+POS Modules Used:
+
+Wholesale/Retail Sales
+
+Current Discount Process:
+
+Manually
+
+POS Integration Requirements:
+
+Pricing and Discounts, Employee Information
+
+Discount App Features
+Selected Features:
+
+Employee Discount Application
+QR/Barcode Scan at POS
+Discount Usage Reporting & Analytics
+Mobile App for Employees
+Monthly/Annual Discount Limits
+Types of Discounts Needed:
+
+All kinds of discounts and offers
+
+Approval Workflow:
+
+No one
+
+Additional Features:
+
+The discount will be across different companies and brands
+
+Implementation
+Timeline: Just exploring
+
+Budget: Prefer to discuss
+
+Additional Notes: None
