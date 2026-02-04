@@ -1,6 +1,8 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { NavBar } from '@/components/layout/nav-bar'
+import { OnlineStatus } from '@/components/pwa/online-status'
+import { InstallPrompt } from '@/components/pwa/install-prompt'
 
 export default async function DashboardLayout({
   children,
@@ -25,6 +27,7 @@ export default async function DashboardLayout({
 
   return (
     <div className="min-h-screen bg-[#0A0A0B]">
+      <OnlineStatus />
       <NavBar
         role={profile?.role ?? 'employee'}
         userName={profile?.first_name ?? null}
@@ -32,6 +35,7 @@ export default async function DashboardLayout({
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         {children}
       </main>
+      <InstallPrompt />
     </div>
   )
 }

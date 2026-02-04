@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { NavBar } from '@/components/layout/nav-bar'
+import { OnlineStatus } from '@/components/pwa/online-status'
 
 export default async function AdminLayout({
   children,
@@ -31,6 +32,7 @@ export default async function AdminLayout({
 
   return (
     <div className="min-h-screen bg-[#0A0A0B]">
+      <OnlineStatus />
       <NavBar role="admin" userName={profile.first_name ?? null} />
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         {children}

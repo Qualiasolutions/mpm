@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#0A0A0B" rx="0"/>
+  
+  <text x="256" y="246.1" font-family="system-ui, -apple-system, sans-serif" font-size="90" font-weight="800" fill="#D4A853" text-anchor="middle" dominant-baseline="central" letter-spacing="5.12">MPM</text>
+  <text x="256" y="319" font-family="system-ui, -apple-system, sans-serif" font-size="33" font-weight="500" fill="#D4A853" text-anchor="middle" dominant-baseline="central" opacity="0.6" letter-spacing="2.56">DISCOUNTS</text>
+</svg>
