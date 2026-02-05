@@ -13,13 +13,13 @@ export function ResetPasswordForm() {
   if (state?.success) {
     return (
       <div className="space-y-5">
-        <div className="rounded-md border border-teal-200 bg-teal-50 px-4 py-3 text-sm text-teal-600">
+        <div className="rounded-md border border-brand-200 bg-brand-50 px-4 py-3 text-sm text-brand-600">
           Check your email for a reset link. It may take a minute to arrive.
         </div>
         <div className="text-center">
           <Link
             href="/login"
-            className="text-xs text-slate-400 transition-colors duration-200 hover:text-teal-600"
+            className="text-xs text-slate-400 transition-colors duration-200 hover:text-brand-600"
           >
             Back to login
           </Link>
@@ -50,14 +50,14 @@ export function ResetPasswordForm() {
           autoComplete="email"
           required
           placeholder="name@mpmimports.com.cy"
-          className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition-colors duration-200 focus:border-teal-500 focus:ring-1 focus:ring-teal-200"
+          className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition-colors duration-200 focus:border-brand-500 focus:ring-1 focus:ring-brand-200"
         />
       </div>
 
       <button
         type="submit"
         disabled={isPending}
-        className="flex w-full items-center justify-center rounded-md bg-teal-600 px-4 py-2.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
+        className="flex w-full items-center justify-center rounded-md bg-brand-600 px-4 py-2.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {isPending ? (
           <span className="flex items-center gap-2">
@@ -90,7 +90,7 @@ export function ResetPasswordForm() {
       <div className="text-center">
         <Link
           href="/login"
-          className="text-xs text-slate-400 transition-colors duration-200 hover:text-teal-600"
+          className="text-xs text-slate-400 transition-colors duration-200 hover:text-brand-600"
         >
           Back to login
         </Link>

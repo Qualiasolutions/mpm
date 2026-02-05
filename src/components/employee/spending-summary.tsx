@@ -27,7 +27,7 @@ export function SpendingSummary({ summary }: SpendingSummaryProps) {
       ? '#ef4444'
       : summary.percentage >= 70
         ? '#eab308'
-        : '#0d9488'
+        : '#004890'
 
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">

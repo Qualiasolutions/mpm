@@ -124,7 +124,7 @@ export function ValidationTerminal({
         {/* Processing State */}
         {flowState === 'processing' && (
           <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center sm:p-16">
-            <div className="mx-auto mb-5 h-10 w-10 animate-spin rounded-full border-2 border-teal-200 border-t-teal-600" />
+            <div className="mx-auto mb-5 h-10 w-10 animate-spin rounded-full border-2 border-brand-200 border-t-brand-600" />
             <p className="text-base text-slate-700">
               Validating discount code...
             </p>
@@ -212,7 +212,7 @@ export function ValidationTerminal({
                     className={`w-full rounded-lg border bg-white py-3.5 pl-16 pr-4 text-right text-2xl font-light tabular-nums text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-1 ${
                       amountError
                         ? 'border-red-500/30 focus:ring-red-500/30'
-                        : 'border-slate-200 focus:ring-teal-200'
+                        : 'border-slate-200 focus:ring-brand-200'
                     }`}
                   />
                 </div>
@@ -239,7 +239,7 @@ export function ValidationTerminal({
                   placeholder="e.g. Limassol Store"
                   value={locationForScan}
                   onChange={(e) => setLocationForScan(e.target.value)}
-                  className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-1 focus:ring-teal-200"
+                  className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-1 focus:ring-brand-200"
                 />
               </div>
 
@@ -254,7 +254,7 @@ export function ValidationTerminal({
                 <button
                   type="submit"
                   disabled={!amountForScan}
-                  className="flex-[2] rounded-lg bg-teal-600 px-6 py-3.5 text-sm font-medium text-white transition-all active:scale-[0.98] hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-40"
+                  className="flex-[2] rounded-lg bg-brand-600 px-6 py-3.5 text-sm font-medium text-white transition-all active:scale-[0.98] hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   Validate Code
                 </button>
@@ -272,7 +272,7 @@ export function ValidationTerminal({
                 onClick={() => setActiveTab('scan')}
                 className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-medium transition-all ${
                   activeTab === 'scan'
-                    ? 'bg-teal-50 text-teal-600'
+                    ? 'bg-brand-50 text-brand-600'
                     : 'text-slate-400 hover:text-slate-700'
                 }`}
               >
@@ -296,7 +296,7 @@ export function ValidationTerminal({
                 onClick={() => setActiveTab('manual')}
                 className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-medium transition-all ${
                   activeTab === 'manual'
-                    ? 'bg-teal-50 text-teal-600'
+                    ? 'bg-brand-50 text-brand-600'
                     : 'text-slate-400 hover:text-slate-700'
                 }`}
               >

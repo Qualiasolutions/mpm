@@ -132,7 +132,7 @@ function ValidationItem({ validation }: { validation: RecentValidation }) {
           <span className="truncate text-sm text-slate-800">
             {validation.employee_name}
           </span>
-          <span className="flex-shrink-0 rounded bg-teal-50 px-1.5 py-0.5 text-[10px] font-medium text-teal-600">
+          <span className="flex-shrink-0 rounded bg-brand-50 px-1.5 py-0.5 text-[10px] font-medium text-brand-600">
             -{validation.discount_percentage}%
           </span>
         </div>

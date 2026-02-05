@@ -22,13 +22,13 @@ export function EmployeePageTabs({
           onClick={() => setTab('manage')}
           className={`relative px-4 py-2.5 text-sm font-medium transition-colors ${
             tab === 'manage'
-              ? 'text-teal-600'
+              ? 'text-brand-600'
               : 'text-slate-400 hover:text-slate-700'
           }`}
         >
           Manage
           {tab === 'manage' && (
-            <span className="absolute bottom-0 left-0 right-0 h-px bg-teal-600" />
+            <span className="absolute bottom-0 left-0 right-0 h-px bg-brand-600" />
           )}
         </button>
         <button
@@ -36,13 +36,13 @@ export function EmployeePageTabs({
           onClick={() => setTab('import')}
           className={`relative px-4 py-2.5 text-sm font-medium transition-colors ${
             tab === 'import'
-              ? 'text-teal-600'
+              ? 'text-brand-600'
               : 'text-slate-400 hover:text-slate-700'
           }`}
         >
           Import CSV
           {tab === 'import' && (
-            <span className="absolute bottom-0 left-0 right-0 h-px bg-teal-600" />
+            <span className="absolute bottom-0 left-0 right-0 h-px bg-brand-600" />
           )}
         </button>
       </div>

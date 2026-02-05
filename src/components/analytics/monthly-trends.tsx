@@ -103,7 +103,7 @@ export function MonthlyTrends({ trends }: MonthlyTrendsProps) {
               </span>
               <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-100">
                 <div
-                  className="h-full rounded-full bg-[#0d9488]/70 transition-all duration-500"
+                  className="h-full rounded-full bg-[#004890]/70 transition-all duration-500"
                   style={{
                     width: `${(t.transactions / maxTransactions) * 100}%`,
                   }}
@@ -118,7 +118,7 @@ export function MonthlyTrends({ trends }: MonthlyTrendsProps) {
               </span>
               <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-100">
                 <div
-                  className="h-full rounded-full bg-[#0d9488]/40 transition-all duration-500"
+                  className="h-full rounded-full bg-[#004890]/40 transition-all duration-500"
                   style={{
                     width: `${(t.total_original / maxAmount) * 100}%`,
                   }}

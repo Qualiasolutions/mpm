@@ -62,7 +62,7 @@ export default async function DashboardPage() {
         <span
           className={`rounded-full px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider ${
             isAdmin
-              ? 'bg-teal-50 text-teal-600'
+              ? 'bg-brand-50 text-brand-600'
               : 'bg-slate-100 text-slate-400'
           }`}
         >
@@ -74,7 +74,7 @@ export default async function DashboardPage() {
       {isAdmin && (
         <Link
           href="/admin"
-          className="group flex items-center gap-3 rounded-2xl border border-teal-100 bg-teal-50 px-5 py-3.5 transition-colors hover:border-teal-200 hover:bg-teal-100"
+          className="group flex items-center gap-3 rounded-2xl border border-brand-100 bg-brand-50 px-5 py-3.5 transition-colors hover:border-brand-200 hover:bg-brand-100"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -86,12 +86,12 @@ export default async function DashboardPage() {
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-teal-500"
+            className="text-brand-500"
           >
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
           </svg>
           <div>
-            <div className="text-sm font-medium text-teal-600 transition-colors group-hover:text-teal-700">
+            <div className="text-sm font-medium text-brand-600 transition-colors group-hover:text-brand-700">
               Admin Dashboard
             </div>
             <div className="text-xs text-slate-400">

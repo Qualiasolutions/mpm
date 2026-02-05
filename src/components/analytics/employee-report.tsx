@@ -130,7 +130,7 @@ export function EmployeeReport({ rows, dateFrom, dateTo }: EmployeeReportProps) 
               placeholder="Search employees..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded-md border border-slate-300 bg-white py-1.5 pl-8 pr-3 text-sm text-slate-800 outline-none transition-colors placeholder:text-slate-400 focus:border-teal-400 focus:ring-1 focus:ring-teal-200 sm:w-48"
+              className="w-full rounded-md border border-slate-300 bg-white py-1.5 pl-8 pr-3 text-sm text-slate-800 outline-none transition-colors placeholder:text-slate-400 focus:border-brand-400 focus:ring-1 focus:ring-brand-200 sm:w-48"
             />
           </div>
           <button
@@ -302,7 +302,7 @@ export function EmployeeReport({ rows, dateFrom, dateTo }: EmployeeReportProps) 
                   <td className="whitespace-nowrap px-3 py-3 text-right tabular-nums text-slate-700 sm:px-5">
                     {formatCurrency(row.total_original)}
                   </td>
-                  <td className="whitespace-nowrap px-3 py-3 text-right tabular-nums text-teal-600 sm:px-5">
+                  <td className="whitespace-nowrap px-3 py-3 text-right tabular-nums text-brand-600 sm:px-5">
                     {formatCurrency(row.total_discount)}
                   </td>
                   <td className="whitespace-nowrap px-3 py-3 text-right tabular-nums text-slate-700 sm:px-5">
@@ -361,7 +361,7 @@ function SortableHeader({
         {label}
         <span
           className={`inline-flex flex-col leading-none ${
-            isActive ? 'text-teal-600' : 'text-slate-300'
+            isActive ? 'text-brand-600' : 'text-slate-300'
           }`}
         >
           <svg
@@ -370,7 +370,7 @@ function SortableHeader({
             viewBox="0 0 8 5"
             className={`${
               isActive && direction === 'asc'
-                ? 'text-teal-600'
+                ? 'text-brand-600'
                 : 'text-slate-300'
             }`}
           >
@@ -382,7 +382,7 @@ function SortableHeader({
             viewBox="0 0 8 5"
             className={`${
               isActive && direction === 'desc'
-                ? 'text-teal-600'
+                ? 'text-brand-600'
                 : 'text-slate-300'
             }`}
           >

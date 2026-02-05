@@ -188,7 +188,7 @@ export function CsvImport() {
           onClick={() => fileInputRef.current?.click()}
           className={`flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed px-4 py-8 sm:px-6 sm:py-12 transition-colors ${
             dragOver
-              ? 'border-teal-400 bg-teal-50'
+              ? 'border-brand-400 bg-brand-50'
               : 'border-slate-300 bg-slate-50 hover:border-slate-400 hover:bg-white'
           }`}
         >
@@ -210,11 +210,11 @@ export function CsvImport() {
           </svg>
           <p className="text-sm text-slate-500">
             {fileName ? (
-              <span className="text-teal-600">{fileName}</span>
+              <span className="text-brand-600">{fileName}</span>
             ) : (
               <>
                 Drag and drop a CSV file, or{' '}
-                <span className="text-teal-600">click to browse</span>
+                <span className="text-brand-600">click to browse</span>
               </>
             )}
           </p>
@@ -346,7 +346,7 @@ export function CsvImport() {
               <button
                 type="submit"
                 disabled={isPending || validCount === 0}
-                className="flex items-center gap-2 rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
+                className="flex items-center gap-2 rounded-md bg-brand-600 px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isPending ? (
                   <>

@@ -91,7 +91,7 @@ export function ActivityChart({ data }: ActivityChartProps) {
             onClick={() => setViewMode('count')}
             className={`px-3 py-1 text-[11px] font-medium transition-colors ${
               viewMode === 'count'
-                ? 'bg-teal-50 text-teal-600'
+                ? 'bg-brand-50 text-brand-600'
                 : 'text-slate-400 hover:text-slate-700'
             }`}
           >
@@ -102,7 +102,7 @@ export function ActivityChart({ data }: ActivityChartProps) {
             onClick={() => setViewMode('amount')}
             className={`px-3 py-1 text-[11px] font-medium transition-colors ${
               viewMode === 'amount'
-                ? 'bg-teal-50 text-teal-600'
+                ? 'bg-brand-50 text-brand-600'
                 : 'text-slate-400 hover:text-slate-700'
             }`}
           >
@@ -175,8 +175,8 @@ export function ActivityChart({ data }: ActivityChartProps) {
                   <div
                     className={`w-full min-w-[6px] max-w-[32px] rounded-t transition-all duration-150 ${
                       isHovered
-                        ? 'bg-[#0d9488]'
-                        : 'bg-[#0d9488]/60 hover:bg-[#0d9488]/80'
+                        ? 'bg-[#004890]'
+                        : 'bg-[#004890]/60 hover:bg-[#004890]/80'
                     }`}
                     style={{
                       height: `${Math.max(heightPct, value > 0 ? 2 : 0)}%`,

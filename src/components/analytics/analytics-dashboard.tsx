@@ -124,13 +124,13 @@ export function AnalyticsDashboard({
             onClick={() => setActiveTab(tab.id)}
             className={`relative px-4 py-2.5 text-sm font-medium transition-colors ${
               activeTab === tab.id
-                ? 'text-teal-600'
+                ? 'text-brand-600'
                 : 'text-slate-400 hover:text-slate-700'
             }`}
           >
             {tab.label}
             {activeTab === tab.id && (
-              <span className="absolute bottom-0 left-0 right-0 h-px bg-teal-600" />
+              <span className="absolute bottom-0 left-0 right-0 h-px bg-brand-600" />
             )}
           </button>
         ))}

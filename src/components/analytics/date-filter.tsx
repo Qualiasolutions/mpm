@@ -85,7 +85,7 @@ export function DateFilter({ onFilterChange }: DateFilterProps) {
           type="date"
           value={dateFrom}
           onChange={(e) => setDateFrom(e.target.value)}
-          className="min-w-0 flex-1 rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200 sm:flex-none sm:px-2.5"
+          className="min-w-0 flex-1 rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm text-slate-800 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200 sm:flex-none sm:px-2.5"
         />
       </div>
       <div className="flex items-center gap-2">
@@ -96,7 +96,7 @@ export function DateFilter({ onFilterChange }: DateFilterProps) {
           type="date"
           value={dateTo}
           onChange={(e) => setDateTo(e.target.value)}
-          className="min-w-0 flex-1 rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200 sm:flex-none sm:px-2.5"
+          className="min-w-0 flex-1 rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm text-slate-800 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200 sm:flex-none sm:px-2.5"
         />
       </div>
 
@@ -104,7 +104,7 @@ export function DateFilter({ onFilterChange }: DateFilterProps) {
         <button
           type="button"
           onClick={handleApply}
-          className="rounded-md bg-teal-600 px-3 py-1.5 text-xs font-medium text-white transition-all hover:bg-teal-700"
+          className="rounded-md bg-brand-600 px-3 py-1.5 text-xs font-medium text-white transition-all hover:bg-brand-700"
         >
           Apply
         </button>

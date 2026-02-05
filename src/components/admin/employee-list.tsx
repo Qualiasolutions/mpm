@@ -58,7 +58,7 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
 
   // Color map for division chips
   const chipColors = [
-    'bg-teal-50 text-teal-600 border-teal-200',
+    'bg-brand-50 text-brand-600 border-brand-200',
     'bg-sky-50 text-sky-600 border-sky-200',
     'bg-violet-50 text-violet-600 border-violet-200',
     'bg-emerald-50 text-emerald-600 border-emerald-200',
@@ -97,7 +97,7 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
               placeholder="Search by name or email..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded-md border border-slate-300 bg-white py-2 pl-9 pr-3.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+              className="w-full rounded-md border border-slate-300 bg-white py-2 pl-9 pr-3.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
             />
           </div>
 
@@ -175,7 +175,7 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
                           {emp.first_name ?? ''} {emp.last_name ?? ''}
                         </p>
                         {emp.role === 'admin' && (
-                          <span className="text-[10px] font-medium uppercase tracking-wider text-teal-600">
+                          <span className="text-[10px] font-medium uppercase tracking-wider text-brand-600">
                             Admin
                           </span>
                         )}

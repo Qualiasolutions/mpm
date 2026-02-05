@@ -52,7 +52,7 @@ export function DivisionList({ divisions }: DivisionListProps) {
         <button
           type="button"
           onClick={() => setShowAddDivision(!showAddDivision)}
-          className="flex items-center gap-2 rounded-md bg-teal-600 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-teal-700"
+          className="flex items-center gap-2 rounded-md bg-brand-600 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-brand-700"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -222,7 +222,7 @@ export function DivisionList({ divisions }: DivisionListProps) {
                                 : div.id
                             )
                           }
-                          className="flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs text-teal-600 transition-colors hover:bg-teal-50 hover:text-teal-700"
+                          className="flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs text-brand-600 transition-colors hover:bg-brand-50 hover:text-brand-700"
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -366,7 +366,7 @@ function AddDivisionForm({ onDone }: { onDone: () => void }) {
   }
 
   return (
-    <div className="rounded-lg border border-teal-200 bg-teal-50 p-5">
+    <div className="rounded-lg border border-brand-200 bg-brand-50 p-5">
       <h3 className="mb-4 text-sm font-medium text-slate-800">
         New Division
       </h3>
@@ -387,7 +387,7 @@ function AddDivisionForm({ onDone }: { onDone: () => void }) {
               name="name"
               type="text"
               required
-              className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+              className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
               placeholder="e.g. Fashion"
             />
           </div>
@@ -399,7 +399,7 @@ function AddDivisionForm({ onDone }: { onDone: () => void }) {
               name="code"
               type="text"
               required
-              className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+              className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
               placeholder="e.g. FASH"
             />
           </div>
@@ -413,7 +413,7 @@ function AddDivisionForm({ onDone }: { onDone: () => void }) {
             <input
               name="description"
               type="text"
-              className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+              className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
               placeholder="Brief description"
             />
           </div>
@@ -422,7 +422,7 @@ function AddDivisionForm({ onDone }: { onDone: () => void }) {
           <button
             type="submit"
             disabled={isPending}
-            className="flex items-center gap-2 rounded-md bg-teal-600 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
+            className="flex items-center gap-2 rounded-md bg-brand-600 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {isPending ? (
               <>
@@ -500,7 +500,7 @@ function EditDivisionForm({
             type="text"
             required
             defaultValue={division.name}
-            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
           />
         </div>
         <div className="w-24">
@@ -512,7 +512,7 @@ function EditDivisionForm({
             type="text"
             required
             defaultValue={division.code}
-            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
           />
         </div>
         <div className="flex-1">
@@ -523,7 +523,7 @@ function EditDivisionForm({
             name="description"
             type="text"
             defaultValue={division.description ?? ''}
-            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
           />
         </div>
         <div className="w-28">
@@ -533,7 +533,7 @@ function EditDivisionForm({
           <select
             name="isActive"
             defaultValue={division.is_active ? 'true' : 'false'}
-            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
           >
             <option value="true" className="bg-white">
               Active
@@ -547,7 +547,7 @@ function EditDivisionForm({
           <button
             type="submit"
             disabled={isPending}
-            className="rounded-md bg-teal-600 px-3 py-2 text-sm font-medium text-white transition-all hover:bg-teal-700 disabled:opacity-50"
+            className="rounded-md bg-brand-600 px-3 py-2 text-sm font-medium text-white transition-all hover:bg-brand-700 disabled:opacity-50"
           >
             {isPending ? 'Saving...' : 'Save'}
           </button>
@@ -581,7 +581,7 @@ function AddBrandForm({
   }
 
   return (
-    <div className="rounded-md border border-teal-200 bg-teal-50 p-3">
+    <div className="rounded-md border border-brand-200 bg-brand-50 p-3">
       {state?.error && (
         <div className="mb-2 text-xs text-red-600">{state.error}</div>
       )}
@@ -595,14 +595,14 @@ function AddBrandForm({
             name="name"
             type="text"
             required
-            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+            className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
             placeholder="e.g. Gucci"
           />
         </div>
         <button
           type="submit"
           disabled={isPending}
-          className="rounded-md bg-teal-600 px-3 py-2 text-sm font-medium text-white transition-all hover:bg-teal-700 disabled:opacity-50"
+          className="rounded-md bg-brand-600 px-3 py-2 text-sm font-medium text-white transition-all hover:bg-brand-700 disabled:opacity-50"
         >
           {isPending ? 'Adding...' : 'Add'}
         </button>
@@ -647,13 +647,13 @@ function EditBrandForm({
             type="text"
             required
             defaultValue={brand.name}
-            className="w-full rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+            className="w-full rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm text-slate-800 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
           />
         </div>
         <select
           name="isActive"
           defaultValue={brand.is_active ? 'true' : 'false'}
-          className="rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+          className="rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm text-slate-800 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
         >
           <option value="true" className="bg-white">
             Active
@@ -665,7 +665,7 @@ function EditBrandForm({
         <button
           type="submit"
           disabled={isPending}
-          className="rounded-md bg-teal-600 px-3 py-1.5 text-sm font-medium text-white transition-all hover:bg-teal-700 disabled:opacity-50"
+          className="rounded-md bg-brand-600 px-3 py-1.5 text-sm font-medium text-white transition-all hover:bg-brand-700 disabled:opacity-50"
         >
           {isPending ? 'Saving...' : 'Save'}
         </button>

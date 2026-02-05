@@ -30,7 +30,7 @@ const CODE_COLORS = [
   { border: 'border-rose-500/30', bg: 'bg-rose-500/10', text: 'text-rose-600' },
   { border: 'border-cyan-500/30', bg: 'bg-cyan-500/10', text: 'text-cyan-600' },
   { border: 'border-indigo-500/30', bg: 'bg-indigo-500/10', text: 'text-indigo-600' },
-  { border: 'border-teal-500/30', bg: 'bg-teal-500/10', text: 'text-teal-600' },
+  { border: 'border-brand-500/30', bg: 'bg-brand-500/10', text: 'text-brand-600' },
 ]
 
 function getCodeColor(index: number) {
@@ -250,7 +250,7 @@ export function DivisionReport({ rows, dateFrom, dateTo }: DivisionReportProps) 
                     <td className="whitespace-nowrap px-3 py-3.5 text-right tabular-nums text-slate-700 sm:px-5">
                       {formatCurrency(row.total_original)}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-3.5 text-right tabular-nums text-teal-600 sm:px-5">
+                    <td className="whitespace-nowrap px-3 py-3.5 text-right tabular-nums text-brand-600 sm:px-5">
                       {formatCurrency(row.total_discount)}
                     </td>
                     <td className="whitespace-nowrap px-3 py-3.5 text-right tabular-nums text-slate-700 sm:px-5">
@@ -308,7 +308,7 @@ function SortableHeader({
         {label}
         <span
           className={`inline-flex flex-col leading-none ${
-            isActive ? 'text-teal-600' : 'text-slate-300'
+            isActive ? 'text-brand-600' : 'text-slate-300'
           }`}
         >
           <svg
@@ -317,7 +317,7 @@ function SortableHeader({
             viewBox="0 0 8 5"
             className={`${
               isActive && direction === 'asc'
-                ? 'text-teal-600'
+                ? 'text-brand-600'
                 : 'text-slate-300'
             }`}
           >
@@ -329,7 +329,7 @@ function SortableHeader({
             viewBox="0 0 8 5"
             className={`${
               isActive && direction === 'desc'
-                ? 'text-teal-600'
+                ? 'text-brand-600'
                 : 'text-slate-300'
             }`}
           >

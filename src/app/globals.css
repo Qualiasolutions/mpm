@@ -3,8 +3,8 @@
 :root {
   --background: #f8fafc;
   --foreground: #0f172a;
-  --accent: #0d9488;
-  --accent-light: #14b8a6;
+  --accent: #004890;
+  --accent-light: #2a6baf;
   --card-bg: #ffffff;
   --muted: #64748b;
 }
@@ -14,6 +14,16 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-brand-50: #edf3fa;
+  --color-brand-100: #d6e3f2;
+  --color-brand-200: #adc7e5;
+  --color-brand-300: #80a8d4;
+  --color-brand-400: #5489c2;
+  --color-brand-500: #2a6baf;
+  --color-brand-600: #004890;
+  --color-brand-700: #003a74;
+  --color-brand-800: #002d59;
+  --color-brand-900: #001f3e;
 }
 
 body {

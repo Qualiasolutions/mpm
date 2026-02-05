@@ -50,7 +50,7 @@ export function OnlineStatus() {
         text-sm font-medium
         transition-all duration-300 ease-out
         ${showOffline
-          ? 'bg-teal-50 border-b border-teal-300 text-teal-600'
+          ? 'bg-brand-50 border-b border-brand-300 text-brand-600'
           : 'bg-emerald-50 border-b border-emerald-300 text-emerald-600'
         }
         ${showBanner ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}

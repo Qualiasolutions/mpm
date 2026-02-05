@@ -82,7 +82,7 @@ export function CodeGenerator({
         width: 256,
         margin: 2,
         color: {
-          dark: '#0d9488',
+          dark: '#004890',
           light: '#ffffff',
         },
       })
@@ -145,14 +145,14 @@ export function CodeGenerator({
         </button>
         <div>
           <h2 className="text-base font-medium text-slate-800">{divisionName}</h2>
-          <p className="text-xs text-teal-600">{discountPercentage}% discount</p>
+          <p className="text-xs text-brand-600">{discountPercentage}% discount</p>
         </div>
       </div>
 
       {/* Idle State */}
       {state === 'idle' && (
         <div className="rounded-2xl border border-slate-200 bg-white p-6 text-center">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-teal-50">
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-50">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="28"
@@ -163,7 +163,7 @@ export function CodeGenerator({
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="text-teal-600"
+              className="text-brand-600"
             >
               <rect x="3" y="3" width="18" height="18" rx="2" />
               <path d="M7 7h.01" />
@@ -183,7 +183,7 @@ export function CodeGenerator({
           </p>
           <button
             onClick={handleGenerate}
-            className="w-full rounded-lg bg-teal-600 px-5 py-3 text-sm font-medium text-white transition-all active:scale-[0.98] hover:bg-teal-700"
+            className="w-full rounded-lg bg-brand-600 px-5 py-3 text-sm font-medium text-white transition-all active:scale-[0.98] hover:bg-brand-700"
           >
             Generate Code
           </button>
@@ -193,7 +193,7 @@ export function CodeGenerator({
       {/* Loading State */}
       {state === 'loading' && (
         <div className="rounded-2xl border border-slate-200 bg-white p-10 text-center">
-          <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-teal-200 border-t-teal-600" />
+          <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-brand-200 border-t-brand-600" />
           <p className="text-sm text-slate-500">Generating your code...</p>
         </div>
       )}
@@ -239,7 +239,7 @@ export function CodeGenerator({
               Or use this code
             </p>
             <div className="flex items-center gap-2">
-              <div className="flex-1 rounded-lg bg-slate-50 px-4 py-3 text-center font-mono text-xl tracking-[0.15em] text-teal-600">
+              <div className="flex-1 rounded-lg bg-slate-50 px-4 py-3 text-center font-mono text-xl tracking-[0.15em] text-brand-600">
                 {code.manual_code}
               </div>
               <button
@@ -314,7 +314,7 @@ export function CodeGenerator({
           </p>
           <button
             onClick={handleGenerate}
-            className="w-full rounded-lg bg-teal-600 px-5 py-3 text-sm font-medium text-white transition-all active:scale-[0.98] hover:bg-teal-700"
+            className="w-full rounded-lg bg-brand-600 px-5 py-3 text-sm font-medium text-white transition-all active:scale-[0.98] hover:bg-brand-700"
           >
             Generate New Code
           </button>
@@ -355,7 +355,7 @@ export function CodeGenerator({
             </button>
             <button
               onClick={handleGenerate}
-              className="flex-1 rounded-lg bg-teal-600 px-4 py-3 text-sm font-medium text-white transition-all active:scale-[0.98] hover:bg-teal-700"
+              className="flex-1 rounded-lg bg-brand-600 px-4 py-3 text-sm font-medium text-white transition-all active:scale-[0.98] hover:bg-brand-700"
             >
               Try Again
             </button>

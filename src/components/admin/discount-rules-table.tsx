@@ -109,7 +109,7 @@ function DiscountRuleRow({ division }: { division: Division }) {
                 max="100"
                 step="0.1"
                 defaultValue={rule?.discount_percentage ?? 0}
-                className="w-full rounded-md border border-slate-300 bg-white px-3 py-1.5 pr-8 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+                className="w-full rounded-md border border-slate-300 bg-white px-3 py-1.5 pr-8 text-sm text-slate-800 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
                 autoFocus
               />
               <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-400">
@@ -119,7 +119,7 @@ function DiscountRuleRow({ division }: { division: Division }) {
             <select
               name="isActive"
               defaultValue={rule?.is_active !== false ? 'true' : 'false'}
-              className="rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+              className="rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm text-slate-800 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
             >
               <option value="true" className="bg-white">
                 Active
@@ -131,7 +131,7 @@ function DiscountRuleRow({ division }: { division: Division }) {
             <button
               type="submit"
               disabled={isPending}
-              className="rounded-md bg-teal-600 px-3 py-1.5 text-xs font-medium text-white transition-all hover:bg-teal-700 disabled:opacity-50"
+              className="rounded-md bg-brand-600 px-3 py-1.5 text-xs font-medium text-white transition-all hover:bg-brand-700 disabled:opacity-50"
             >
               {isPending ? 'Saving...' : 'Save'}
             </button>
@@ -211,7 +211,7 @@ function DefaultSpendingLimitSection({ limit }: { limit: number }) {
   }
 
   return (
-    <div className="rounded-2xl border border-teal-200 bg-teal-50 p-4 sm:p-6">
+    <div className="rounded-2xl border border-brand-200 bg-brand-50 p-4 sm:p-6">
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">
           <h2 className="text-base font-light tracking-wide text-slate-800 sm:text-lg">
@@ -257,7 +257,7 @@ function DefaultSpendingLimitSection({ limit }: { limit: number }) {
                 min="0"
                 step="0.01"
                 defaultValue={limit}
-                className="w-full rounded-md border border-slate-300 bg-white py-2.5 pl-14 pr-3.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200 sm:w-48"
+                className="w-full rounded-md border border-slate-300 bg-white py-2.5 pl-14 pr-3.5 text-sm text-slate-800 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200 sm:w-48"
                 autoFocus
               />
             </div>
@@ -265,7 +265,7 @@ function DefaultSpendingLimitSection({ limit }: { limit: number }) {
           <button
             type="submit"
             disabled={isPending}
-            className="rounded-md bg-teal-600 px-4 py-2.5 text-sm font-medium text-white transition-all hover:bg-teal-700 disabled:opacity-50"
+            className="rounded-md bg-brand-600 px-4 py-2.5 text-sm font-medium text-white transition-all hover:bg-brand-700 disabled:opacity-50"
           >
             {isPending ? 'Saving...' : 'Save'}
           </button>

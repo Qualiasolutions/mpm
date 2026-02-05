@@ -48,7 +48,7 @@ export function CreateEmployeeForm() {
               name="firstName"
               type="text"
               required
-              className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+              className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
               placeholder="Enter first name"
             />
           </div>
@@ -65,7 +65,7 @@ export function CreateEmployeeForm() {
               name="lastName"
               type="text"
               required
-              className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+              className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
               placeholder="Enter last name"
             />
           </div>
@@ -83,7 +83,7 @@ export function CreateEmployeeForm() {
             name="email"
             type="email"
             required
-            className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+            className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
             placeholder="employee@company.com"
           />
         </div>
@@ -99,7 +99,7 @@ export function CreateEmployeeForm() {
             id="role"
             name="role"
             defaultValue="employee"
-            className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+            className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
           >
             <option value="employee" className="bg-white">
               Employee
@@ -113,7 +113,7 @@ export function CreateEmployeeForm() {
         <button
           type="submit"
           disabled={isPending}
-          className="flex w-full items-center justify-center rounded-md bg-teal-600 px-4 py-2.5 text-sm font-medium text-white transition-all hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
+          className="flex w-full items-center justify-center rounded-md bg-brand-600 px-4 py-2.5 text-sm font-medium text-white transition-all hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {isPending ? (
             <span className="flex items-center gap-2">

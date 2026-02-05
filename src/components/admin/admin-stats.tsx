@@ -4,7 +4,7 @@ interface AdminStatsProps {
   stats: AdminStats
 }
 
-const COLORS = ['bg-teal-50 text-teal-600', 'bg-emerald-50 text-emerald-600', 'bg-indigo-50 text-indigo-600', 'bg-amber-50 text-amber-600']
+const COLORS = ['bg-brand-50 text-brand-600', 'bg-emerald-50 text-emerald-600', 'bg-indigo-50 text-indigo-600', 'bg-amber-50 text-amber-600']
 
 export function AdminStatsCards({ stats }: AdminStatsProps) {
   const cards = [

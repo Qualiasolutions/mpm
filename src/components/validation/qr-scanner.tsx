@@ -150,7 +150,7 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
         <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white">
           {/* Placeholder viewfinder */}
           <div className="flex aspect-[4/3] flex-col items-center justify-center p-8">
-            <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-2xl bg-teal-50 animate-pulse-ring">
+            <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-2xl bg-brand-50 animate-pulse-ring">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="36"
@@ -161,7 +161,7 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-teal-600"
+                className="text-brand-600"
               >
                 <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
                 <circle cx="12" cy="13" r="4" />
@@ -175,7 +175,7 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
             </p>
             <button
               onClick={startCamera}
-              className="rounded-lg bg-teal-600 px-8 py-3.5 text-sm font-medium text-white transition-all active:scale-[0.98] hover:bg-teal-700"
+              className="rounded-lg bg-brand-600 px-8 py-3.5 text-sm font-medium text-white transition-all active:scale-[0.98] hover:bg-brand-700"
             >
               Start Camera
             </button>
@@ -223,7 +223,7 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
   if (cameraState === 'requesting') {
     return (
       <div className="rounded-2xl border border-slate-200 bg-white p-10 text-center">
-        <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-teal-200 border-t-teal-600" />
+        <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-brand-200 border-t-brand-600" />
         <p className="text-sm text-slate-500">Requesting camera access...</p>
         <p className="mt-1 text-xs text-slate-400">
           Please allow camera permission when prompted
@@ -307,7 +307,7 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
   // Active camera state
   return (
     <div className="space-y-3">
-      <div className="relative overflow-hidden rounded-2xl border border-teal-200 bg-black">
+      <div className="relative overflow-hidden rounded-2xl border border-brand-200 bg-black">
         {/* Video feed */}
         <video
           ref={videoRef}
@@ -330,13 +330,13 @@ export function QrScanner({ onScan, isActive }: QrScannerProps) {
             }} />
 
             {/* Corner brackets */}
-            <div className="absolute left-0 top-0 h-6 w-6 border-l-2 border-t-2 border-teal-500 rounded-tl" />
-            <div className="absolute right-0 top-0 h-6 w-6 border-r-2 border-t-2 border-teal-500 rounded-tr" />
-            <div className="absolute bottom-0 left-0 h-6 w-6 border-b-2 border-l-2 border-teal-500 rounded-bl" />
-            <div className="absolute bottom-0 right-0 h-6 w-6 border-b-2 border-r-2 border-teal-500 rounded-br" />
+            <div className="absolute left-0 top-0 h-6 w-6 border-l-2 border-t-2 border-brand-500 rounded-tl" />
+            <div className="absolute right-0 top-0 h-6 w-6 border-r-2 border-t-2 border-brand-500 rounded-tr" />
+            <div className="absolute bottom-0 left-0 h-6 w-6 border-b-2 border-l-2 border-brand-500 rounded-bl" />
+            <div className="absolute bottom-0 right-0 h-6 w-6 border-b-2 border-r-2 border-brand-500 rounded-br" />
 
             {/* Scanning line */}
-            <div className="animate-scan-line absolute left-2 right-2 h-0.5 bg-gradient-to-r from-transparent via-teal-500 to-transparent" />
+            <div className="animate-scan-line absolute left-2 right-2 h-0.5 bg-gradient-to-r from-transparent via-brand-500 to-transparent" />
           </div>
         </div>
 

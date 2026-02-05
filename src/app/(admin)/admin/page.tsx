@@ -32,7 +32,7 @@ export default async function AdminDashboardPage() {
         {/* Validate Code - Primary Action */}
         <Link
           href="/admin/validate"
-          className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-teal-600 to-teal-700 p-6 text-white transition-all hover:shadow-xl hover:shadow-teal-600/20 active:scale-[0.98] sm:col-span-2 lg:col-span-1"
+          className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-600 to-brand-700 p-6 text-white transition-all hover:shadow-xl hover:shadow-brand-600/20 active:scale-[0.98] sm:col-span-2 lg:col-span-1"
         >
           <div className="absolute right-0 top-0 h-24 w-24 translate-x-6 -translate-y-6 rounded-full bg-white/10" />
           <div className="absolute bottom-0 right-8 h-16 w-16 translate-y-4 rounded-full bg-white/5" />
@@ -44,7 +44,7 @@ export default async function AdminDashboardPage() {
               </svg>
             </div>
             <h3 className="text-lg font-bold">Validate Code</h3>
-            <p className="mt-1 text-sm text-teal-100">
+            <p className="mt-1 text-sm text-brand-100">
               Scan QR or enter code to apply employee discount
             </p>
           </div>
@@ -98,7 +98,7 @@ function AdminCard({
       href={href}
       className="group rounded-2xl border border-slate-200 bg-white p-5 transition-all hover:shadow-lg hover:shadow-slate-200/50 hover:border-slate-300 active:scale-[0.98]"
     >
-      <div className="mb-3 text-teal-600 group-hover:text-teal-700 transition-colors">
+      <div className="mb-3 text-brand-600 group-hover:text-brand-700 transition-colors">
         {icon}
       </div>
       <h3 className="text-sm font-semibold text-slate-800 group-hover:text-slate-900 transition-colors">

@@ -108,7 +108,7 @@ function TransactionItem({ transaction }: { transaction: Transaction }) {
             <span className="truncate text-sm text-slate-800">
               {transaction.division_name || 'Unknown Division'}
             </span>
-            <span className="flex-shrink-0 rounded bg-teal-50 px-1.5 py-0.5 text-[10px] font-medium text-teal-600">
+            <span className="flex-shrink-0 rounded bg-brand-50 px-1.5 py-0.5 text-[10px] font-medium text-brand-600">
               -{transaction.discount_percentage}%
             </span>
           </div>

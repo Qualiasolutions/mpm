@@ -4,7 +4,7 @@ export default function AccessDeniedPage() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-[#f8fafc] px-4">
       <div className="text-center">
-        <div className="mb-6 text-6xl font-bold text-teal-200">403</div>
+        <div className="mb-6 text-6xl font-bold text-brand-200">403</div>
         <h1 className="text-xl font-semibold text-slate-900">
           Access Denied
         </h1>

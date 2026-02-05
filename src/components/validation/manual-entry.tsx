@@ -85,7 +85,7 @@ export function ManualEntry({ onSubmit, isProcessing }: ManualEntryProps) {
         </label>
         <div className="flex items-stretch">
           <div className="flex items-center rounded-l-lg border border-r-0 border-slate-200 bg-slate-100 px-3.5">
-            <span className="font-mono text-sm text-teal-600/70">MPM-</span>
+            <span className="font-mono text-sm text-brand-600/70">MPM-</span>
           </div>
           <input
             ref={codeInputRef}
@@ -101,7 +101,7 @@ export function ManualEntry({ onSubmit, isProcessing }: ManualEntryProps) {
             className={`flex-1 rounded-r-lg border bg-white px-4 py-3.5 font-mono text-lg tracking-[0.15em] text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-1 disabled:opacity-50 ${
               errors.code
                 ? 'border-red-500/30 focus:ring-red-500/30'
-                : 'border-slate-200 focus:ring-teal-200'
+                : 'border-slate-200 focus:ring-brand-200'
             }`}
           />
         </div>
@@ -134,7 +134,7 @@ export function ManualEntry({ onSubmit, isProcessing }: ManualEntryProps) {
             className={`w-full rounded-lg border bg-white py-3.5 pl-16 pr-4 text-right text-2xl font-light tabular-nums text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-1 disabled:opacity-50 ${
               errors.amount
                 ? 'border-red-500/30 focus:ring-red-500/30'
-                : 'border-slate-200 focus:ring-teal-200'
+                : 'border-slate-200 focus:ring-brand-200'
             }`}
           />
         </div>
@@ -162,7 +162,7 @@ export function ManualEntry({ onSubmit, isProcessing }: ManualEntryProps) {
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           disabled={isProcessing}
-          className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-1 focus:ring-teal-200 disabled:opacity-50"
+          className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 placeholder:text-slate-300 focus:outline-none focus:ring-1 focus:ring-brand-200 disabled:opacity-50"
         />
       </div>
 
@@ -170,7 +170,7 @@ export function ManualEntry({ onSubmit, isProcessing }: ManualEntryProps) {
       <button
         type="submit"
         disabled={isProcessing || !code || !amount}
-        className="mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-teal-600 px-6 py-4 text-base font-medium text-white transition-all active:scale-[0.98] hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-teal-600"
+        className="mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-brand-600 px-6 py-4 text-base font-medium text-white transition-all active:scale-[0.98] hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-brand-600"
       >
         {isProcessing ? (
           <>

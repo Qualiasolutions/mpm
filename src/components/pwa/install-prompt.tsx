@@ -99,15 +99,15 @@ export function InstallPrompt() {
           className="
             flex items-center gap-3
             rounded-xl
-            border border-teal-200
+            border border-brand-200
             bg-white/95 backdrop-blur-md
             px-4 py-3
             shadow-lg shadow-slate-200/40
           "
         >
           {/* App icon */}
-          <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-lg bg-teal-50 border border-teal-200">
-            <span className="text-teal-600 font-bold text-sm">MPM</span>
+          <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-lg bg-brand-50 border border-brand-200">
+            <span className="text-brand-600 font-bold text-sm">MPM</span>
           </div>
 
           {/* Text */}
@@ -142,8 +142,8 @@ export function InstallPrompt() {
                 px-4 py-1.5
                 text-xs font-semibold
                 text-white
-                bg-teal-600
-                hover:bg-teal-700
+                bg-brand-600
+                hover:bg-brand-700
                 rounded-md
                 transition-colors
               "

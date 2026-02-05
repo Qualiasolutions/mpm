@@ -156,7 +156,7 @@ export function OverviewCards({ overview }: OverviewCardsProps) {
           key={card.label}
           className={`rounded-2xl p-3 transition-colors sm:p-4 ${
             card.accent
-              ? 'border border-teal-200 bg-teal-50'
+              ? 'border border-brand-200 bg-brand-50'
               : 'border border-slate-200 bg-white'
           }`}
         >
@@ -164,7 +164,7 @@ export function OverviewCards({ overview }: OverviewCardsProps) {
             <div className="min-w-0">
               <p
                 className={`truncate text-base font-light tabular-nums sm:text-xl lg:text-2xl ${
-                  card.accent ? 'text-teal-600' : 'text-slate-900'
+                  card.accent ? 'text-brand-600' : 'text-slate-900'
                 }`}
               >
                 {card.value}
@@ -175,7 +175,7 @@ export function OverviewCards({ overview }: OverviewCardsProps) {
             </div>
             <div
               className={`flex-shrink-0 ${
-                card.accent ? 'text-teal-600/40' : 'text-slate-400'
+                card.accent ? 'text-brand-600/40' : 'text-slate-400'
               }`}
             >
               {card.icon}

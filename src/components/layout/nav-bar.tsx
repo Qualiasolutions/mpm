@@ -127,7 +127,7 @@ function NavLink({
       href={href}
       className={`rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
         highlight
-          ? 'bg-teal-600 text-white hover:bg-teal-700 shadow-sm'
+          ? 'bg-brand-600 text-white hover:bg-brand-700 shadow-sm'
           : subtle
             ? 'text-slate-400 hover:text-slate-600 hover:bg-slate-50'
             : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
@@ -156,7 +156,7 @@ function MobileNavLink({
       href={href}
       className={`block px-4 py-2 text-sm transition-colors hover:bg-slate-50 ${
         highlight
-          ? 'text-teal-600 font-medium hover:text-teal-700'
+          ? 'text-brand-600 font-medium hover:text-brand-700'
           : 'text-slate-600 hover:text-slate-900'
       }`}
     >

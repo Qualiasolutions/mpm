@@ -32,7 +32,7 @@ export function LoginForm() {
           autoComplete="email"
           required
           placeholder="name@mpmimports.com.cy"
-          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none transition-all duration-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
+          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none transition-all duration-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
         />
       </div>
 
@@ -51,14 +51,14 @@ export function LoginForm() {
           required
           minLength={6}
           placeholder="Enter your password"
-          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none transition-all duration-200 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
+          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none transition-all duration-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
         />
       </div>
 
       <button
         type="submit"
         disabled={isPending}
-        className="flex w-full items-center justify-center rounded-xl bg-teal-600 px-4 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-teal-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 shadow-lg shadow-teal-600/25"
+        className="flex w-full items-center justify-center rounded-xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-brand-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 shadow-lg shadow-brand-600/25"
       >
         {isPending ? (
           <span className="flex items-center gap-2">
@@ -91,7 +91,7 @@ export function LoginForm() {
       <div className="text-center">
         <Link
           href="/reset-password"
-          className="text-sm text-slate-500 transition-colors duration-200 hover:text-teal-600"
+          className="text-sm text-slate-500 transition-colors duration-200 hover:text-brand-600"
         >
           Forgot password?
         </Link>

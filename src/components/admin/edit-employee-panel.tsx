@@ -152,7 +152,7 @@ export function EditEmployeePanel({
                   name="firstName"
                   type="text"
                   defaultValue={employee.first_name ?? ''}
-                  className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+                  className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
                   placeholder="First name"
                 />
               </div>
@@ -168,7 +168,7 @@ export function EditEmployeePanel({
                   name="lastName"
                   type="text"
                   defaultValue={employee.last_name ?? ''}
-                  className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+                  className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
                   placeholder="Last name"
                 />
               </div>
@@ -186,7 +186,7 @@ export function EditEmployeePanel({
                 id="edit-role"
                 name="role"
                 defaultValue={employee.role}
-                className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+                className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
               >
                 <option value="employee" className="bg-white">
                   Employee
@@ -213,7 +213,7 @@ export function EditEmployeePanel({
                 name="employeeIdCode"
                 type="text"
                 defaultValue={employee.employee_id ?? ''}
-                className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+                className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
                 placeholder="e.g. EMP-001"
               />
             </div>
@@ -234,7 +234,7 @@ export function EditEmployeePanel({
                 name="phone"
                 type="tel"
                 defaultValue={employee.phone ?? ''}
-                className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+                className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
                 placeholder="+30 ..."
               />
             </div>
@@ -258,7 +258,7 @@ export function EditEmployeePanel({
                   step="0.01"
                   min="0"
                   defaultValue={employee.monthly_spending_limit ?? ''}
-                  className="w-full rounded-md border border-slate-300 bg-white py-2.5 pl-14 pr-3.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+                  className="w-full rounded-md border border-slate-300 bg-white py-2.5 pl-14 pr-3.5 text-sm text-slate-800 placeholder-slate-400 outline-none transition-colors focus:border-brand-400 focus:ring-1 focus:ring-brand-200"
                   placeholder="0.00"
                 />
               </div>
@@ -292,7 +292,7 @@ export function EditEmployeePanel({
                         type="checkbox"
                         checked={isChecked}
                         onChange={() => toggleDivision(div.id)}
-                        className="h-4 w-4 rounded border-slate-300 bg-white text-teal-600 accent-teal-600"
+                        className="h-4 w-4 rounded border-slate-300 bg-white text-brand-600 accent-brand-600"
                       />
                       <span className="text-sm text-slate-700">
                         {div.name}
@@ -311,7 +311,7 @@ export function EditEmployeePanel({
               <button
                 type="submit"
                 disabled={isPending}
-                className="flex items-center gap-2 rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
+                className="flex items-center gap-2 rounded-md bg-brand-600 px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isPending ? (
                   <>

@@ -32,7 +32,7 @@ export function UpdatePasswordForm() {
           required
           minLength={6}
           placeholder="Minimum 6 characters"
-          className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition-colors duration-200 focus:border-teal-500 focus:ring-1 focus:ring-teal-200"
+          className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition-colors duration-200 focus:border-brand-500 focus:ring-1 focus:ring-brand-200"
         />
       </div>
 
@@ -51,14 +51,14 @@ export function UpdatePasswordForm() {
           required
           minLength={6}
           placeholder="Re-enter your password"
-          className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition-colors duration-200 focus:border-teal-500 focus:ring-1 focus:ring-teal-200"
+          className="w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition-colors duration-200 focus:border-brand-500 focus:ring-1 focus:ring-brand-200"
         />
       </div>
 
       <button
         type="submit"
         disabled={isPending}
-        className="flex w-full items-center justify-center rounded-md bg-teal-600 px-4 py-2.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-teal-700 disabled:cursor-not-allowed disabled:opacity-50"
+        className="flex w-full items-center justify-center rounded-md bg-brand-600 px-4 py-2.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {isPending ? (
           <span className="flex items-center gap-2">

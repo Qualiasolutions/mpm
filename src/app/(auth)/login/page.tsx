@@ -13,9 +13,9 @@ export default async function LoginPage({
         <div className="flex flex-col items-center mb-2">
           <h1 className="text-5xl sm:text-6xl font-black text-slate-900 tracking-tighter leading-none mb-1 relative">
             <span className="relative z-10">MPM</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-teal-500/20 to-indigo-500/20 blur-xl -z-10" />
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-500/20 to-indigo-500/20 blur-xl -z-10" />
           </h1>
-          <div className="h-1 w-16 bg-gradient-to-r from-teal-500 to-indigo-500 rounded-full mb-2" />
+          <div className="h-1 w-16 bg-gradient-to-r from-brand-500 to-indigo-500 rounded-full mb-2" />
           <p className="text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-[0.3em]">
             Distributors
           </p>
