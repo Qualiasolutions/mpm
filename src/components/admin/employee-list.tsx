@@ -74,7 +74,7 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
     <>
       <div className="rounded-2xl border border-slate-200 bg-white">
         {/* Toolbar */}
-        <div className="flex flex-col gap-4 border-b border-slate-200 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-3 border-b border-slate-200 px-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-5 sm:py-4">
           {/* Search */}
           <div className="relative max-w-xs flex-1">
             <svg
@@ -128,19 +128,19 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
           <table className="w-full text-left text-sm">
             <thead>
               <tr className="border-b border-slate-200">
-                <th className="px-5 py-3 text-xs font-medium uppercase tracking-wider text-slate-400">
+                <th className="px-3 py-3 text-xs font-medium uppercase tracking-wider text-slate-400 sm:px-5">
                   Name
                 </th>
-                <th className="px-5 py-3 text-xs font-medium uppercase tracking-wider text-slate-400">
+                <th className="px-3 py-3 text-xs font-medium uppercase tracking-wider text-slate-400 sm:px-5">
                   Email
                 </th>
-                <th className="hidden px-5 py-3 text-xs font-medium uppercase tracking-wider text-slate-400 md:table-cell">
+                <th className="hidden px-3 py-3 text-xs font-medium uppercase tracking-wider text-slate-400 sm:px-5 md:table-cell">
                   Divisions
                 </th>
-                <th className="px-5 py-3 text-xs font-medium uppercase tracking-wider text-slate-400">
+                <th className="px-3 py-3 text-xs font-medium uppercase tracking-wider text-slate-400 sm:px-5">
                   Status
                 </th>
-                <th className="px-5 py-3 text-xs font-medium uppercase tracking-wider text-slate-400">
+                <th className="px-3 py-3 text-xs font-medium uppercase tracking-wider text-slate-400 sm:px-5">
                   Actions
                 </th>
               </tr>
@@ -164,7 +164,7 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
                   className="transition-colors hover:bg-slate-50"
                 >
                   {/* Name */}
-                  <td className="whitespace-nowrap px-5 py-3.5">
+                  <td className="whitespace-nowrap px-3 py-3 sm:px-5 sm:py-3.5">
                     <div className="flex items-center gap-3">
                       <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-xs font-medium text-slate-500">
                         {(emp.first_name?.[0] ?? '').toUpperCase()}
@@ -184,7 +184,7 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
                   </td>
 
                   {/* Email */}
-                  <td className="whitespace-nowrap px-5 py-3.5 text-slate-500">
+                  <td className="whitespace-nowrap px-3 py-3 sm:px-5 sm:py-3.5 text-slate-500">
                     {emp.email}
                   </td>
 
@@ -206,7 +206,7 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
                   </td>
 
                   {/* Status */}
-                  <td className="whitespace-nowrap px-5 py-3.5">
+                  <td className="whitespace-nowrap px-3 py-3 sm:px-5 sm:py-3.5">
                     {emp.is_active ? (
                       <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[11px] font-medium text-emerald-600">
                         <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
@@ -221,7 +221,7 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
                   </td>
 
                   {/* Actions */}
-                  <td className="whitespace-nowrap px-5 py-3.5">
+                  <td className="whitespace-nowrap px-3 py-3 sm:px-5 sm:py-3.5">
                     <div className="flex items-center gap-1">
                       <button
                         type="button"
@@ -301,7 +301,7 @@ export function EmployeeList({ employees, divisions }: EmployeeListProps) {
         </div>
 
         {/* Footer */}
-        <div className="border-t border-slate-200 px-5 py-3">
+        <div className="border-t border-slate-200 px-3 py-3 sm:px-5">
           <p className="text-xs text-slate-400">
             Showing {filtered.length} of {employees.length} employees
           </p>

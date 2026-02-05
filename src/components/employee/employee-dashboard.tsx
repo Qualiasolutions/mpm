@@ -75,7 +75,7 @@ export function EmployeeDashboard({
     <div className="pb-20">
       {/* Dashboard View */}
       {view === 'dashboard' && (
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           <SpendingSummary summary={spending} />
 
           {/* Active Code Banner */}
@@ -168,7 +168,7 @@ export function EmployeeDashboard({
       )}
 
       {/* Bottom Tab Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200 bg-white/90 backdrop-blur-md">
+      <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200 bg-white/90 backdrop-blur-md safe-area-bottom">
         <div className="mx-auto flex max-w-lg items-center justify-around">
           <TabButton
             active={view === 'dashboard'}

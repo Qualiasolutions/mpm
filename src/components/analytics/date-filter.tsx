@@ -75,48 +75,50 @@ export function DateFilter({ onFilterChange }: DateFilterProps) {
   }, [onFilterChange])
 
   return (
-    <div className="flex flex-wrap items-center gap-2">
+    <div className="space-y-3 sm:space-y-0 sm:flex sm:flex-wrap sm:items-center sm:gap-2">
       {/* Date Inputs */}
       <div className="flex items-center gap-2">
-        <label className="text-[10px] font-medium uppercase tracking-wider text-slate-400">
+        <label className="text-[10px] font-medium uppercase tracking-wider text-slate-400 w-8 shrink-0">
           From
         </label>
         <input
           type="date"
           value={dateFrom}
           onChange={(e) => setDateFrom(e.target.value)}
-          className="rounded-md border border-slate-300 bg-white px-2.5 py-1.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+          className="min-w-0 flex-1 rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200 sm:flex-none sm:px-2.5"
         />
       </div>
       <div className="flex items-center gap-2">
-        <label className="text-[10px] font-medium uppercase tracking-wider text-slate-400">
+        <label className="text-[10px] font-medium uppercase tracking-wider text-slate-400 w-8 shrink-0">
           To
         </label>
         <input
           type="date"
           value={dateTo}
           onChange={(e) => setDateTo(e.target.value)}
-          className="rounded-md border border-slate-300 bg-white px-2.5 py-1.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+          className="min-w-0 flex-1 rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200 sm:flex-none sm:px-2.5"
         />
       </div>
 
-      <button
-        type="button"
-        onClick={handleApply}
-        className="rounded-md bg-teal-600 px-3 py-1.5 text-xs font-medium text-white transition-all hover:bg-teal-700"
-      >
-        Apply
-      </button>
-
-      {(dateFrom || dateTo) && (
+      <div className="flex items-center gap-2">
         <button
           type="button"
-          onClick={handleClear}
-          className="rounded-md px-2.5 py-1.5 text-xs text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700"
+          onClick={handleApply}
+          className="rounded-md bg-teal-600 px-3 py-1.5 text-xs font-medium text-white transition-all hover:bg-teal-700"
         >
-          Clear
+          Apply
         </button>
-      )}
+
+        {(dateFrom || dateTo) && (
+          <button
+            type="button"
+            onClick={handleClear}
+            className="rounded-md px-2.5 py-1.5 text-xs text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700"
+          >
+            Clear
+          </button>
+        )}
+      </div>
 
       {/* Divider */}
       <div className="mx-1 hidden h-4 w-px bg-slate-200 sm:block" />

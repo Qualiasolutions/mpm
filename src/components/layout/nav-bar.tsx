@@ -12,7 +12,7 @@ export function NavBar({ role, userName }: NavBarProps) {
 
   return (
     <nav className="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
-      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-3 sm:px-6 lg:px-8">
         {/* Branding */}
         <Link
           href={isAdmin ? '/admin' : '/'}

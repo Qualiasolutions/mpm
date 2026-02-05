@@ -30,15 +30,15 @@ export function SpendingSummary({ summary }: SpendingSummaryProps) {
         : '#0d9488'
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-      <div className="flex items-center gap-5">
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+      <div className="flex items-center gap-4 sm:gap-5">
         {/* Progress Ring */}
         <div className="relative flex-shrink-0">
           <svg
-            width="140"
-            height="140"
+            width="110"
+            height="110"
             viewBox="0 0 140 140"
-            className="rotate-[-90deg]"
+            className="rotate-[-90deg] sm:h-[140px] sm:w-[140px]"
           >
             <circle
               cx="70"
@@ -65,10 +65,10 @@ export function SpendingSummary({ summary }: SpendingSummaryProps) {
           </svg>
 
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="text-2xl font-bold tracking-tight text-slate-900">
+            <span className="text-lg font-bold tracking-tight text-slate-900 sm:text-2xl">
               {formatCurrency(summary.remaining)}
             </span>
-            <span className="mt-0.5 text-[10px] uppercase tracking-wider text-slate-400 font-semibold">
+            <span className="mt-0.5 text-[9px] uppercase tracking-wider text-slate-400 font-semibold sm:text-[10px]">
               remaining
             </span>
           </div>
@@ -76,7 +76,7 @@ export function SpendingSummary({ summary }: SpendingSummaryProps) {
 
         {/* Details */}
         <div className="min-w-0 flex-1">
-          <h3 className="text-sm font-semibold text-slate-800">Monthly Spending</h3>
+          <h3 className="text-xs font-semibold text-slate-800 sm:text-sm">Monthly Spending</h3>
           <p className="mt-1 text-xs text-slate-500">
             {formatCurrency(summary.spent)} of {formatCurrency(summary.limit)} used
           </p>

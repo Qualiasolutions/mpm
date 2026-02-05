@@ -150,11 +150,11 @@ export function OverviewCards({ overview }: OverviewCardsProps) {
   ]
 
   return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6">
       {cards.map((card) => (
         <div
           key={card.label}
-          className={`rounded-2xl p-4 transition-colors ${
+          className={`rounded-2xl p-3 transition-colors sm:p-4 ${
             card.accent
               ? 'border border-teal-200 bg-teal-50'
               : 'border border-slate-200 bg-white'
@@ -163,7 +163,7 @@ export function OverviewCards({ overview }: OverviewCardsProps) {
           <div className="flex items-start justify-between">
             <div className="min-w-0">
               <p
-                className={`truncate text-xl font-light tabular-nums sm:text-2xl ${
+                className={`truncate text-base font-light tabular-nums sm:text-xl lg:text-2xl ${
                   card.accent ? 'text-teal-600' : 'text-slate-900'
                 }`}
               >

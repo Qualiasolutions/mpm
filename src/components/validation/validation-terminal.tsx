@@ -118,12 +118,12 @@ export function ValidationTerminal({
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1fr,340px]">
+    <div className="grid gap-4 sm:gap-6 lg:grid-cols-[1fr,340px]">
       {/* Main Terminal */}
       <div className="space-y-5">
         {/* Processing State */}
         {flowState === 'processing' && (
-          <div className="rounded-2xl border border-slate-200 bg-white p-12 text-center sm:p-16">
+          <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center sm:p-16">
             <div className="mx-auto mb-5 h-10 w-10 animate-spin rounded-full border-2 border-teal-200 border-t-teal-600" />
             <p className="text-base text-slate-700">
               Validating discount code...

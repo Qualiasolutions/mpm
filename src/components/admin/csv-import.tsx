@@ -186,7 +186,7 @@ export function CsvImport() {
           onDragLeave={() => setDragOver(false)}
           onDrop={handleDrop}
           onClick={() => fileInputRef.current?.click()}
-          className={`flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed px-6 py-12 transition-colors ${
+          className={`flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed px-4 py-8 sm:px-6 sm:py-12 transition-colors ${
             dragOver
               ? 'border-teal-400 bg-teal-50'
               : 'border-slate-300 bg-slate-50 hover:border-slate-400 hover:bg-white'
@@ -265,25 +265,25 @@ export function CsvImport() {
               <table className="w-full text-left text-sm">
                 <thead>
                   <tr className="border-b border-slate-200 bg-white">
-                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400">
+                    <th className="px-3 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400 sm:px-4">
                       Row
                     </th>
-                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400">
+                    <th className="px-3 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400 sm:px-4">
                       First Name
                     </th>
-                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400">
+                    <th className="px-3 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400 sm:px-4">
                       Last Name
                     </th>
-                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400">
+                    <th className="px-3 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400 sm:px-4">
                       Email
                     </th>
-                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400">
+                    <th className="px-3 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400 sm:px-4">
                       Role
                     </th>
-                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400">
+                    <th className="px-3 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400 sm:px-4">
                       Divisions
                     </th>
-                    <th className="px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400">
+                    <th className="px-3 py-2.5 text-xs font-medium uppercase tracking-wider text-slate-400 sm:px-4">
                       Status
                     </th>
                   </tr>
@@ -298,33 +298,33 @@ export function CsvImport() {
                           : 'bg-red-50/50'
                       }
                     >
-                      <td className="px-4 py-2.5 tabular-nums text-slate-400">
+                      <td className="px-3 py-2.5 tabular-nums text-slate-400 sm:px-4">
                         {row.rowIndex}
                       </td>
-                      <td className="px-4 py-2.5 text-slate-700">
+                      <td className="px-3 py-2.5 text-slate-700 sm:px-4">
                         {row.first_name || (
                           <span className="text-slate-400">--</span>
                         )}
                       </td>
-                      <td className="px-4 py-2.5 text-slate-700">
+                      <td className="px-3 py-2.5 text-slate-700 sm:px-4">
                         {row.last_name || (
                           <span className="text-slate-400">--</span>
                         )}
                       </td>
-                      <td className="px-4 py-2.5 text-slate-700">
+                      <td className="px-3 py-2.5 text-slate-700 sm:px-4">
                         {row.email || (
                           <span className="text-slate-400">--</span>
                         )}
                       </td>
-                      <td className="px-4 py-2.5 text-slate-500">
+                      <td className="px-3 py-2.5 text-slate-500 sm:px-4">
                         {row.role}
                       </td>
-                      <td className="px-4 py-2.5 text-slate-500">
+                      <td className="px-3 py-2.5 text-slate-500 sm:px-4">
                         {row.divisions || (
                           <span className="text-slate-400">--</span>
                         )}
                       </td>
-                      <td className="px-4 py-2.5">
+                      <td className="px-3 py-2.5 sm:px-4">
                         {row.valid ? (
                           <span className="text-xs text-emerald-600">
                             Valid

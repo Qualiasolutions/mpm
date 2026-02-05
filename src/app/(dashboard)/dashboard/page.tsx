@@ -55,8 +55,8 @@ export default async function DashboardPage() {
   return (
     <div className="space-y-6">
       {/* Welcome Header */}
-      <div className="flex items-center gap-4">
-        <h1 className="text-2xl font-light tracking-wide text-slate-800">
+      <div className="flex items-center gap-3">
+        <h1 className="text-xl font-light tracking-wide text-slate-800 sm:text-2xl">
           Welcome, {firstName}
         </h1>
         <span

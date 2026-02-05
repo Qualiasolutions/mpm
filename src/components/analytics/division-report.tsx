@@ -96,7 +96,7 @@ export function DivisionReport({ rows, dateFrom, dateTo }: DivisionReportProps) 
   return (
     <div className="rounded-2xl border border-slate-200 bg-white">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
+      <div className="flex items-center justify-between border-b border-slate-200 px-3 py-3 sm:px-5 sm:py-4">
         <h2 className="text-sm font-medium uppercase tracking-wider text-slate-400">
           Division Report
         </h2>
@@ -234,32 +234,32 @@ export function DivisionReport({ rows, dateFrom, dateTo }: DivisionReportProps) 
                     key={row.id}
                     className="transition-colors hover:bg-slate-50"
                   >
-                    <td className="whitespace-nowrap px-5 py-3.5 font-medium text-slate-800">
+                    <td className="whitespace-nowrap px-3 py-3.5 font-medium text-slate-800 sm:px-5">
                       {row.name}
                     </td>
-                    <td className="whitespace-nowrap px-5 py-3.5">
+                    <td className="whitespace-nowrap px-3 py-3.5 sm:px-5">
                       <span
                         className={`rounded-md border px-2 py-0.5 font-mono text-[11px] ${color.border} ${color.bg} ${color.text}`}
                       >
                         {row.code}
                       </span>
                     </td>
-                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-slate-700">
+                    <td className="whitespace-nowrap px-3 py-3.5 text-right tabular-nums text-slate-700 sm:px-5">
                       {row.transaction_count}
                     </td>
-                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-slate-700">
+                    <td className="whitespace-nowrap px-3 py-3.5 text-right tabular-nums text-slate-700 sm:px-5">
                       {formatCurrency(row.total_original)}
                     </td>
-                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-teal-600">
+                    <td className="whitespace-nowrap px-3 py-3.5 text-right tabular-nums text-teal-600 sm:px-5">
                       {formatCurrency(row.total_discount)}
                     </td>
-                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-slate-700">
+                    <td className="whitespace-nowrap px-3 py-3.5 text-right tabular-nums text-slate-700 sm:px-5">
                       {formatCurrency(row.total_final)}
                     </td>
-                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-slate-700">
+                    <td className="whitespace-nowrap px-3 py-3.5 text-right tabular-nums text-slate-700 sm:px-5">
                       {row.unique_employees}
                     </td>
-                    <td className="whitespace-nowrap px-5 py-3.5 text-right tabular-nums text-slate-500">
+                    <td className="whitespace-nowrap px-3 py-3.5 text-right tabular-nums text-slate-500 sm:px-5">
                       {row.avg_discount_pct.toFixed(1)}%
                     </td>
                   </tr>
@@ -272,7 +272,7 @@ export function DivisionReport({ rows, dateFrom, dateTo }: DivisionReportProps) 
 
       {/* Footer */}
       {sorted.length > 0 && (
-        <div className="border-t border-slate-200 px-5 py-3">
+        <div className="border-t border-slate-200 px-3 py-3 sm:px-5">
           <p className="text-[11px] text-slate-400">
             {sorted.length} division{sorted.length !== 1 ? 's' : ''}
           </p>
@@ -301,7 +301,7 @@ function SortableHeader({
 
   return (
     <th
-      className={`cursor-pointer select-none whitespace-nowrap px-5 py-3 text-xs font-medium uppercase tracking-wider text-slate-400 transition-colors hover:text-slate-700 ${className}`}
+      className={`cursor-pointer select-none whitespace-nowrap px-3 py-3 text-xs font-medium uppercase tracking-wider text-slate-400 transition-colors hover:text-slate-700 sm:px-5 ${className}`}
       onClick={() => onSort(field)}
     >
       <span className="inline-flex items-center gap-1">

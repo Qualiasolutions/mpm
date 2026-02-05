@@ -79,9 +79,9 @@ export function ActivityChart({ data }: ActivityChartProps) {
   }
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6">
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-6">
       {/* Header */}
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-4 flex items-center justify-between sm:mb-6">
         <h3 className="text-sm font-medium uppercase tracking-wider text-slate-400">
           Daily Activity
         </h3>

@@ -17,7 +17,7 @@ export function DiscountRulesTable({
     <div className="space-y-8">
       {/* Discount Rules */}
       <div className="rounded-2xl border border-slate-200 bg-white">
-        <div className="border-b border-slate-200 px-5 py-4">
+        <div className="border-b border-slate-200 px-3 py-3 sm:px-5 sm:py-4">
           <h2 className="text-sm font-medium uppercase tracking-wider text-slate-400">
             Division Discount Rules
           </h2>
@@ -211,10 +211,10 @@ function DefaultSpendingLimitSection({ limit }: { limit: number }) {
   }
 
   return (
-    <div className="rounded-2xl border border-teal-200 bg-teal-50 p-6">
-      <div className="flex items-start justify-between">
-        <div>
-          <h2 className="text-lg font-light tracking-wide text-slate-800">
+    <div className="rounded-2xl border border-teal-200 bg-teal-50 p-4 sm:p-6">
+      <div className="flex items-start justify-between gap-2">
+        <div className="min-w-0">
+          <h2 className="text-base font-light tracking-wide text-slate-800 sm:text-lg">
             Default Monthly Spending Limit
           </h2>
           <p className="mt-1 text-xs text-slate-400">
@@ -241,7 +241,7 @@ function DefaultSpendingLimitSection({ limit }: { limit: number }) {
       {isEditing ? (
         <form
           action={formAction}
-          className="mt-4 flex items-end gap-3"
+          className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-end"
         >
           <div>
             <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400">
@@ -257,7 +257,7 @@ function DefaultSpendingLimitSection({ limit }: { limit: number }) {
                 min="0"
                 step="0.01"
                 defaultValue={limit}
-                className="w-48 rounded-md border border-slate-300 bg-white py-2.5 pl-14 pr-3.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+                className="w-full rounded-md border border-slate-300 bg-white py-2.5 pl-14 pr-3.5 text-sm text-slate-800 outline-none transition-colors focus:border-teal-400 focus:ring-1 focus:ring-teal-200 sm:w-48"
                 autoFocus
               />
             </div>

@@ -72,8 +72,8 @@ export function MonthlyTrends({ trends }: MonthlyTrendsProps) {
   }
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6">
-      <h3 className="mb-6 text-sm font-medium uppercase tracking-wider text-slate-400">
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-6">
+      <h3 className="mb-4 text-sm font-medium uppercase tracking-wider text-slate-400 sm:mb-6">
         Monthly Trends
       </h3>
 
@@ -85,12 +85,12 @@ export function MonthlyTrends({ trends }: MonthlyTrendsProps) {
               <span className="text-sm font-medium text-slate-700">
                 {formatMonth(t.month)}
               </span>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 sm:gap-4">
                 {/* Transaction change indicator */}
                 {t.txnChange !== null && (
                   <ChangeIndicator value={t.txnChange} label="txns" />
                 )}
-                <span className="text-xs tabular-nums text-slate-400">
+                <span className="text-[10px] tabular-nums text-slate-400 sm:text-xs">
                   {t.unique_employees} employee{t.unique_employees !== 1 ? 's' : ''}
                 </span>
               </div>

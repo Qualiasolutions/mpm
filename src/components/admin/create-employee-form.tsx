@@ -17,8 +17,8 @@ export function CreateEmployeeForm() {
   }
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6">
-      <h2 className="mb-6 text-lg font-light tracking-wide text-slate-800">
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-6">
+      <h2 className="mb-4 text-base font-light tracking-wide text-slate-800 sm:mb-6 sm:text-lg">
         Create New Employee
       </h2>
 

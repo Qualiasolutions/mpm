@@ -104,12 +104,12 @@ export function EmployeeReport({ rows, dateFrom, dateTo }: EmployeeReportProps) 
   return (
     <div className="rounded-2xl border border-slate-200 bg-white">
       {/* Header */}
-      <div className="flex flex-col gap-3 border-b border-slate-200 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-3 border-b border-slate-200 px-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-5 sm:py-4">
         <h2 className="text-sm font-medium uppercase tracking-wider text-slate-400">
           Employee Report
         </h2>
         <div className="flex items-center gap-2">
-          <div className="relative">
+          <div className="relative flex-1 sm:flex-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -130,7 +130,7 @@ export function EmployeeReport({ rows, dateFrom, dateTo }: EmployeeReportProps) 
               placeholder="Search employees..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-48 rounded-md border border-slate-300 bg-white py-1.5 pl-8 pr-3 text-sm text-slate-800 outline-none transition-colors placeholder:text-slate-400 focus:border-teal-400 focus:ring-1 focus:ring-teal-200"
+              className="w-full rounded-md border border-slate-300 bg-white py-1.5 pl-8 pr-3 text-sm text-slate-800 outline-none transition-colors placeholder:text-slate-400 focus:border-teal-400 focus:ring-1 focus:ring-teal-200 sm:w-48"
             />
           </div>
           <button
@@ -268,7 +268,7 @@ export function EmployeeReport({ rows, dateFrom, dateTo }: EmployeeReportProps) 
                   key={row.id}
                   className="transition-colors hover:bg-slate-50"
                 >
-                  <td className="whitespace-nowrap px-5 py-3">
+                  <td className="whitespace-nowrap px-3 py-3 sm:px-5">
                     <div>
                       <p className="font-medium text-slate-800">
                         {row.name}
@@ -278,7 +278,7 @@ export function EmployeeReport({ rows, dateFrom, dateTo }: EmployeeReportProps) 
                       </p>
                     </div>
                   </td>
-                  <td className="px-5 py-3">
+                  <td className="px-3 py-3 sm:px-5">
                     <div className="flex flex-wrap gap-1">
                       {row.division_names.length > 0 ? (
                         row.division_names.map((name) => (
@@ -296,22 +296,22 @@ export function EmployeeReport({ rows, dateFrom, dateTo }: EmployeeReportProps) 
                       )}
                     </div>
                   </td>
-                  <td className="whitespace-nowrap px-5 py-3 text-right tabular-nums text-slate-700">
+                  <td className="whitespace-nowrap px-3 py-3 text-right tabular-nums text-slate-700 sm:px-5">
                     {row.transaction_count}
                   </td>
-                  <td className="whitespace-nowrap px-5 py-3 text-right tabular-nums text-slate-700">
+                  <td className="whitespace-nowrap px-3 py-3 text-right tabular-nums text-slate-700 sm:px-5">
                     {formatCurrency(row.total_original)}
                   </td>
-                  <td className="whitespace-nowrap px-5 py-3 text-right tabular-nums text-teal-600">
+                  <td className="whitespace-nowrap px-3 py-3 text-right tabular-nums text-teal-600 sm:px-5">
                     {formatCurrency(row.total_discount)}
                   </td>
-                  <td className="whitespace-nowrap px-5 py-3 text-right tabular-nums text-slate-700">
+                  <td className="whitespace-nowrap px-3 py-3 text-right tabular-nums text-slate-700 sm:px-5">
                     {formatCurrency(row.total_final)}
                   </td>
-                  <td className="whitespace-nowrap px-5 py-3 text-right tabular-nums text-slate-500">
+                  <td className="whitespace-nowrap px-3 py-3 text-right tabular-nums text-slate-500 sm:px-5">
                     {formatCurrency(row.monthly_limit)}
                   </td>
-                  <td className="whitespace-nowrap px-5 py-3">
+                  <td className="whitespace-nowrap px-3 py-3 sm:px-5">
                     <UsageBar percentage={row.limit_usage_pct} />
                   </td>
                 </tr>
@@ -323,7 +323,7 @@ export function EmployeeReport({ rows, dateFrom, dateTo }: EmployeeReportProps) 
 
       {/* Footer */}
       {filteredAndSorted.length > 0 && (
-        <div className="border-t border-slate-200 px-5 py-3">
+        <div className="border-t border-slate-200 px-3 py-3 sm:px-5">
           <p className="text-[11px] text-slate-400">
             {filteredAndSorted.length} employee
             {filteredAndSorted.length !== 1 ? 's' : ''}
@@ -354,7 +354,7 @@ function SortableHeader({
 
   return (
     <th
-      className={`cursor-pointer select-none whitespace-nowrap px-5 py-3 text-xs font-medium uppercase tracking-wider text-slate-400 transition-colors hover:text-slate-700 ${className}`}
+      className={`cursor-pointer select-none whitespace-nowrap px-3 py-3 text-xs font-medium uppercase tracking-wider text-slate-400 transition-colors hover:text-slate-700 sm:px-5 ${className}`}
       onClick={() => onSort(field)}
     >
       <span className="inline-flex items-center gap-1">
