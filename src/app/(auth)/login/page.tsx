@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { LoginForm } from '@/components/auth/login-form'
 
 export default async function LoginPage({
@@ -11,14 +12,15 @@ export default async function LoginPage({
     <div className="space-y-6 sm:space-y-8">
       <div className="flex flex-col items-center text-center space-y-4 sm:space-y-6">
         <div className="flex flex-col items-center mb-2">
-          <h1 className="text-5xl sm:text-6xl font-black text-slate-900 tracking-tighter leading-none mb-1 relative">
-            <span className="relative z-10">MPM</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-500/20 to-indigo-500/20 blur-xl -z-10" />
-          </h1>
-          <div className="h-1 w-16 bg-gradient-to-r from-brand-500 to-indigo-500 rounded-full mb-2" />
-          <p className="text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-[0.3em]">
-            Distributors
-          </p>
+          <Image
+            src="/logo.png"
+            alt="MPM Imports"
+            width={280}
+            height={70}
+            className="h-12 w-auto sm:h-14"
+            priority
+          />
+          <div className="h-0.5 w-16 bg-brand-600 rounded-full mt-4 mb-2" />
         </div>
 
         <div>

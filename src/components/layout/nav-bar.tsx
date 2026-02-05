@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { LogoutButton } from './logout-button'
 
 interface NavBarProps {
@@ -13,17 +14,19 @@ export function NavBar({ role, userName }: NavBarProps) {
   return (
     <nav className="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-3 sm:px-6 lg:px-8">
-        {/* Branding */}
+        {/* Logo */}
         <Link
           href={isAdmin ? '/admin' : '/'}
-          className="flex items-center gap-2"
+          className="flex items-center"
         >
-          <span className="text-xl font-black tracking-tight text-slate-900">
-            MPM
-          </span>
-          <span className="hidden text-[10px] font-bold tracking-[0.1em] text-slate-400 uppercase sm:inline">
-            Discounts
-          </span>
+          <Image
+            src="/logo.png"
+            alt="MPM Imports"
+            width={160}
+            height={40}
+            className="h-7 w-auto sm:h-8"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -50,54 +53,9 @@ export function NavBar({ role, userName }: NavBarProps) {
               <NavLink href="/dashboard">History</NavLink>
             </>
           )}
-        </div>
-
-        {/* User Section */}
-        <div className="flex items-center gap-2">
-          {/* Mobile Menu */}
-          <details className="relative md:hidden">
-            <summary className="list-none rounded-lg px-2.5 py-1.5 text-sm text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
-            </summary>
-            <div className="absolute right-0 top-full z-50 mt-2 w-48 rounded-xl border border-slate-200 bg-white py-1.5 shadow-xl">
-              {isAdmin ? (
-                <>
-                  <MobileNavLink href="/admin">Dashboard</MobileNavLink>
-                  <MobileNavLink href="/admin/employees">Employees</MobileNavLink>
-                  <MobileNavLink href="/admin/divisions">Divisions</MobileNavLink>
-                  <MobileNavLink href="/admin/discounts">Discounts</MobileNavLink>
-                  <MobileNavLink href="/admin/validate" highlight>Validate</MobileNavLink>
-                  <MobileNavLink href="/admin/analytics">Analytics</MobileNavLink>
-                  <div className="my-1.5 border-t border-slate-100" />
-                  <MobileNavLink href="/dashboard">Employee View</MobileNavLink>
-                </>
-              ) : (
-                <>
-                  <MobileNavLink href="/dashboard">Dashboard</MobileNavLink>
-                  <MobileNavLink href="/dashboard">Discounts</MobileNavLink>
-                  <MobileNavLink href="/dashboard">History</MobileNavLink>
-                </>
-              )}
-            </div>
-          </details>
-
-          {/* User Info */}
-          <div className="flex items-center gap-2 border-l border-slate-200 pl-3">
-            <div className="hidden flex-col items-end sm:flex">
+          <NavDivider />
+          <div className="flex items-center gap-3 pl-1">
+            <div className="flex flex-col items-end">
               <span className="text-sm font-medium text-slate-700">{displayName}</span>
               <span className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">
                 {role}
@@ -106,6 +64,59 @@ export function NavBar({ role, userName }: NavBarProps) {
             <LogoutButton />
           </div>
         </div>
+
+        {/* Mobile Menu - right side */}
+        <details className="relative md:hidden">
+          <summary className="list-none rounded-lg px-2.5 py-1.5 text-sm text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700 cursor-pointer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </summary>
+          <div className="absolute right-0 top-full z-50 mt-2 w-52 rounded-xl border border-slate-200 bg-white py-1.5 shadow-xl">
+            {/* User info */}
+            <div className="px-4 py-2.5 border-b border-slate-100 mb-1">
+              <p className="text-sm font-medium text-slate-800">{displayName}</p>
+              <p className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">{role}</p>
+            </div>
+
+            {isAdmin ? (
+              <>
+                <MobileNavLink href="/admin">Dashboard</MobileNavLink>
+                <MobileNavLink href="/admin/employees">Employees</MobileNavLink>
+                <MobileNavLink href="/admin/divisions">Divisions</MobileNavLink>
+                <MobileNavLink href="/admin/discounts">Discounts</MobileNavLink>
+                <MobileNavLink href="/admin/validate" highlight>Validate</MobileNavLink>
+                <MobileNavLink href="/admin/analytics">Analytics</MobileNavLink>
+                <div className="my-1.5 border-t border-slate-100" />
+                <MobileNavLink href="/dashboard">Employee View</MobileNavLink>
+              </>
+            ) : (
+              <>
+                <MobileNavLink href="/dashboard">Dashboard</MobileNavLink>
+                <MobileNavLink href="/dashboard">Discounts</MobileNavLink>
+                <MobileNavLink href="/dashboard">History</MobileNavLink>
+              </>
+            )}
+
+            {/* Sign Out */}
+            <div className="my-1.5 border-t border-slate-100" />
+            <div className="px-1.5">
+              <LogoutButton variant="menu" />
+            </div>
+          </div>
+        </details>
       </div>
     </nav>
   )
