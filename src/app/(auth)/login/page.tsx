@@ -49,9 +49,22 @@ export default async function LoginPage({
         <LoginForm />
       </div>
 
-      <p className="text-center text-xs text-slate-400">
-        &copy; {new Date().getFullYear()} MPM Distributors Ltd.
-      </p>
+      <div className="text-center">
+        <p className="text-xs text-slate-400">
+          &copy; {new Date().getFullYear()} MPM Distributors Ltd.
+        </p>
+        <p className="mt-1 text-[11px] text-slate-400">
+          Powered by:{' '}
+          <a
+            href="https://qualiasolutions.net"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-[#0d9488] hover:text-[#0f766e] transition-colors"
+          >
+            Qualia Solutions
+          </a>
+        </p>
+      </div>
     </div>
   )
 }

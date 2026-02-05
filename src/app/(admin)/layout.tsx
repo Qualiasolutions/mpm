@@ -1,6 +1,8 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { NavBar } from '@/components/layout/nav-bar'
+import { DemoBanner } from '@/components/layout/demo-banner'
+import { Footer } from '@/components/layout/footer'
 import { OnlineStatus } from '@/components/pwa/online-status'
 
 export default async function AdminLayout({
@@ -29,12 +31,14 @@ export default async function AdminLayout({
   }
 
   return (
-    <div className="min-h-screen bg-[#f8fafc]">
+    <div className="min-h-screen bg-[#f8fafc] flex flex-col">
+      <DemoBanner />
       <OnlineStatus />
       <NavBar role="admin" userName={profile.first_name ?? null} />
-      <main className="mx-auto max-w-7xl px-3 py-4 sm:px-6 sm:py-8 lg:px-8">
+      <main className="mx-auto max-w-7xl px-3 py-4 sm:px-6 sm:py-8 lg:px-8 flex-1 w-full">
         {children}
       </main>
+      <Footer />
     </div>
   )
 }
